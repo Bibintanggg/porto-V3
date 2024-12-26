@@ -1,8 +1,14 @@
-import Sidebar from './Component/Sidebar'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./Component/Home"
 
 function App() {
   return (
-    <Sidebar/>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+
+      </Routes>
+      </BrowserRouter>
   )
 }
 
