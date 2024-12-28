@@ -7,7 +7,7 @@ import ContactIcon from "../assets/Icon/contact.svg";
 function Sidebar() {
   return (
     <section>
-      <div className="relative w-60 h-[100vh] bg-[#B7B7B7] pt-10">
+      <div className="relative w-60 h-[100vh] bg-[#ffff] pt-10 ">
         <div className="bg-red-50 w-32 h-32 rounded-full items-center mx-auto overflow-hidden">
           <img
             src={FotoBintang}
@@ -17,14 +17,14 @@ function Sidebar() {
         </div>
 
         <div>
-          <h1 className="text-white text-center mt-4 text-xl font-jakarta font-medium">Bintang Yudha</h1>
+          <h1 className="text-black text-center mt-4 text-xl font-jakarta font-medium">Bintang Yudha</h1>
         </div>
 
         <div className="w-48 h-0.5 bg-gray-50 mx-auto mt-8"></div>
 
         <ul className="text-center space-y-6 mt-6 font-jakarta">
           <li>
-            <button className="flex items-center text-white text-lg mx-auto gap-4 relative group 
+            <button className="flex items-center text-black text-lg mx-auto gap-4 relative group 
             duration-300">
               <img src={HomeIcon} alt="Home Icon" className="w-6 h-6" />
               Home
@@ -34,7 +34,7 @@ function Sidebar() {
           </li>
 
           <li>
-            <button className="flex items-center text-white text-lg mx-auto gap-4 relative group 
+            <button className="flex items-center text-black text-lg mx-auto gap-4 relative group 
             duration-300">
               <img src={AboutIcon} alt="About Icon" className="w-6 h-6" />
               About
@@ -43,7 +43,7 @@ function Sidebar() {
             </button>
           </li>
           <li>
-            <button className="flex items-center text-white text-lg mx-auto gap-4 relative group 
+            <button className="flex items-center text-black text-lg mx-auto gap-4 relative group 
             duration-300">
               <img src={ProjectIcon} alt="Project Icon" className="w-6 h-6" />
               Project
@@ -52,7 +52,7 @@ function Sidebar() {
             </button>
           </li>
           <li>
-            <button className="flex items-center text-white text-lg mx-auto gap-4 relative group 
+            <button className="flex items-center text-black text-lg mx-auto gap-4 relative group 
             duration-300">
               <img src={ContactIcon} alt="Contact Icon" className="w-6 h-6 opacity-70" />
               Contact

@@ -1,5 +1,6 @@
 import Sidebar from "../Component/Sidebar.jsx";
 import Particle from "./particle.jsx";
+import WavingHand from '../assets/Image/wavinghand.png'
 
 function Home() {
     return (
@@ -24,13 +25,22 @@ function Home() {
 
                     <div className="w-full h-0.5 bg-black mx-auto opacity-25"></div>
 
-                    <div>
-                      <div>
+                    <div className="flex items-center justify-start h-96">
                         <div>
-                          <h1 className="text-4xl font-poppins font-bold ">It's Me Bintang Yudha</h1>
+                            <h1 className="text-2xl font-poppins font-bold flex gap-2">
+                                Hello, It's Me Bintang!
+                                <img
+                                    src={WavingHand}
+                                    className="w-8 h-8"
+                                />
+                            </h1>
+                            <p className="text-2xl font-poppins font-bold">
+                                I'm Front End Developer
+                            </p>
                         </div>
-                      </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
