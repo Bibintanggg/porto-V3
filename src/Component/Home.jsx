@@ -1,19 +1,18 @@
 import Sidebar from "../Component/Sidebar.jsx";
 import Particle from "./particle.jsx";
 import WavingHand from '../assets/Image/wavinghand.png'
+import InstagramIcon from '../assets/Icon/instagram.svg'
+import Linkedinicon from '../assets/Icon/linkedin.svg'
+import FotoBintang from '../assets/Image/Image1.png'
 
 function Home() {
     return (
         <div className="relative min-h-screen">
-            {/* Particle sebagai background */}
             <Particle className="absolute top-0 left-0 w-full h-full -z-10" />
 
-            {/* Layout dengan flex */}
             <div className="flex relative z-10">
-                {/* Sidebar di kiri */}
                 <Sidebar />
 
-                {/* Konten utama di kanan */}
                 <div className="flex-1 bg-transparent p-8">
                     <div className="flex justify-between text-left ">
                         <h1 className="text-base font-semibold text-gray-800 font-poppins pt-2">Home</h1>
@@ -25,18 +24,41 @@ function Home() {
 
                     <div className="w-full h-0.5 bg-black mx-auto opacity-25"></div>
 
-                    <div className="flex items-center justify-start h-96">
-                        <div>
-                            <h1 className="text-2xl font-poppins font-bold flex gap-2">
-                                Hello, It's Me Bintang!
+                    <div className="flex items-center justify-start h-96 gap-5 p-10">
+                        <div className="w-4 h-4 bg-[#1d3557] rounded-full">
+                            <div className="w-1 h-36 mx-auto rounded-full bg-gradient-to-b from-[#1d3557] to-transparent"></div>
+                        </div>
+
+                        <div className="pt-16">
+                            <h1 className="text-3xl font-poppins font-bold flex gap-2 text-[#1d3557]">
+                                Hii, I'm Bintang Yudha!
                                 <img
                                     src={WavingHand}
                                     className="w-8 h-8"
                                 />
                             </h1>
-                            <p className="text-2xl font-poppins font-bold">
-                                I'm Front End Developer
+
+                            <p className="font-jakarta">
+                                A student with a passion in programming
                             </p>
+
+                            <div className="flex gap-3 translate-y-3">
+                            <a href="">
+                                <img src={InstagramIcon} 
+                                className="w-6 animate-bounce duration-100 ease-in-out 
+                                hover:opacity-20 transition hover:duration-100"/>
+                            </a>
+
+                                <a href="">
+                                    <img src={Linkedinicon}
+                                        className="w-6 animate-bounce duration-100 ease-in-out 
+                                hover:opacity-20 transition hover:duration-100"/>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src={FotoBintang} alt="" />
                         </div>
                     </div>
 
