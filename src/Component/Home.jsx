@@ -4,10 +4,13 @@ import WavingHand from '../assets/Image/wavinghand.png'
 import InstagramIcon from '../assets/Icon/instagram.svg'
 import Linkedinicon from '../assets/Icon/linkedin.svg'
 import FotoBintang from '../assets/Image/Image1.png'
+import Preload from "./Preload.jsx";
+
 
 function Home() {
     return (
         <div className="relative min-h-screen">
+            <Preload/>
             <Particle className="absolute top-0 left-0 w-full h-full -z-10" />
 
             <div className="flex relative z-10">
@@ -21,15 +24,16 @@ function Home() {
                             <p className="-translate-y-2">Role &gt; Student </p>
                         </div>
                     </div>
-
                     <div className="w-full h-0.5 bg-black mx-auto opacity-25"></div>
 
-                    <div className="flex items-center justify-start h-96 gap-5 p-10">
-                        <div className="w-4 h-4 bg-[#1d3557] rounded-full">
-                            <div className="w-1 h-36 mx-auto rounded-full bg-gradient-to-b from-[#1d3557] to-transparent"></div>
-                        </div>
+                    <div className="flex items-center justify-between h-96 gap-5 p-10">
 
-                        <div className="pt-16">
+                        <div className="pt-16 flex items-center gap-5">
+                            <div className="w-4 h-4 bg-[#1d3557] rounded-full">
+                                <div className="w-1 h-36 mx-auto rounded-full bg-gradient-to-b from-[#1d3557] to-transparent"></div>
+                            </div>
+
+                            <div className="pt-20">
                             <h1 className="text-3xl font-poppins font-bold flex gap-2 text-[#1d3557]">
                                 Hii, I'm Bintang Yudha!
                                 <img
@@ -55,10 +59,12 @@ function Home() {
                                 hover:opacity-20 transition hover:duration-100"/>
                                 </a>
                             </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <img src={FotoBintang} alt="" />
+                        <div className="mx-auto pt-20 rounded-md">
+                            <img src={FotoBintang} 
+                            className="w-72 h-72" />
                         </div>
                     </div>
 
