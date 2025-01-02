@@ -25,7 +25,7 @@ function About() {
           <div className="flex items-center justify-between h-96 gap-5 p-10">
             <div className="pt-36 flex items-center gap-5">
 
-              <div className="w-[80rem] h-[28rem] items-center mx-auto rounded-3xl bg-white">
+              <div className="w-[60rem] h-[28rem] items-center mx-auto rounded-3xl bg-white">
                 <div className="p-10 flex items-center gap-4">
                   <h1 className="font-jakarta font-bold text-xl">About Me</h1>
                   <div className="relative flex items-center">
@@ -36,17 +36,17 @@ function About() {
 
                 <div className="px-16">
                   <div className="flex items-start gap-32">
-                    <img src={FotoBintang} className="w-72 h-72 rounded-2xl" />
+                    <img src={FotoBintang} className="w-48 h-48 rounded-2xl" />
                     <div className="pt-10">
 
-                      <p className=" max-w-2xl tracking-wide font-jakarta">
+                      <p className=" max-w-lg tracking-wide font-jakarta text-sm">
                         <span className="ml-10">Lorem ipsum</span> dolor sit
                         amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad
                         minim veniam, quis nostrud exercitation ullamco laboris
                         nisi ut aliquip ex ea
                       </p>
-                      <p className=" max-w-2xl tracking-wide font-jakarta mt-5">
+                      <p className=" max-w-lg tracking-wide font-jakarta mt-5 text-sm">
                         <span className="ml-10">Lorem ipsum</span> dolor sit
                         amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad
