@@ -1,11 +1,10 @@
 import Sidebar from "../Component/Sidebar.jsx";
-import Particle from "./particle.jsx";
+import Particle from "../Component/particle.jsx"
 import WavingHand from '../assets/Image/wavinghand.png'
 import InstagramIcon from '../assets/Icon/instagram.svg'
 import Linkedinicon from '../assets/Icon/linkedin.svg'
 import FotoBintang from '../assets/Image/Image1.png'
-import Preload from "./Preload.jsx";
-
+import preload from "../Component/Preload.jsx"
 
 function Home() {
     return (
@@ -44,6 +43,8 @@ function Home() {
                             <p className="font-jakarta">
                                 A student with a passion in programming
                             </p>
+
+                            <button>View Project</button>
 
                             <div className="flex gap-3 translate-y-3">
                             <a href="">
