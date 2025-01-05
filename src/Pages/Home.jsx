@@ -5,8 +5,30 @@ import InstagramIcon from '../assets/Icon/instagram.svg'
 import Linkedinicon from '../assets/Icon/linkedin.svg'
 import FotoBintang from '../assets/Image/Image1.png'
 import preload from "../Component/Preload.jsx"
+import ProjectIcon from "../assets/Icon/project.svg";
+import { useNavigate } from "react-router-dom";
+
+const hire = [
+    { 
+        id: 1, 
+        text: "Project", 
+        logo: ProjectIcon, 
+        path: "/project" 
+    },
+    { 
+        id: 2, 
+        text: "Hire Me", 
+        logo: ProjectIcon,
+        path: "/about"
+    },
+]
 
 function Home() {
+    const navigate = useNavigate();
+
+    const handleNavigate = (path) => {
+        navigate(path)
+    }
     return (
         <div className="relative min-h-screen">
             <Particle className="absolute top-0 left-0 w-full h-full -z-10" />
@@ -44,7 +66,22 @@ function Home() {
                                 A student with a passion in programming
                             </p>
 
-                            <button>View Project</button>
+                            <div className="flex gap-5">
+                                    {hire.map((nav) => (
+                                        <button
+                                        key={nav.id}
+                                        className="flex w-32 bg-white h-[30px] rounded-full group"
+                                        onClick={() => handleNavigate(nav.path)}>
+                                            <div className="flex gap-2 mx-auto">
+                                                <p className="text-base font-jakarta">{nav.text}</p>
+                                                <img src={nav.logo} alt="" className="w-6 group-hover:rotate-90 transition 
+                                                ease-in-out duration-300"/>
+                                            </div>
+                                        </button>
+                                    ))}
+
+                                    
+                            </div>
 
                             <div className="flex gap-3 translate-y-3">
                             <a href="">
