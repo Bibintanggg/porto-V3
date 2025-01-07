@@ -66,14 +66,15 @@ function Home() {
                                 A student with a passion in programming
                             </p>
 
-                            <div className="flex gap-5">
+                            <div className="flex gap-5 pt-2 mb-2">
                                     {hire.map((nav) => (
                                         <button
                                         key={nav.id}
-                                        className="flex w-32 bg-white h-[30px] rounded-full group"
+                                        className="flex w-32 bg-white h-[30px] rounded-full group animation ease-in-out duration-300 
+                                        hover:bg-slate-400 hover:w-20 "
                                         onClick={() => handleNavigate(nav.path)}>
-                                            <div className="flex gap-2 mx-auto">
-                                                <p className="text-base font-jakarta">{nav.text}</p>
+                                            <div className="flex gap-2 mx-auto justify-center items-center">
+                                                <p className="text-base font-jakarta ">{nav.text}</p>
                                                 <img src={nav.logo} alt="" className="w-6 group-hover:rotate-90 transition 
                                                 ease-in-out duration-300"/>
                                             </div>
@@ -104,12 +105,12 @@ function Home() {
                             className="w-72 h-72" />
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     );
 }
+
+
 
 export default Home;
