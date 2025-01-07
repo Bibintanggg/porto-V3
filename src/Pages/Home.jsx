@@ -6,13 +6,14 @@ import Linkedinicon from '../assets/Icon/linkedin.svg'
 import FotoBintang from '../assets/Image/Image1.png'
 import preload from "../Component/Preload.jsx"
 import ProjectIcon from "../assets/Icon/project.svg";
+import ShareIcon from "../assets/Icon/share.svg"
 import { useNavigate } from "react-router-dom";
 
 const hire = [
     { 
         id: 1, 
         text: "Project", 
-        logo: ProjectIcon, 
+        logo: ShareIcon, 
         path: "/project" 
     },
     { 
@@ -22,6 +23,8 @@ const hire = [
         path: "/about"
     },
 ]
+
+
 
 function Home() {
     const navigate = useNavigate();
@@ -69,17 +72,22 @@ function Home() {
                             <div className="flex gap-5 pt-2 mb-2">
                                     {hire.map((nav) => (
                                         <button
-                                        key={nav.id}
-                                        className="flex w-32 bg-white h-[30px] rounded-full group animation ease-in-out duration-300 
-                                        hover:bg-slate-400 hover:w-20 "
-                                        onClick={() => handleNavigate(nav.path)}>
-                                            <div className="flex gap-2 mx-auto justify-center items-center">
-                                                <p className="text-base font-jakarta ">{nav.text}</p>
-                                                <img src={nav.logo} alt="" className="w-6 group-hover:rotate-90 transition 
-                                                ease-in-out duration-300"/>
+                                            key={nav.id}
+                                            className="relative flex items-center w-32 h-10 bg-white 
+                                            rounded-lg overflow-hidden group transition-all duration-300 ease-in-out "
+                                            onClick={() => handleNavigate(nav.path)}
+                                        >
+                                            <div className="absolute top-0 left-0 h-full bg-slate-300
+                                            w-0 transition-all duration-500 group-hover:w-[100%] skew-x-12"></div>
+                                            <div className="relative flex items-center justify-center w-full gap-2">
+                                                <p className="text-base font-jakarta">
+                                                    {nav.text}
+                                                </p>
+                                                <img src={nav.logo} className="w-4 transition-transform duration-700 ease-in-out group-hover:rotate-45"/>
                                             </div>
                                         </button>
                                     ))}
+
 
                                     
                             </div>
@@ -106,6 +114,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );
