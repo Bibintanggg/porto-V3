@@ -27,6 +27,7 @@ function Sidebar() {
   return (
     <section>
       <div className="relative w-60 h-[100vh] bg-[#ffff] pt-10">
+      
         <div className="bg-red-50 w-32 h-32 rounded-full items-center mx-auto overflow-hidden">
           <img
             src={FotoBintang}

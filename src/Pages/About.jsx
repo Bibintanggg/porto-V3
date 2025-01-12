@@ -32,21 +32,21 @@ function About() {
       id: 1,
       title: "TOTAL PROJECTS",
       value: 5,
-      desc: "TOTAL PROJECT YANG SAYA KERJAKAN",
+      desc: "TOTAL PROJECT I HAVE COMPLETED",
       icon: ProjectIcon,
     },
     {
       id: 2,
       title: "CERTIFICATES",
       value: 5,
-      desc: "TOTAL PROJECT YANG SAYA KERJAKAN",
+      desc: "TOTAL CERTIFICATES I HAVE ACHIEVED",
       icon: CertiIcon,
     },
     {
       id: 3,
       title: "EXPERIENCE",
       value: 5,
-      desc: "TOTAL PROJECT YANG SAYA KERJAKAN",
+      desc: "TOTAL EXPERIENCES I HAVE GAINED",
       icon: ExperienceIcon,
     },
   ];
@@ -54,7 +54,7 @@ function About() {
   const stack = [
     {
       id: 1,
-      title: "FRAMEWORK",
+      title: "TECH STACK",
       icon: FrameworkIcon,
     },
     {
@@ -94,9 +94,13 @@ function About() {
       <div className="ml-[250px] w-full overflow-y-auto">
         <div className="bg-transparent p-8">
           <div className="flex justify-between text-left">
-            <h1 className="text-base font-semibold text-gray-800 font-poppins pt-2">About</h1>
+            <h1 className="text-base font-semibold text-gray-800 font-poppins pt-2">
+              About
+            </h1>
             <div className="text-right">
-              <h2 className="text-base font-semibold text-gray-800 font-poppins">Hello, Bintang!</h2>
+              <h2 className="text-base font-semibold text-gray-800 font-poppins">
+                Hello, Bintang!
+              </h2>
               <p className="-translate-y-2">Role &gt; Student</p>
             </div>
           </div>
@@ -139,7 +143,10 @@ function About() {
 
             <div className="w-[60rem] h-48 bg-white mt-10 rounded-3xl flex gap-10 items-center justify-center">
               {dataProject.map((project) => (
-                <div key={project.id} className="bg-gray-100 p-4 rounded-lg h-36 w-[17rem]">
+                <div
+                  key={project.id}
+                  className="bg-gray-100 p-4 rounded-lg h-36 w-[17rem]"
+                >
                   <div className="cursor-pointer">
                     <div className="flex items-center gap-[9.75rem]">
                       <div className="w-14 h-14 rounded-full bg-slate-50 justify-center items-center flex">
@@ -147,7 +154,9 @@ function About() {
                       </div>
                       <p className="font-poppins">{project.value}</p>
                     </div>
-                    <p className="text-sm translate-y-3 font-poppins">{project.title}</p>
+                    <p className="text-sm translate-y-3 font-poppins">
+                      {project.title}
+                    </p>
                     <div className="translate-y-4 font-poppins flex gap-5">
                       <span className="text-[0.65rem]">{project.desc}</span>
                       <img src={ShareIcon} alt="" className="w-3 opacity-45" />
@@ -160,7 +169,9 @@ function About() {
             <div>
               <div className="text-center">
                 <p className="text-xl font-bold mt-10">Tech Stack</p>
-                <span className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                <span className="text-sm">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
               </div>
 
               <div>
@@ -178,8 +189,11 @@ function About() {
                       <div
                         key={items.id}
                         onClick={() => setActiveStack(items.title)}
-                        className={`flex items-center gap-2 w-36 h-10 rounded-md cursor-pointer ${activeStack === items.title ? 'bg-blue-100' : 'bg-gray-100'
-                          }`}
+                        className={`flex items-center gap-2 w-36 h-10 rounded-md cursor-pointer ${
+                          activeStack === items.title
+                            ? "bg-blue-100"
+                            : "bg-gray-100"
+                        }`}
                       >
                         <div className="flex items-center justify-center mx-auto gap-2">
                           <img src={items.icon} alt="" className="w-6 h-6" />
@@ -192,10 +206,24 @@ function About() {
 
                 <div className="grid grid-cols-6 gap-4 mt-5 rounded-lg">
                   {displayedStack.map((icons) => (
-                    <div key={icons.id} className="flex items-center justify-center">
-                      <div className="flex flex-col items-center justify-center w-80 h-32 bg-white rounded p-2">
-                        <img src={icons.icon} alt={icons.name} className="w-20 h-20" />
-                        <span className="text-xs text-black mt-2 font-poppins">{icons.name}</span>
+                    <div
+                      key={icons.id}
+                      className="flex items-center justify-center"
+                    >
+                      <div className="relative flex items-center justify-center w-48 h-6 bg-white rounded p-10 gap-3 overflow-hidden group transition-all duration-300 ease-in-out">
+                        <div className="absolute top-0 left-0 h-full bg-slate-300 w-0 transition-all duration-500 group-hover:w-[100%]"></div>
+
+                        <div className="relative flex items-center justify-center gap-3">
+                          <img
+                            src={icons.icon}
+                            alt={icons.name}
+                            className="w-10 h-20 transition-transform duration-700 ease-in-out group-hover:-translate-x-1"
+                          />
+                          <span className="text-xs text-black mt-2 font-poppins transition-transform duration-700 ease-in-out group-hover:translate-x-2">
+                            {" "}
+                            {icons.name}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   ))}
