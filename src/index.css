@@ -2,6 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes sunrise {
+    0% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes cloud {
+    0% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+@keyframes cloud-2 {
+    0% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(-100px);
+    }
+}
+
+@keyframes wind {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bird {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes leaf {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100px);
+    }
+}
+
 @keyframes moon {
     0% {
         transform: translateY(0);
@@ -44,14 +108,28 @@
     }
 }
 
-@keyframes walk {
-    0% {
-        transform: translateX(0);
-    }
+.animate-sunrise {
+    animation: sunrise 5s ease-in-out;
+}
 
-    100% {
-        transform: translateX(100px);
-    }
+.animate-cloud {
+    animation: cloud 10s infinite linear;
+}
+
+.animate-cloud-2 {
+    animation: cloud-2 12s infinite linear;
+}
+
+.animate-wind {
+    animation: wind 5s infinite linear;
+}
+
+.animate-bird {
+    animation: bird 2s infinite ease-in-out;
+}
+
+.animate-leaf {
+    animation: leaf 5s infinite linear;
 }
 
 .animate-moon {
@@ -64,8 +142,4 @@
 
 .animate-twinkle-2 {
     animation: twinkle-2 3s infinite ease-in-out;
-}
-
-.animate-walk {
-    animation: walk 10s infinite linear;
 }

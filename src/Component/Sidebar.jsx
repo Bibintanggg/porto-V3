@@ -5,6 +5,7 @@ import HomeIcon from "../assets/Icon/home.svg";
 import AboutIcon from "../assets/Icon/about.svg";
 import ProjectIcon from "../assets/Icon/project.svg";
 import ContactIcon from "../assets/Icon/contact.svg";
+import MoonPNG from "../assets/Image/moon.png"
 
 function Sidebar() {
   const location = useLocation();
@@ -58,10 +59,29 @@ function Sidebar() {
               />
               <p className="text-white">Hello</p>
             </div>
+            {timeOfDay === "morning" && (
+              <div className="absolute inset-0 overflow-hidden">
+                {/* Matahari */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-300 rounded-full shadow-lg animate-sunrise"></div>
+                {/* Awan */}
+                <div className="absolute top-8 left-8 w-16 h-8 bg-white rounded-full animate-cloud"></div>
+                <div className="absolute top-12 left-16 w-20 h-10 bg-white rounded-full animate-cloud-2"></div>
+              </div>
+            )}
+            {timeOfDay === "afternoon" && (
+              <div className="absolute inset-0 overflow-hidden">
+                {/* Angin */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-full animate-wind"></div>
+                {/* Burung */}
+                <div className="absolute top-8 left-8 w-8 h-8 bg-white rounded-full animate-bird"></div>
+              </div>
+            )}
             {timeOfDay === "night" && (
               <div className="absolute inset-0 overflow-hidden">
                 {/* Bulan */}
-                <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-200 rounded-full shadow-lg animate-moon"></div>
+                <div className="absolute top-4 right-4 w-12 h-12 rounded-full animate-moon">
+                  <img src={MoonPNG}/>
+                </div>
                 {/* Bintang */}
                 <div className="absolute top-8 left-8 w-2 h-2 bg-white rounded-full animate-twinkle"></div>
                 <div className="absolute top-12 left-16 w-2 h-2 bg-white rounded-full animate-twinkle-2"></div>
