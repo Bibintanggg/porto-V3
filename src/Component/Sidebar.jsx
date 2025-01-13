@@ -7,10 +7,10 @@ import ProjectIcon from "../assets/Icon/project.svg";
 import ContactIcon from "../assets/Icon/contact.svg";
 
 function Sidebar() {
-  const location = useLocation(); // Mengambil lokasi rute saat ini
-  const [activePosition, setActivePosition] = useState("translate-y-0"); // State posisi garis vertikal
+  const location = useLocation();
+  const [activePosition, setActivePosition] = useState("translate-y-0");
+  const [timeOfDay, setTimeOfDay] = useState("day");
 
-  // Mapping rute ke posisi vertikal
   const activeRoutes = {
     "/": "-translate-y-10",
     "/about": "translate-y-2",
@@ -18,34 +18,61 @@ function Sidebar() {
     "/contact": "translate-y-[110px]",
   };
 
-  // Update posisi garis saat lokasi berubah
   useEffect(() => {
     const newPosition = activeRoutes[location.pathname] || "translate-y-0";
     setActivePosition(newPosition);
   }, [location.pathname]);
 
+  const getTimeOfDay = () => {
+    const hour = new Date().getHours();
+    if (hour >= 6 && hour < 12) {
+      return "morning";
+    } else if (hour >= 12 && hour < 18) {
+      return "afternoon";
+    } else {
+      return "night";
+    }
+  };
+
+  useEffect(() => {
+    setTimeOfDay(getTimeOfDay());
+  }, []);
+
   return (
     <section>
-      <div className="relative w-60 h-[100vh] bg-[#ffff] pt-10">
-      
-        <div className="bg-red-50 w-32 h-32 rounded-full items-center mx-auto overflow-hidden">
-          <img
-            src={FotoBintang}
-            className="w-full h-full bg-repeat bg-cover"
-            alt="Foto Bintang"
-          />
+      <div className="relative w-60 h-[100vh] bg-[#ffff]">
+        <div className="flex flex-col">
+          <div
+            className={`w-60 h-40 rounded-b-3xl flex justify-center items-center transition-all duration-1000 ${
+              timeOfDay === "morning"
+                ? "bg-gradient-to-r from-yellow-200 to-yellow-400"
+                : timeOfDay === "afternoon"
+                ? "bg-gradient-to-r from-orange-300 to-orange-500"
+                : "bg-gradient-to-r from-blue-800 to-indigo-900"
+            }`}
+          >
+            <div className="items-center justify-center flex flex-col pt-40">
+              <img
+                src={FotoBintang}
+                className="w-24 h-24 items-center justify-center rounded-full shadow-black/20 shadow-lg"
+              />
+              <p className="text-white">Hello</p>
+            </div>
+            {timeOfDay === "night" && (
+              <div className="absolute inset-0 overflow-hidden">
+                {/* Bulan */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-200 rounded-full shadow-lg animate-moon"></div>
+                {/* Bintang */}
+                <div className="absolute top-8 left-8 w-2 h-2 bg-white rounded-full animate-twinkle"></div>
+                <div className="absolute top-12 left-16 w-2 h-2 bg-white rounded-full animate-twinkle-2"></div>
+              </div>
+            )}
+          </div>
         </div>
 
-        <div>
-          <h1 className="text-black text-center mt-4 text-xl font-jakarta font-medium">
-            Bintang Yudha
-          </h1>
-        </div>
-
-        <div className="w-48 h-0.5 bg-gray-50 mx-auto mt-8"></div>
+        <div className="w-48 h-0.5 bg-gray-50 mx-auto mt-20"></div>
 
         <div className="relative">
-          {/* Garis vertikal */}
           <span
             className={`absolute top-10 right-0 w-0.5 h-10 bg-[#1d3557] rounded-full transition-transform duration-500 ease-in-out ${activePosition}`}
           ></span>

@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes moon {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle-2 {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+.animate-moon {
+    animation: moon 5s infinite ease-in-out;
+}
+
+.animate-twinkle {
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+.animate-twinkle-2 {
+    animation: twinkle-2 3s infinite ease-in-out;
+}
+
+.animate-walk {
+    animation: walk 10s infinite linear;
+}
