@@ -95,7 +95,7 @@ function About() {
         <div className="bg-transparent p-8">
           <div className="flex justify-between text-left">
             <h1 className="text-base font-semibold text-gray-800 font-poppins pt-2">
-              About
+              ABOUT
             </h1>
             <div className="text-right">
               <h2 className="text-base font-semibold text-gray-800 font-poppins">

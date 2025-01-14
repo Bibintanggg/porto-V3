@@ -17,6 +17,7 @@ function Sidebar() {
     "/about": "translate-y-2",
     "/project": "translate-y-14",
     "/contact": "translate-y-[110px]",
+    "/project/sleepwell" : "translate-y-14",
   };
 
   useEffect(() => {
