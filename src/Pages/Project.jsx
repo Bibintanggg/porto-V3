@@ -2,15 +2,15 @@ import Sidebar from "../Component/Sidebar"
 import Dicoding from "../assets/Image/dicoding.png"
 import SleepWell from "../assets/Image/sleepwell.png"
 
-const projects = [
-    {
-        id: 1,
-        text: "WEBSITE KESEHATAN TIDUR",
-        desc: "Web ini dirancang untuk membuat para pengidap",
-        icon: SleepWell,
-    }
-]
 function Project() {
+  const projects = [
+      {
+          id: 1,
+          text: "WEBSITE KESEHATAN TIDUR",
+          desc: "Web ini dirancang untuk membuat para pengidap walalwapldpalwadapldwpaldpawdpald",
+          image: SleepWell,
+      }
+  ]
     return (
       <div className="relative min-h-screen h-screen flex">
         <div className="w-[250px] h-screen fixed top-0 left-0">
@@ -33,7 +33,15 @@ function Project() {
             <div className="w-full h-0.5 bg-black mx-auto opacity-25"></div>
 
             <div>
-
+              {projects.map((data_project) => (
+                <div key={data_project.id}>
+                  <div>
+                      <img src={data_project.image} alt="" className="w-80 rounded-lg"/>
+                    <p className="font-jakarta text-base font-medium pt-2">{data_project.text}</p>
+                    <span className="font-jakarta text-sm text-balance">{data_project.desc}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
