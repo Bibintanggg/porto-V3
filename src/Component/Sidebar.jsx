@@ -57,7 +57,7 @@ function Sidebar() {
                 src={FotoBintang}
                 className="w-24 h-24 items-center justify-center rounded-full shadow-black/20 shadow-lg"
               />
-              <p className="text-white">Hello</p>
+              <p className="text-black pt-2">Hello World</p>
             </div>
             {timeOfDay === "morning" && (
               <div className="absolute inset-0 overflow-hidden">
