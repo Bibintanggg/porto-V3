@@ -101,14 +101,14 @@ function SleepWell({ sleepWellProject }) {
                                     ))}
                                 </div>
 
-                                <div className="mt-1">
+                                <div className="mt-5">
                                     <div className="flex gap-2 bg-white w-[18.8rem] h-10 items-center justify-center rounded-lg">
                                         <img src={sleepWellProject.image2_tech} alt="" className="w-7" />
                                         <p>{sleepWellProject.title2_tech}</p>
                                     </div>
 
                                     
-                                    <div className="grid grid-cols-3 mt-4 gap-2 w-[29rem]">
+                                    <div className="grid grid-cols-3 mt-7 gap-2 w-[29rem]">
                                         {sleepWellProject.tech_used.map((text, index) => (
                                             <div key={index} className="flex gap-3 items-center bg-white w-36 h-10 rounded-lg justify-center">
                                                 <img src={sleepWellProject.tech_icon[index]} alt="" className="w-6" />
