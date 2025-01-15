@@ -14,13 +14,13 @@ function MoreInfo() {
     const sleepWellProject = {
         id: 1,
         title: "Website Kesehatan Tidur",
-        desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp",
+        desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp lorem ipsum waokaoda oakwoad oakwad oawkda aokdad aokd oakdad aokdad aokdwa",
         image: SleepWellImage,
 
         title2_tech: "Technologies Used",
         image2_tech: CodeIcon,
 
-        tech_used: ["ReactJS", "Vite", "TailwindCSS", "DataAOS", "CSS", "ChartJS"],
+        tech_used: ["TailwindCSS", "ReactJS", "CSS", "DataAOS", "Vite", "ChartJS"],
         tech_icon: [TailwindIcon, ReactIcon, CSS3Icon, ChartJSIcon, ViteIcon],
 
         total_tech: 5,

@@ -210,8 +210,10 @@ function About() {
                       key={icons.id}
                       className="flex items-center justify-center"
                     >
-                      <div className="relative flex items-center justify-center w-48 h-6 bg-white rounded p-10 gap-3 overflow-hidden group transition-all duration-300 ease-in-out">
-                        <div className="absolute top-0 left-0 h-full bg-slate-300 w-0 transition-all duration-500 group-hover:w-[100%]"></div>
+                      <div className="relative flex items-center justify-center w-48 h-6 bg-white rounded
+                       p-10 gap-3 overflow-hidden group transition-all duration-300 ease-in-out">
+                        <div className="absolute top-0 left-0 h-full bg-slate-300 w-0 
+                        transition-all duration-500 group-hover:w-[100%]"></div>
 
                         <div className="relative flex items-center justify-center gap-3">
                           <img

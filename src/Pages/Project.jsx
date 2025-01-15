@@ -70,8 +70,8 @@ const handleNavigate = (path) => {
                   {/* Container untuk tombol LIVE DEMO dan DETAILS */}
                   <div className="flex justify-between items-center w-[26rem] gap-4 pt-3">
                     {/* Tombol LIVE DEMO */}
-                    <button className="flex items-center gap-2">
-                      <a href="" className="text-[0.90rem] font-jakarta">
+                    <button className="flex items-center gap-2" >
+                      <a href="https://sleepwell-calypso.vercel.app/" className="text-[0.90rem] font-jakarta">
                         {data_project.path}
                       </a>
                       <img src={data_project.icon} alt="" className="w-4" />
