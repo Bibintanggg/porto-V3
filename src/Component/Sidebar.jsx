@@ -5,19 +5,21 @@ import HomeIcon from "../assets/Icon/home.svg";
 import AboutIcon from "../assets/Icon/about.svg";
 import ProjectIcon from "../assets/Icon/project.svg";
 import ContactIcon from "../assets/Icon/contact.svg";
-import MoonPNG from "../assets/Image/moon.png"
+import MoonPNG from "../assets/Image/moon.png";
+import { useDarkMode } from '../Component/DarkMode'; 
 
 function Sidebar() {
   const location = useLocation();
   const [activePosition, setActivePosition] = useState("translate-y-0");
   const [timeOfDay, setTimeOfDay] = useState("day");
+  const { darkMode, toggleDarkMode } = useDarkMode(); 
 
   const activeRoutes = {
     "/": "-translate-y-10",
     "/about": "translate-y-2",
     "/project": "translate-y-14",
     "/contact": "translate-y-[110px]",
-    "/project/sleepwell" : "translate-y-14",
+    "/project/sleepwell": "translate-y-14",
   };
 
   useEffect(() => {
@@ -42,23 +44,22 @@ function Sidebar() {
 
   return (
     <section>
-      <div className="relative w-60 h-[100vh] bg-[#ffff]">
+      <div className={`relative w-60 h-[100vh] ${darkMode ? 'bg-gray-900' : 'bg-[#ffff]'}`}>
         <div className="flex flex-col">
           <div
-            className={`w-60 h-40 rounded-b-3xl flex justify-center items-center transition-all duration-1000 ${
-              timeOfDay === "morning"
+            className={`w-60 h-40 rounded-b-3xl flex justify-center items-center transition-all duration-1000 ${timeOfDay === "morning"
                 ? "bg-gradient-to-r from-yellow-200 to-yellow-400"
                 : timeOfDay === "afternoon"
-                ? "bg-gradient-to-r from-orange-300 to-orange-500"
-                : "bg-gradient-to-r from-blue-800 to-indigo-900"
-            }`}
+                  ? "bg-gradient-to-r from-orange-300 to-orange-500"
+                  : "bg-gradient-to-r from-blue-800 to-indigo-900"
+              }`}
           >
             <div className="items-center justify-center flex flex-col pt-40">
               <img
                 src={FotoBintang}
                 className="w-24 h-24 items-center justify-center rounded-full shadow-black/20 shadow-lg"
               />
-              <p className="text-black pt-2">Hello World</p>
+              <p className={`${darkMode ? 'text-white' : 'text-black'} pt-2`}>Hello World</p>
             </div>
             {timeOfDay === "morning" && (
               <div className="absolute inset-0 overflow-hidden">
@@ -71,19 +72,15 @@ function Sidebar() {
             )}
             {timeOfDay === "afternoon" && (
               <div className="absolute inset-0 overflow-hidden">
-                {/* Angin */}
                 <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-full animate-wind"></div>
-                {/* Burung */}
                 <div className="absolute top-8 left-8 w-8 h-8 bg-white rounded-full animate-bird"></div>
               </div>
             )}
             {timeOfDay === "night" && (
               <div className="absolute inset-0 overflow-hidden">
-                {/* Bulan */}
                 <div className="absolute top-4 right-4 w-12 h-12 rounded-full animate-moon">
-                  <img src={MoonPNG}/>
+                  <img src={MoonPNG} />
                 </div>
-                {/* Bintang */}
                 <div className="absolute top-8 left-8 w-2 h-2 bg-white rounded-full animate-twinkle"></div>
                 <div className="absolute top-12 left-16 w-2 h-2 bg-white rounded-full animate-twinkle-2"></div>
               </div>
@@ -95,52 +92,59 @@ function Sidebar() {
 
         <div className="relative">
           <span
-            className={`absolute top-10 right-0 w-0.5 h-10 bg-[#1d3557] rounded-full transition-transform duration-500 ease-in-out ${activePosition}`}
+            className={`absolute top-10 right-0 w-0.5 h-10 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} rounded-full transition-transform duration-500 ease-in-out ${activePosition}`}
           ></span>
 
           <ul className="text-center space-y-6 mt-6 font-jakarta">
             <li className="flex">
               <Link
                 to="/"
-                className="flex items-center justify-center text-black text-lg mx-auto gap-4 relative group duration-300"
+                className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
                 <img src={HomeIcon} alt="Home Icon" className="w-6 h-6" />
                 Home
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#1d3557] transition-all duration-300 group-hover:w-full translate-y-2"></span>
+                <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
             </li>
             <li className="flex">
               <Link
                 to="/about"
-                className="flex items-center justify-center text-black text-lg mx-auto gap-4 relative group duration-300"
+                className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
                 <img src={AboutIcon} alt="About Icon" className="w-6 h-6" />
                 About
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#1d3557] transition-all duration-300 group-hover:w-full translate-y-2"></span>
+                <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
             </li>
             <li className="flex">
               <Link
                 to="/project"
-                className="flex items-center text-black justify-center text-lg mx-auto gap-4 relative group duration-300"
+                className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
                 <img src={ProjectIcon} alt="Project Icon" className="w-6 h-6" />
                 Project
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#1d3557] transition-all duration-300 group-hover:w-full translate-y-2"></span>
+                <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
             </li>
             <li className="flex">
               <Link
                 to="/contact"
-                className="flex items-center text-black justify-center text-lg mx-auto gap-4 relative group duration-300"
+                className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
                 <img src={ContactIcon} alt="Contact Icon" className="w-6 h-6" />
                 Contact
-                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#1d3557] transition-all duration-300 group-hover:w-full translate-y-2"></span>
+                <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
             </li>
           </ul>
         </div>
+
+        <button
+          onClick={toggleDarkMode}
+          className="absolute bottom-4 right-4 p-2 bg-gray-800 text-white rounded-full"
+        >
+          {darkMode ? '☀️' : '🌙'}
+        </button>
       </div>
     </section>
   );

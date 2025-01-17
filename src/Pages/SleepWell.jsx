@@ -1,5 +1,25 @@
 import { data, useNavigate } from "react-router-dom";
+import StarIcon from "../assets/Icon/star.svg"
 import Sidebar from "../Component/Sidebar";
+
+const valueProject = [
+    {
+        id: 1,
+        title: "Musik Relaksasi",
+    },
+    {
+        id: 2,
+        title: "Artikel Kesehatan Tidur",
+    },
+    {
+        id: 3,
+        title: "Dongeng Online",
+    },
+    {
+        id: 4,
+        title: "Tes Kualitas Tidur",
+    }
+]
 
 function SleepWell({ sleepWellProject }) {
     const navigate = useNavigate();
@@ -58,9 +78,6 @@ function SleepWell({ sleepWellProject }) {
                                         <div className="absolute top-0 left-0 h-full bg-slate-200 w-0 
                       transition-all duration-500 group-hover:w-full"></div>
 
-                                        <div className="absolute top-0 left-0 h-full bg-gray-400 w-0 
-                      transition-all duration-700 delay-100 group-hover:w-full"></div>
-
                                         <div className="relative flex items-center gap-3 text-sm ml-4">
                                             <div className="bg-slate-300 rounded-full w-10 h-10 flex items-center justify-center mt-auto">
                                                 <img src={sleepWellProject.image2_tech} alt="" className="w-7" />
@@ -75,9 +92,6 @@ function SleepWell({ sleepWellProject }) {
                                     <div className="relative bg-white w-52 h-14 rounded-lg mb-10 overflow-hidden group">
                                         <div className="absolute top-0 left-0 h-full bg-slate-200 w-0 
                       transition-all duration-500 group-hover:w-full"></div>
-
-                                        <div className="absolute top-0 left-0 h-full bg-gray-400 w-0 
-                      transition-all duration-700 delay-100 group-hover:w-full"></div>
 
                                         <div className="relative flex items-center gap-3 text-sm ml-4">
                                             <div className="bg-slate-300 rounded-full w-10 h-10 flex items-center justify-center mt-auto">
@@ -120,13 +134,42 @@ function SleepWell({ sleepWellProject }) {
                             </div>
                         </div>
 
-                        <div className="w-[40rem] pt-10 group overflow-hidden rounded-lg">
+                        <div className="w-[40rem] pt-10 group overflow-hidden rounded-lg ">
                             <img
                                 src={sleepWellProject.image}
                                 alt=""
                                 className="w-full h-auto rounded-lg object-cover transform transition-transform 
                       duration-300 group-hover:scale-105"
                             />
+
+                        <div className="flex ">
+                            <div className="bg-gray-50 w-[40rem] h-[21rem] mt-4 rounded-xl items-center justify-center flex">
+                                <div className="bg-white w-[26rem] h-72 rounded-xl">
+                                    <div className="p-10">
+
+                                    <div className="flex gap-3 items-center ">
+                                        <img src={StarIcon} className="" />
+                                        <p className="font-jakarta font-semibold">Fitur Fitur</p>
+                                    </div>
+                                    
+                                    <div className="flex flex-col gap-3 items-center mt-4">
+                                        {valueProject.map((value) => (
+                                            <div key={value.id }>
+                                                <div className="flex gap-3 items-center bg-gray-100 h-10 w-[21rem] rounded-lg">
+                                                <div className="bg-black w-[0.80rem] h-[0.60rem] rounded-full items-center ml-3"></div>
+                                                <div className="text-black h-8 w-96">
+                                                    <p className="font-jakarrta text-base mt-1">{value.title}</p>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                         </div>
                     </div>
 
