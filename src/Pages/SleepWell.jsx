@@ -86,29 +86,28 @@ function SleepWell({ sleepWellProject }) {
 
                                         <div className="relative flex items-center gap-3 text-sm ml-4">
                                             <div className={`rounded-full w-10 h-10 flex items-center justify-center mt-auto 
-                                                ${darkMode ? 'bg-gradient-to-r from-black/60' : 'text-black bg-gray-100'}`}>
+                                                ${darkMode ? 'bg-gradient-to-r from-black/60' : 'text-black bg-slate-200'}`}>
                                                 <img src={sleepWellProject.image2_tech} alt="" className={`w-7 
                                                     ${darkMode ? 'invert brightness-75' : ''}`} />
                                             </div>
                                             <div className="flex flex-col mt-2">
-                                                <h2 className="relative z-10">{sleepWellProject.total_tech}</h2>
-                                                <h1 className="-translate-y-1 relative z-10">{sleepWellProject.tech_text}</h1>
+                                                <h2 className="relative z-10 font-jakarta">{sleepWellProject.total_tech}</h2>
+                                                <h1 className="-translate-y-1 relative z-10 font-jakarta">{sleepWellProject.tech_text}</h1>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className={`relative w-52 h-14 rounded-lg mb-10 overflow-hidden group
-                                        ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'text-black'}`}>
-                                        <div className="absolute top-0 left-0 h-full bg-slate-200 w-0 
-                      transition-all duration-500 group-hover:w-full"></div>
+                                        ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'text-black bg-gray-100'}`}>
 
                                         <div className="relative flex items-center gap-3 text-sm ml-4">
-                                            <div className="bg-slate-300 rounded-full w-10 h-10 flex items-center justify-center mt-auto">
-                                                <img src={sleepWellProject.image2_tech} alt="" className="w-7" />
+                                            <div className={` rounded-full w-10 h-10 flex items-center justify-center mt-auto 
+                                                ${darkMode ? 'bg-gradient-to-r bg-black/60' : ' bg-slate-200'}`}>
+                                                <img src={sleepWellProject.image2_tech} className={`w-7 ${darkMode ? 'invert brightness-75' : ''}`} / >
                                             </div>
                                             <div className="flex flex-col mt-2">
-                                                <h2 className="relative z-10">{sleepWellProject.total_feature}</h2>
-                                                <h1 className="-translate-y-1 relative z-10">{sleepWellProject.feature_tech}</h1>
+                                                <h2 className="relative z-10 font-jakarta">{sleepWellProject.total_feature}</h2>
+                                                <h1 className="-translate-y-1 relative z-10 font-jakarta">{sleepWellProject.feature_tech}</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -116,24 +115,27 @@ function SleepWell({ sleepWellProject }) {
 
                                 <div className="mt-6 flex gap-5">
                                     {sleepWellProject.demo_text.map((text, index) => (
-                                        <button key={index} className="flex items-center gap-2 mb-2 bg-white w-[8.8rem] h-10 
-                                        rounded-lg justify-center">
-                                            <img src={sleepWellProject.demo_icon[index]} alt={text} className="w-6 h-6" />
+                                        <button key={index} className={`flex items-center gap-2 mb-2 w-[8.8rem] h-14 rounded-lg justify-center
+                                        ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'text-black bg-white'}`}>
+                                            <img src={sleepWellProject.demo_icon[index]} alt={text} className={`w-6 h-6
+                                                ${darkMode ? 'invert brightness-75' : ''}`} />
                                             <p className="font-jakarta">{text}</p>
                                         </button>
                                     ))}
                                 </div>
 
-                                <div className="mt-5">
-                                    <div className="flex gap-2 bg-white w-[18.8rem] h-10 items-center justify-center rounded-lg">
-                                        <img src={sleepWellProject.image2_tech} alt="" className="w-7" />
+                                <div className="mt-3">
+                                    <div className={`flex gap-2 w-[18.8rem] h-14 items-center justify-center rounded-lg
+                                        ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'text-black bg-white'}`}>
+                                        <img src={sleepWellProject.image2_tech} alt="" className={`w-7 ${darkMode ? 'invert brightness-75' : ''}`} />
                                         <p>{sleepWellProject.title2_tech}</p>
                                     </div>
 
                                     
-                                    <div className="grid grid-cols-3 mt-7 gap-2 w-[29rem]">
+                                    <div className="grid grid-cols-3 mt-4 gap-2 w-[29rem]">
                                         {sleepWellProject.tech_used.map((text, index) => (
-                                            <div key={index} className="flex gap-3 items-center bg-white w-36 h-10 rounded-lg justify-center">
+                                            <div key={index} className={`flex gap-3 items-center w-36 h-10 rounded-lg justify-center
+                                            ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'text-black bg-white'}`}>
                                                 <img src={sleepWellProject.tech_icon[index]} alt="" className="w-6" />
                                                 <span className="font-jakarta text-sm">{text}</span>
                                             </div>
@@ -152,22 +154,24 @@ function SleepWell({ sleepWellProject }) {
                             />
 
                         <div className="flex ">
-                            <div className="bg-gray-50 w-[40rem] h-[21rem] mt-4 rounded-xl items-center justify-center flex">
-                                <div className="bg-white w-[26rem] h-72 rounded-xl">
+                            <div className={` w-[40rem] h-[21rem] mt-4 rounded-xl items-center justify-center flex 
+                                ${darkMode ? 'bg-gradient-to-r from-black/30 to-black/10' : 'text-black bg-white'}`}>
+                                    <div className={` w-[26rem] h-72 rounded-xl ${darkMode ? 'bg-gradient-to-r from-black/20 to-black/30' : 'text-black bg-gray-50'}`}>
                                     <div className="p-10">
 
                                     <div className="flex gap-3 items-center ">
-                                        <img src={StarIcon} className="" />
+                                                <img src={StarIcon} className={`${darkMode ? 'invert brightness-75' : ''}`} />
                                         <p className="font-jakarta font-semibold">Fitur Fitur</p>
                                     </div>
                                     
                                     <div className="flex flex-col gap-3 items-center mt-4">
                                         {valueProject.map((value) => (
                                             <div key={value.id }>
-                                                <div className="flex gap-3 items-center bg-gray-100 h-10 w-[21rem] rounded-lg">
-                                                <div className="bg-black w-[0.80rem] h-[0.60rem] rounded-full items-center ml-3"></div>
+                                                <div className={`flex gap-3 items-center  h-10 w-[21rem] rounded-lg
+                                                    ${darkMode ? 'bg-gradient-to-r from-black/30 to-black/10' : 'bg-gray-100'}`}>
+                                                <div className=" bg-white w-[0.80rem] h-[0.60rem] rounded-full items-center ml-3"></div>
                                                 <div className="text-black h-8 w-96">
-                                                    <p className="font-jakarrta text-base mt-1">{value.title}</p>
+                                                        <p className={`font-jakarta text-base mt-1 ${darkMode ? 'text-white' : 'text-black'}`}>{value.title}</p>
                                                 </div>
                                                 </div>
                                             </div>
