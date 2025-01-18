@@ -10,7 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useDarkMode } from "../Component/DarkMode.jsx"; 
+import { useDarkMode } from "../Component/DarkMode.jsx";
 
 const hire = [
   {
@@ -32,7 +32,7 @@ const hire = [
 ];
 
 function Home() {
-  const { darkMode, toggleDarkMode } = useDarkMode(); 
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   useEffect(() => {
     AOS.init();
@@ -45,7 +45,7 @@ function Home() {
   };
 
   return (
-    <div className={`relative min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+    <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-white'}`}>
       <Particle className="absolute top-0 left-0 w-full h-full -z-10" />
 
       <div className="flex relative z-10">
@@ -53,7 +53,7 @@ function Home() {
 
         <div className="flex-1 bg-transparent p-8">
           <div className="flex justify-between text-left">
-            <h1 className={`text-base font-semibold ${darkMode ? 'text-black' : 'text-gray-800'} font-poppins pt-2`}>
+            <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} font-poppins pt-2`}>
               HOME
             </h1>
             <div className="text-right">
@@ -101,13 +101,13 @@ function Home() {
                   {hire.map((nav) => (
                     <button
                       key={nav.id}
-                      className={`relative flex items-center w-32 h-10 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} rounded-lg overflow-hidden group transition-all duration-300 ease-in-out`}
+                      className={`relative flex items-center w-32 h-10 ${darkMode ? 'bg-gray-50 text-black' : 'bg-white text-black'} rounded-lg overflow-hidden group transition-all duration-300 ease-in-out`}
                       onClick={() => handleNavigate(nav.path)}
                       data-aos={nav.animation}
                       data-aos-duration="2000"
                     >
                       <div
-                        className={`absolute top-0 left-0 h-full ${darkMode ? 'bg-gray-700' : 'bg-slate-300'} w-0 transition-all duration-500 group-hover:w-[100%] skew-x-12`}
+                        className={`absolute top-0 left-0 h-full ${darkMode ? 'bg-gray-300' : 'bg-slate-300'} w-0 transition-all duration-500 group-hover:w-[100%]`}
                       ></div>
                       <div className="relative flex items-center justify-center w-full gap-2">
                         <p className="text-base font-jakarta">{nav.text}</p>
@@ -124,14 +124,16 @@ function Home() {
                   <a href="" data-aos="fade-up" data-aos-duration="2500">
                     <img
                       src={InstagramIcon}
-                      className="w-6 animate-bounce duration-100 ease-in-out hover:opacity-20 transition hover:duration-100"
+                      className={`w-6 animate-bounce duration-100 ease-in-out hover:opacity-20 
+                      transition hover:duration-100 ${darkMode ? "invert brightness-200" : ''}`}
                     />
                   </a>
 
                   <a href="" data-aos="fade-up" data-aos-duration="3000">
                     <img
                       src={Linkedinicon}
-                      className="w-6 animate-bounce duration-100 ease-in-out hover:opacity-20 transition hover:duration-100"
+                      className={`w-6 animate-bounce duration-100 ease-in-out hover:opacity-20 
+                      transition hover:duration-100 ${darkMode ? "invert brightness-200" : ''}`}
                     />
                   </a>
                 </div>

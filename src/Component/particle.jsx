@@ -31,7 +31,7 @@ const Particle = () => {
     () => ({
       background: {
         color: {
-          value: "#f2f2fc",
+          value: "",
         },
       },
       fpsLimit: 120,
