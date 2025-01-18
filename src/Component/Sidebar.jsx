@@ -63,9 +63,7 @@ function Sidebar() {
             </div>
             {timeOfDay === "morning" && (
               <div className="absolute inset-0 overflow-hidden">
-                {/* Matahari */}
                 <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-300 rounded-full shadow-lg animate-sunrise"></div>
-                {/* Awan */}
                 <div className="absolute top-8 left-8 w-16 h-8 bg-white rounded-full animate-cloud"></div>
                 <div className="absolute top-12 left-16 w-20 h-10 bg-white rounded-full animate-cloud-2"></div>
               </div>
@@ -101,7 +99,7 @@ function Sidebar() {
                 to="/"
                 className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
-                <img src={HomeIcon} alt="Home Icon" className="w-6 h-6" />
+                <img src={HomeIcon} alt="Home Icon" className={`w-6 h-6 ${darkMode ? 'invert brightness-75' : ''}`} />
                 Home
                 <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
@@ -109,9 +107,9 @@ function Sidebar() {
             <li className="flex">
               <Link
                 to="/about"
-                className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
+                className={`flex items-center justify-center ${darkMode ? 'text-white ' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
-                <img src={AboutIcon} alt="About Icon" className="w-6 h-6" />
+                <img src={AboutIcon} alt="About Icon" className={`w-6 h-6 ${darkMode ? 'invert brightness-75' : ''}`} />
                 About
                 <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
@@ -121,7 +119,7 @@ function Sidebar() {
                 to="/project"
                 className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
-                <img src={ProjectIcon} alt="Project Icon" className="w-6 h-6" />
+                <img src={ProjectIcon} alt="Project Icon" className={`w-6 h-6 ${darkMode ? 'invert brightness-75' : ''}`} />
                 Project
                 <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
@@ -131,7 +129,7 @@ function Sidebar() {
                 to="/contact"
                 className={`flex items-center justify-center ${darkMode ? 'text-white' : 'text-black'} text-lg mx-auto gap-4 relative group duration-300`}
               >
-                <img src={ContactIcon} alt="Contact Icon" className="w-6 h-6" />
+                <img src={ContactIcon} alt="Contact Icon" className={`w-6 h-6 ${darkMode ? 'invert brightness-75' : ''}`} />
                 Contact
                 <span className={`absolute bottom-0 left-0 h-[2px] w-0 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} transition-all duration-300 group-hover:w-full translate-y-2`}></span>
               </Link>
