@@ -5,9 +5,6 @@ import ShareIcon from "../assets/Icon/share.svg";
 import MoreInfo from "../Component/MoreInfo";
 import { useNavigate } from "react-router-dom";
 
-
-
-
 function Project() {
   const projects = [
     {
@@ -26,7 +23,7 @@ const handleNavigate = (path) => {
 }
 
   return (
-    <div className="relative min-h-screen h-screen flex">
+    <div className="relative min-h-screen h-screen flex bg-[#f2f2fc]">
       <div className="w-[250px] h-screen fixed top-0 left-0">
         <Sidebar />
       </div>
@@ -46,7 +43,20 @@ const handleNavigate = (path) => {
           </div>
           <div className="w-full h-0.5 bg-black mx-auto opacity-25"></div>
 
-          {/* Container Kotak Putih */}
+          <div>
+            <div className="flex flex-col text-center items-center justify-center mt-5">
+              <h1 className="font-poppins text-3xl font-semibold">Projects</h1>
+              <p className="font-jakarta">Project showcase</p>
+
+              <div>
+                <div className="flex gap-10 pt-5">
+                  <button>Project</button>
+                  <button>Certificate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="bg-white w-[30rem] h-[24rem] flex justify-center rounded-xl group overflow-hidden
           hover:outline hover:outline-blue-500 outline-1 transition duration-300 ease-in-out">
             {projects.map((data_project) => (
@@ -67,16 +77,13 @@ const handleNavigate = (path) => {
                   <span className="font-jakarta text-sm text-wrap max-w-xs block pt-1">
                     {data_project.desc}
                   </span>
-                  {/* Container untuk tombol LIVE DEMO dan DETAILS */}
                   <div className="flex justify-between items-center w-[26rem] gap-4 pt-3">
-                    {/* Tombol LIVE DEMO */}
                     <button className="flex items-center gap-2" >
                       <a href="https://sleepwell-calypso.vercel.app/" className="text-[0.90rem] font-jakarta">
                         {data_project.path}
                       </a>
                       <img src={data_project.icon} alt="" className="w-4" />
                     </button>
-                    {/* Tombol DETAILS */}
                     <button className="flex justify-center items-center bg-gray-500 w-28 h-10 rounded-lg"
                     onClick={() => handleNavigate("/project/sleepwell")}>
                       <a href="" className="text-xs font-jakarta text-[0.90rem]">
