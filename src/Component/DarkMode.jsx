@@ -1,9 +1,7 @@
 import React, { createContext, useState, useContext } from 'react';
 
-// Create the context
 const DarkModeContext = createContext();
 
-// Create the provider
 export const DarkModeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
