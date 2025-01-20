@@ -132,8 +132,8 @@ const {darkMode, setDarkMode} = useDarkMode()
                     <img
                       src={data_project.image}
                       alt=""
-                      className="w-[26rem] rounded-lg transform transition-transform 
-                      duration-300 group-hover:scale-105"
+                      className={`w-[26rem] rounded-lg transform transition-transform 
+                      duration-300 group-hover:scale-105`}
                     />
                   </div>
                   <p className="font-jakarta text-[1.2rem] font-medium pt-2">
@@ -150,7 +150,7 @@ const {darkMode, setDarkMode} = useDarkMode()
                       >
                         {data_project.path}
                       </a>
-                      <img src={data_project.icon} alt="" className="w-4" />
+                      <img src={data_project.icon} alt="" className={`w-4 ${darkMode ? "invert" : ""}`} />
                     </button>
                     <button
                       className="flex justify-center items-center bg-gray-500 w-28 h-10 rounded-lg"
