@@ -37,29 +37,75 @@ const {darkMode, setDarkMode} = useDarkMode()
       <div className="ml-[250px] w-full overflow-y-auto">
         <div className="bg-transparent p-8">
           <div className="flex justify-between text-left">
-            <h1 className="text-base font-semibold text-gray-800 font-poppins pt-2">
+            <h1
+              className={`text-base font-semibold text-gray-800 font-poppins pt-2 ${
+                darkMode ? "text-white" : "text-black"
+              }`}
+            >
               PROJECT
             </h1>
             <div className="text-right">
-              <h2 className="text-base font-semibold text-gray-800 font-poppins">
+              <h2
+                className={`text-base font-semibold text-gray-800 font-poppins ${
+                  darkMode ? "text-white" : "text-black"
+                }
+              <h2 className="text-base font-semibold text-gray-800 font-poppins">`}
+              >
                 Hello, Bintang!
               </h2>
-              <p className="-translate-y-2">Role &gt; Student</p>
+              <p
+                className={`-translate-y-2 ${
+                  darkMode ? "text-white" : "text-black"
+                }
+              <h2 className="text-base font-semibold text-gray-800 font-poppins">`}
+              >
+                Role &gt; Student
+              </p>
             </div>
           </div>
-          <div className="w-full h-0.5 bg-black mx-auto opacity-25"></div>
+          <div
+            className={`w-full h-0.5 bg-black mx-auto opacity-25 ${
+              darkMode ? "bg-white" : "bg-black"
+            }
+              <h2 className="text-base font-semibold text-gray-800 font-poppins">`}
+          ></div>
 
           <div>
             <div className="flex flex-col text-center items-center justify-center mt-5">
-              <h1 className="font-poppins text-3xl font-semibold">Projects</h1>
-              <p className="font-jakarta">Project showcase</p>
+              <h1
+                className={`font-poppins text-3xl font-semibold ${
+                  darkMode ? "text-white" : "text-black"
+                }
+              <h2 className="text-base font-semibold text-gray-800 font-poppins">`}
+              >
+                Projects
+              </h1>
+              <p
+                className={`font-jakarta ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Project showcase
+              </p>
 
               <div>
                 <div className="flex gap-20 pt-5 font-jakarta">
-                  <button className="bg-white w-40 h-10 rounded-lg">
+                  <button
+                    className={` w-40 h-10 rounded-lg ${
+                      darkMode
+                        ? "text-white bg-gradient-to-r from-black/30 to-black/10"
+                        : "bg-white text-black"
+                    }`}
+                  >
                     Project
                   </button>
-                  <button className="bg-white w-40 h-10 rounded-lg">
+                  <button
+                    className={` w-40 h-10 rounded-lg ${
+                      darkMode
+                        ? "text-white bg-gradient-to-r from-black/30 to-black/10"
+                        : "text-black bg-white"
+                    }`}
+                  >
                     Certificate
                   </button>
                 </div>
@@ -68,8 +114,13 @@ const {darkMode, setDarkMode} = useDarkMode()
           </div>
 
           <div
-            className="bg-white w-[30rem] h-[24rem] flex justify-center rounded-xl group overflow-hidden
-          hover:outline hover:outline-blue-500 outline-1 transition duration-300 ease-in-ou mt-10"
+            className={` w-[30rem] h-[24rem] flex justify-center rounded-xl group overflow-hidden
+          hover:outline  outline-1 transition duration-300 ease-in-ou mt-10
+          ${
+            darkMode
+              ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
+              : "hover:outline-blue-500 bg-white text-black"
+          }`}
           >
             {projects.map((data_project) => (
               <div
