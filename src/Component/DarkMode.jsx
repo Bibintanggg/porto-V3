@@ -16,7 +16,6 @@ export const DarkModeProvider = ({ children }) => {
   );
 };
 
-// Create the custom hook
 export const useDarkMode = () => {
   const context = useContext(DarkModeContext);
   if (!context) {

@@ -2,7 +2,6 @@ import Sidebar from "../Component/Sidebar";
 import Dicoding from "../assets/Image/dicoding.png";
 import SleepWell from "../assets/Image/sleepwell.png";
 import ShareIcon from "../assets/Icon/share.svg";
-import MoreInfo from "../Component/MoreInfo";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
 import { useState } from "react";
@@ -26,9 +25,6 @@ function Project() {
       text: "SERTIFIKAT DICODING",
       desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
       image: Dicoding,
-      path: "VIEW CERTIFICATE",
-      icon: ShareIcon,
-      secondText: "DETAILS",
     },
   ];
 
@@ -39,9 +35,21 @@ function Project() {
 
   const { darkMode, setDarkMode } = useDarkMode();
   const [toggleButton, setToggleButton] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
 
   const toggleView = () => {
-    setToggleButton(!toggleButton); 
+    setToggleButton(!toggleButton);
+  };
+
+  const openModal = (certificate) => {
+    setSelectedCertificate(certificate);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedCertificate(null);
+    setIsModalOpen(false);
   };
 
   return (
@@ -144,7 +152,8 @@ function Project() {
               {certificates.map((data_certificate) => (
                 <div
                   key={data_certificate.id}
-                  className="flex justify-center items-center"
+                  className="flex justify-center items-center cursor-pointer"
+                  onClick={() => openModal(data_certificate)}
                 >
                   <div>
                     <div className="overflow-hidden rounded-lg">
@@ -176,7 +185,7 @@ function Project() {
                         />
                       </button>
                       <button
-                        className="flex justify-center items-center bg-gray-500 w-28 h-10 rounded-lg"
+                        className="flex justify-center items-center  w-28 h-10 rounded-lg"
                         onClick={() => handleNavigate("/certificate/dicoding")}
                       >
                         <a
@@ -250,6 +259,47 @@ function Project() {
                   </div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {isModalOpen && (
+            <div
+              className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+              onClick={closeModal}
+            >
+              <div
+                className={`bg-${
+                  darkMode ? "[#131523]" : "white"
+                } rounded-lg p-6 w-11/12 max-w-2xl relative`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  onClick={closeModal}
+                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                >
+                  &times;
+                </button>
+                <img
+                  src={selectedCertificate.image}
+                  className="w-full h-auto rounded-lg"
+                />
+                <div className="mt-4">
+                  <h2
+                    className={`text-xl font-semibold ${
+                      darkMode ? "text-white" : "text-black"
+                    }`}
+                  >
+                    {selectedCertificate.text}
+                  </h2>
+                  <p
+                    className={`${
+                      darkMode ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
+                    {selectedCertificate.desc}
+                  </p>
+                </div>
+              </div>
             </div>
           )}
         </div>
