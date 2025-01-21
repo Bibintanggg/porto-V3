@@ -167,9 +167,11 @@ function SleepWell({ sleepWellProject }) {
                                     <div className="flex flex-col gap-3 items-center mt-4">
                                         {valueProject.map((value) => (
                                             <div key={value.id }>
-                                                <div className={`flex gap-3 items-center  h-10 w-[21rem] rounded-lg
-                                                    ${darkMode ? 'bg-gradient-to-r from-black/30 to-black/10' : 'bg-gray-100'}`}>
-                                                <div className=" bg-white w-[0.80rem] h-[0.60rem] rounded-full items-center ml-3"></div>
+                                                <div className={`flex gap-3 items-center  h-10 w-[21rem] rounded-lg 
+                                                    ${darkMode ? 'bg-gradient-to-r hover:from-[#1B1A55] to-[#9290C3] transition-all duration-300 ease-in-out  ' : 'bg-gray-100'}`}>
+                                                <div 
+                                                className={`  w-[0.80rem] h-[0.60rem] rounded-full items-center ml-3 
+                                                ${darkMode ? "bg-white" : "bg-black"}`}></div>
                                                 <div className="text-black h-8 w-96">
                                                         <p className={`font-jakarta text-base mt-1 ${darkMode ? 'text-white' : 'text-black'}`}>{value.title}</p>
                                                 </div>
