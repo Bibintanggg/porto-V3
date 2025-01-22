@@ -1,20 +1,33 @@
 const Input = ({
-    type = "text",
-    placeholder = '',
+    type : "text",
+    name,
     value,
-    onchange,
+    onChange,
+    placheholder,
+    label,
+    error,
     classname = '',
     ...props
 }) => {
     return (
-        <Input 
+        <div className={`${classname}`}>
+            {label && (
+                <label htmlFor={name}
+                className="">
+                    {label}
+                </label>
+            )}
+        <Input
         type={type}
-        placeholder={placeholder}
+        id={name}
+        name={name}
         value={value}
-        onchange={onchange}
-        classname={` ${classname}`}
+        onChange={onChange}
+        placheholder={placheholder}
+        classname={` ${error ? "" : ""}`}
         {...props}
         />
+        {error && <span>{error}</span>}
+        </div>
     )
 }
-export default Input;

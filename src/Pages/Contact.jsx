@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { isValidElement, useState } from 'react';
 import Sidebar from "../Component/Sidebar";
 import ShareContactIcon from "../assets/Icon/shareContact.svg";
 import { useDarkMode } from "../Component/DarkMode";
@@ -6,11 +6,38 @@ import Input from "../Component/Input";
 
 function Contact() {
   const { darkMode } = useDarkMode();
-  const [inputValue, setInputValue] = useState('');
+  const [formData, setFormData] = useState({
+    username : '',
+    email : '',
+  });
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  const [errors, setErrors] = useState({
+    username: '',
+    email: ''
+  });
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+
+    setErrors({
+      ...errors,
+      [name]: '',
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = {};
+    if(!formData.username) newErrors.username = "username this already"
+    if(!formData.email) newErrors.email = "Email Is Required"
+
+    if(Object.keys)
+  }
 
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
@@ -48,7 +75,7 @@ function Contact() {
               </span>
             </div>
             <div className={`flex mt-10 gap-10 items-center justify-center`}>
-              <div className={`w-[23rem] h-[35rem] bg-gradient-to-r from-black/30 to-black/20 rounded-md bg-clip-padding 
+              <div className={`w-[23rem] h-[35rem] bg-gradient-to-r from-[#0A1D56] to-[#000957] rounded-md bg-clip-padding 
                 backdrop-filter backdrop-blur-md bg-opacity-10 `}>
                 <div className="p-10">
                   <div className="flex items-center justify-between">
@@ -62,14 +89,14 @@ function Contact() {
                       ${darkMode ? "text-white" : "text-black"}
                   `}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
-                  <Input
+                  {/* <Input
                     type="text"
                     placeholder="Masukkan nama Anda"
                     value={inputValue}
                     onChange={handleInputChange}
                     darkMode={darkMode} 
                     className="mt-4 w-full" 
-                  />
+                  /> */}
                 </div>
               </div>
 
