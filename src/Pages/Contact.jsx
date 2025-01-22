@@ -1,43 +1,46 @@
-import React, { isValidElement, useState } from 'react';
+import React, { useState } from 'react';
 import Sidebar from "../Component/Sidebar";
 import ShareContactIcon from "../assets/Icon/shareContact.svg";
 import { useDarkMode } from "../Component/DarkMode";
-import Input from "../Component/Input"; 
+import Input from "../Component/Input";
 
 function Contact() {
   const { darkMode } = useDarkMode();
   const [formData, setFormData] = useState({
-    username : '',
-    email : '',
+    username: '',
+    email: '',
   });
 
   const [errors, setErrors] = useState({
     username: '',
-    email: ''
+    email: '',
   });
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
 
-
     setErrors({
       ...errors,
       [name]: '',
-    })
-  }
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if(!formData.username) newErrors.username = "username this already"
-    if(!formData.email) newErrors.email = "Email Is Required"
+    if (!formData.username) newErrors.username = 'Username is required';
+    if (!formData.email) newErrors.email = 'Email is required';
 
-    if(Object.keys)
-  }
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      console.log('Form Data:', formData);
+    }
+  };
 
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
@@ -89,14 +92,40 @@ function Contact() {
                       ${darkMode ? "text-white" : "text-black"}
                   `}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
-                  {/* <Input
-                    type="text"
-                    placeholder="Masukkan nama Anda"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    darkMode={darkMode} 
-                    className="mt-4 w-full" 
-                  /> */}
+                  <form onSubmit={handleSubmit}>
+                    <Input
+                      type="text"
+                      name="username"
+                      value={formData.username}
+                      onChange={handleChange}
+                      placeholder="Enter your username"
+                      label="Username"
+                      error={errors.username}
+                      darkMode={darkMode}
+                      className="mt-4"
+                    />
+                    <Input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email"
+                      label="Email"
+                      error={errors.email}
+                      darkMode={darkMode}
+                      className="mt-4"
+                    />
+                    <button
+                      type="submit"
+                      className={`w-full mt-6 py-2 px-4 rounded-md ${
+                        darkMode
+                          ? 'bg-blue-600 text-white hover:bg-blue-700'
+                          : 'bg-blue-500 text-white hover:bg-blue-600'
+                      } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    >
+                      Submit
+                    </button>
+                  </form>
                 </div>
               </div>
 
