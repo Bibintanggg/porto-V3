@@ -147,9 +147,9 @@ function Contact() {
                         <h1 className={`font-poppins text-xl font-semibold ${darkMode ? "text-black" : "text-white"}`}>Connect With Me</h1>
                         <div className={`mt-4`} >
                         <div className={`w-72 h-20 bg-black rounded-lg flex items-center${darkMode ? "" : ""}`}>
-                          <div className={` w-14 h-14 rounded-lg ml-4 bg-white${darkMode ? "" : ""}`}>
-
-                          </div>
+                          <div className={` w-14 h-14 rounded-lg ml-4 bg-white${darkMode ? "" : ""}`}></div>
+                          <h1 className={`text-white${darkMode ? "" : ""}`}>Lets Networking</h1>
+                          <span>On Linkedin</span>
                           </div>
                         </div>
                       </div>
