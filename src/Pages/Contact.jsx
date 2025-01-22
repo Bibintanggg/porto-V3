@@ -9,6 +9,7 @@ function Contact() {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
+    message: ''
   });
 
   const [errors, setErrors] = useState({
@@ -78,7 +79,7 @@ function Contact() {
               </span>
             </div>
             <div className={`flex mt-10 gap-10 items-center justify-center`}>
-              <div className={`w-[23rem] h-[35rem] bg-gradient-to-r from-[#0A1D56] to-[#000957] rounded-md bg-clip-padding 
+              <div className={`w-[30rem] h-[50rem] bg-gradient-to-r from-[#0A1D56] to-[#000957] rounded-md bg-clip-padding 
                 backdrop-filter backdrop-blur-md bg-opacity-10 `}>
                 <div className="p-10">
                   <div className="flex items-center justify-between">
@@ -92,7 +93,7 @@ function Contact() {
                       ${darkMode ? "text-white" : "text-black"}
                   `}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit} className='font-poppins text-sm'>
                     <Input
                       type="text"
                       name="username"
@@ -113,7 +114,17 @@ function Contact() {
                       label="Email"
                       error={errors.email}
                       darkMode={darkMode}
-                      className="mt-4"
+                      className="mt-1"
+                    />
+                    <Input
+                      type="text"
+                      name="Message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="your message"
+                      label="Message"
+                      darkMode={darkMode}
+                      className="mt-2"
                     />
                     <button
                       type="submit"
@@ -126,7 +137,24 @@ function Contact() {
                       Submit
                     </button>
                   </form>
+
                 </div>
+                  <div className={`w-60 h-1 rounded-full mx-auto ${darkMode ? "bg-white" : ""}`}></div>
+
+                  <div className='mt-10 flex justify-center'>
+                    <div className='bg-white w-96 h-[17rem] rounded-lg'>
+                      <div className='p-10'>
+                        <h1 className={`font-poppins text-xl font-semibold ${darkMode ? "text-black" : "text-white"}`}>Connect With Me</h1>
+                        <div className={`mt-4`} >
+                        <div className={`w-72 h-20 bg-black rounded-lg flex items-center${darkMode ? "" : ""}`}>
+                          <div className={` w-14 h-14 rounded-lg ml-4 bg-white${darkMode ? "" : ""}`}>
+
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
 
               <div className={`w-[30rem] h-[35rem] bg-white rounded-lg`}></div>
