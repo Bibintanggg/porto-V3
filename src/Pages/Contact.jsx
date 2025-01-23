@@ -100,7 +100,7 @@ function Contact() {
               </span>
             </div>
             <div className={`flex mt-10 gap-10 items-center justify-center`}>
-              <div className={`w-[30rem] h-[50rem] bg-gradient-to-r from-[#0A1D56] to-[#000957] rounded-md bg-clip-padding 
+              <div className={`w-[30rem] min-h-[40rem] bg-gradient-to-r from-[#0A1D56] to-[#000957] rounded-md  
                 backdrop-filter backdrop-blur-md bg-opacity-10 `}>
                 <div className="p-10">
                   <div className="flex items-center justify-between">

@@ -190,13 +190,15 @@ function About() {
                 </div>
 
                 <div className="flex items-center justify-center mt-2">
-                  <button className={`flex items-center justify-center gap-11 w-[360px] h-[65px] rounded-lg backdrop-blur-xl backdrop-brightness-100
+                  <button className={`flex items-center justify-center gap-11 w-[360px] h-[65px] rounded-lg 
+                  isolate aspect-video  shadow-lg ">
                     ${darkMode ? 'bg-gradient-to-r from-black/30 to-black/10' : 'bg-white'}`}>
                     {stack.map((items) => (
                       <div
                         key={items.id}
                         onClick={() => setActiveStack(items.title)}
-                        className={`flex items-center gap-2 w-36 h-10 rounded-md cursor-pointer ${activeStack === items.title ? "bg-blue-100" : ""
+                        className={`flex items-center gap-2 w-36 h-10 rounded-md 
+                          cursor-pointer isolate aspect-video shadow-lg "> ${activeStack === items.title ? "bg-blue-100" : ""
                           } ${darkMode ? 'text-white bg-gradient-to-r from-black/50 to-black/30' : 'text-black bg-gray-100 '}`}
                       >
                         <div className="flex items-center justify-center mx-auto gap-2">
@@ -212,7 +214,8 @@ function About() {
                   {displayedStack.map((icons) => (
                     <div key={icons.id} className="flex items-center justify-center">
                       <div
-                        className={`relative flex items-center justify-center w-48 h-6 rounded p-10 gap-3 overflow-hidden group transition-all duration-300 ease-in-out backdrop-blur-md backdrop-brightness-75 ${darkMode
+                        className={`relative flex items-center justify-center w-48 h-6 rounded p-10 gap-3 
+                          overflow-hidden group transition-all duration-300 ease-in-out backdrop-blur-md backdrop-brightness-75 ${darkMode
                             ? "bg-gradient-to-r from-black/30 to-black/20 border border-white/10"
                             : "bg-white"
                           }`}
@@ -225,7 +228,8 @@ function About() {
                             alt={icons.name}
                             className="w-10 h-20 transition-transform duration-700 ease-in-out group-hover:-translate-x-1"
                           />
-                          <span className="text-xs text-black mt-2 font-poppins transition-transform duration-700 ease-in-out group-hover:translate-x-2">
+                          <span className={`text-xs mt-2 font-poppins transition-transform duration-700
+                           ease-in-out group-hover:translate-x-2 ${darkMode ? "text-white" : "text-black"}`}>
                             {icons.name}
                           </span>
                         </div>
