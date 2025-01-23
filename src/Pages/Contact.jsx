@@ -1,9 +1,30 @@
 import React, { useState } from 'react';
 import Sidebar from "../Component/Sidebar";
 import ShareContactIcon from "../assets/Icon/shareContact.svg";
+import LinkedinIcon from "../assets/Icon/linkedin.svg"
+import GithubIcon from "../assets/TechIcon/GitHub.svg"
+import InstagramIcon from "../assets/Icon/instagram.svg"
 import { useDarkMode } from "../Component/DarkMode";
 import Input from "../Component/Input";
+import Connect from '../Component/Connect';
 
+const platforms = [
+  {
+    icon: LinkedinIcon,
+    title: "Linkedin",
+    description: "Lets Networking On Me"
+  },
+  {
+    icon: GithubIcon,
+    title: "Github",
+    description: "Check Out My Projects"
+  },
+  {
+    icon: InstagramIcon,
+    title: "Instagram",
+    description: "Check Out My Projects"
+  },
+]
 function Contact() {
   const { darkMode } = useDarkMode();
   const [formData, setFormData] = useState({
@@ -141,19 +162,11 @@ function Contact() {
                 </div>
                   <div className={`w-60 h-1 rounded-full mx-auto ${darkMode ? "bg-white" : ""}`}></div>
 
-                  <div className='mt-10 flex justify-center'>
-                    <div className='bg-white w-96 h-[17rem] rounded-lg'>
-                      <div className='p-10'>
-                        <h1 className={`font-poppins text-xl font-semibold ${darkMode ? "text-black" : "text-white"}`}>Connect With Me</h1>
-                        <div className={`mt-4`} >
-                        <div className={`w-72 h-20 bg-black rounded-lg flex items-center${darkMode ? "" : ""}`}>
-                          <div className={` w-14 h-14 rounded-lg ml-4 bg-white${darkMode ? "" : ""}`}></div>
-                          <h1 className={`text-white${darkMode ? "" : ""}`}>Lets Networking</h1>
-                          <span>On Linkedin</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div>
+                    <Connect
+                    darkMode={darkMode}
+                    platforms={platforms}
+                    />
                   </div>
               </div>
 
