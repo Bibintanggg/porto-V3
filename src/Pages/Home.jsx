@@ -46,7 +46,7 @@ function Home() {
 
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
-      <Particle className="absolute top-0 left-0 w-full h-full -z-10" />
+      
 
       <div className="flex relative z-10">
         <Sidebar />

@@ -20,11 +20,13 @@ const platforms = [
     icon: GithubIcon,
     title: "Github",
     description: "Check Out My Projects",
+    link: "https://www.instagram.com/bintang.ydha_/",
   },
   {
     icon: InstagramIcon,
     title: "Instagram",
     description: "Check Out My Projects",
+    link: "https://www.instagram.com/bintang.ydha_/",
   },
 ];
 function Contact() {
@@ -66,10 +68,6 @@ function Contact() {
     }
   };
 
-  const navigate = useNavigate(link);
-  const handleNavigate = () => {
-    navigate(link);
-  };
   return (
     <div
       className={`relative min-h-screen ${
@@ -222,7 +220,6 @@ function Contact() {
                   <Connect
                     darkMode={darkMode}
                     platforms={platforms}
-                    link={link}
                   />
                 </div>
               </div>
