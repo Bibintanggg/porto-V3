@@ -29,18 +29,19 @@ const Connect = ({ title, darkMode, platforms, link }) => {
             onClick={() => handleButtonClick(platforms[0].link)}
           >
             <div
-              className={`w-[25rem] h-24 isolate aspect-video bg-white/20 shadow-lg ${
+              className={`w-[25rem] h-24 isolate aspect-video bg-gradient-to-r 
+              from-black/30 to-black/40 shadow-lg ${
                 darkMode ? "" : "bg-gray-100"
               } rounded-lg flex items-center p-4`}
             >
               <div
-                className={`w-12 h-12 rounded-lg flex items-center justify-center isolate aspect-video bg-white/20 shadow-lg ${
-                  darkMode ? "bg-gray-600" : "bg-white"
+                className={`w-12 h-12 rounded-lg flex items-center justify-center isolate aspect-video  ${
+                  darkMode ? "bg-gray-50 bg-opacity-10" : "bg-white"
                 }`}
               >
                 <img
                   src={platforms[0].icon}
-                  className="w-6 h-6"
+                  className="w-6 h-6 invert"
                   alt={platforms[0].title}
                 />
               </div>
@@ -62,19 +63,21 @@ const Connect = ({ title, darkMode, platforms, link }) => {
             {platforms.slice(1).map((platform, index) => (
               <div
                 key={index}
-                className={`w-full h-24 isolate aspect-video bg-white/20 shadow-lg ${
-                  darkMode ? "" : "bg-gray-100"
+                className={`w-full h-24 isolate aspect-video shadow-lg ${
+                  darkMode
+                    ? "bg-gradient-to-r from-black/20 to-black/30 "
+                    : "bg-gray-100"
                 } rounded-lg flex items-center p-4`}
                 onClick={() => handleButtonClick(platform.link)}
               >
                 <div
-                  className={`w-12 h-12 rounded-lg flex items-center justify-center isolate aspect-video bg-white/20 shadow-lg ${
-                    darkMode ? "" : "bg-white"
+                  className={`w-12 h-12 rounded-lg flex items-center justify-center isolate aspect-video  shadow-lg ${
+                    darkMode ? "bg-gray-50 bg-opacity-15" : "bg-white"
                   }`}
                 >
                   <img
                     src={platform.icon}
-                    className="w-6 h-6"
+                    className="w-6 h-6 invert"
                     alt={platform.title}
                   />
                 </div>

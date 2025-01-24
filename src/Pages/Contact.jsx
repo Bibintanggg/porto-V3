@@ -135,8 +135,8 @@ function Contact() {
             </div>
             <div className={`flex mt-10 gap-10 items-center justify-center`}>
               <div
-                className={`w-[30rem] min-h-[30rem] bg-gradient-to-r from-[#0A1D56] to-[#000957] rounded-md  
-                backdrop-filter backdrop-blur-md bg-opacity-10 `}
+                className={`w-[30rem] min-h-[30rem] isolate rounded-3xl bg-gradient-to-b 
+                from-black/20 to-black/30 shadow-lg `}
               >
                 <div className="p-10">
                   <div className="flex items-center justify-between">
@@ -215,12 +215,8 @@ function Contact() {
                     darkMode ? "bg-white" : ""
                   }`}
                 ></div>
-
                 <div>
-                  <Connect
-                    darkMode={darkMode}
-                    platforms={platforms}
-                  />
+                  <Connect darkMode={darkMode} platforms={platforms} />
                 </div>
               </div>
 
