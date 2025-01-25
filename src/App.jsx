@@ -17,6 +17,7 @@ function App() {
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/project/sleepwell" element={<MoreInfo />} />
+          <Route path="/project/portfolio-v1" element={<MoreInfo />} />
         </Routes>
       </BrowserRouter>
     </DarkModeProvider>

@@ -1,6 +1,7 @@
 import Sidebar from "../Component/Sidebar";
 import Dicoding from "../assets/Image/dicoding.png";
 import SleepWell from "../assets/Image/sleepwell.png";
+import Porto_V1 from "../assets/Image/portov1.png"
 import ShareIcon from "../assets/Icon/share.svg";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
@@ -13,16 +14,18 @@ function Project() {
       text: "WEBSITE KESEHATAN TIDUR",
       desc: "Web ini dirancang untuk membuat para pengidap insomnia...",
       image: SleepWell,
-      path: "LIVE DEMO",
+      demo: "LIVE DEMO",
+      path: "https://sleepwell-calypso.vercel.app/",
       icon: ShareIcon,
       secondText: "DETAILS",
     },
     {
       id: 2,
       text: "PORTFOLIO V1",
-      desc: "Portfolio pertama saya yang dibuat dengan React.",
-      image: SleepWell,
-      path: "LIVE  DEMO",
+      desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
+      image: Porto_V1,
+      demo: "LIVE DEMO",
+      path: "https://portofolio-bin.vercel.app/",
       icon: ShareIcon,
       secondText: "DETAILS",
     },
@@ -241,10 +244,10 @@ function Project() {
                       <div className="flex justify-between items-center w-full gap-4 pt-3">
                         <button className="flex items-center gap-2">
                           <a
-                            href="https://sleepwell-calypso.vercel.app/"
+                            href={data_project.path}
                             className="text-[0.90rem] font-jakarta"
                           >
-                            {data_project.path}
+                            {data_project.demo}
                           </a>
                           <img
                             src={data_project.icon}
@@ -258,7 +261,7 @@ function Project() {
                           } w-28 h-10 rounded-lg`}
                           onClick={() =>
                             handleNavigate(
-                              `/project/${data_project.id === 1 ? "sleepwell" : "portfolio-v1"}`
+                              `/project/${data_project.id === 3 ? "sleepwell" : "portfolio-v1"}`
                             )
                           }
                         >
