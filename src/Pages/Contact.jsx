@@ -58,8 +58,8 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!formData.username) newErrors.username = "Username is required";
-    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.username) newErrors.username = "Membutuhkan Username";
+    if (!formData.email) newErrors.email = "Membutuhkan email";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
