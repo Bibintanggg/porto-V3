@@ -32,7 +32,7 @@ const hire = [
 
 function Home() {
   const { darkMode } = useDarkMode();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     AOS.init();
@@ -49,9 +49,10 @@ function Home() {
       <div className="flex relative z-10">
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
-        <div className={`flex-1 p-8 transition-all duration-300 ${isOpen ? 'ml-60' : 'mx-auto'}`}>
+        <div className={`flex-1 p-8 transition-all duration-300 ${isOpen ? '' : '-ml-[17rem]'}`}>
           <div className={`flex justify-between text-left ${isOpen ? 'opacity-100' : 'opacity-100'}`}>
-            <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} font-poppins pt-2`}>
+            <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} 
+            ${isOpen ? "ml-10" : "ml-10"} font-poppins pt-2`}>
               HOME
             </h1>
             <div className={`text-right ${isOpen ? "" : "mr-10"}`}>
@@ -63,10 +64,13 @@ function Home() {
               </p>
             </div>
           </div>
-          <div className={`w-full h-0.5 ${darkMode ? 'bg-white' : 'bg-black'} mx-auto opacity-25`}></div>
+          <div className={`w-full h-0.5 ${darkMode ? 'bg-white' : 'bg-black'} ${isOpen ? "" : "w-[100%]"} mx-auto opacity-25`}></div>
 
           <div className="flex items-center justify-between h-96 gap-5 p-10">
             <div className="pt-16 flex items-center gap-5">
+              <div className="w-1 h-10 bg-black rounded-full">
+
+              </div>
               <div className="pt-20">
                 <h1
                   className={`text-3xl font-poppins font-bold flex gap-2 ${darkMode ? 'text-white' : 'text-[#1d3557]'}`}

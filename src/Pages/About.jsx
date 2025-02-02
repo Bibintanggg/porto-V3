@@ -27,6 +27,7 @@ import TrelloIcon from "../assets/TechIcon/Trello.svg";
 function About() {
   const [activeStack, setActiveStack] = useState("FRAMEWORK");
   const { darkMode, toggleDarkMode } = useDarkMode();
+  const { isOpen, setIsOpen } = useState(true)
 
   const dataProject = [
     {
@@ -93,7 +94,7 @@ function About() {
       }`}
     >
       <div className="w-[250px] h-screen fixed top-0 left-0">
-        <Sidebar />
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
       </div>
 
       <div className="ml-[250px] w-full overflow-y-auto">
