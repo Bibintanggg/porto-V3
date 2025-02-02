@@ -13,6 +13,7 @@ function Sidebar() {
   const [activePosition, setActivePosition] = useState("translate-y-0");
   const [timeOfDay, setTimeOfDay] = useState("day");
   const { darkMode, toggleDarkMode } = useDarkMode(); 
+  const [isOpen, setIsOpen] = useState(true); // State untuk mengatur sidebar terbuka/tutup
 
   const activeRoutes = {
     "/": "-translate-y-10",
@@ -44,15 +45,14 @@ function Sidebar() {
 
   return (
     <section>
-      <div className={`relative w-60 h-[100vh] ${darkMode ? 'bg-gray-900' : 'bg-[#ffff]'}`}>
+      <div className={`relative w-60 h-[100vh] ${darkMode ? 'bg-gray-900' : 'bg-[#ffff]'} transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
         <div className="flex flex-col">
-          <div
-            className={`w-60 h-40 rounded-b-3xl flex justify-center items-center transition-all duration-1000 ${timeOfDay === "morning"
-                ? "bg-gradient-to-r from-yellow-200 to-yellow-400"
-                : timeOfDay === "afternoon"
-                  ? "bg-gradient-to-r from-orange-300 to-orange-500"
-                  : "bg-gradient-to-r from-blue-800 to-indigo-900"
-              }`}
+          <div className={`w-60 h-40 rounded-b-3xl flex justify-center items-center transition-all duration-1000 ${timeOfDay === "morning"
+              ? "bg-gradient-to-r from-yellow-200 to-yellow-400"
+              : timeOfDay === "afternoon"
+                ? "bg-gradient-to-r from-orange-300 to-orange-500"
+                : "bg-gradient-to-r from-blue-800 to-indigo-900"
+            }`}
           >
             <div className="items-center justify-center flex flex-col pt-40">
               <img
@@ -61,6 +61,7 @@ function Sidebar() {
               />
               <p className={`${darkMode ? 'text-white' : 'text-black'} pt-2`}>Hello World</p>
             </div>
+            {/* Animasi berdasarkan waktu */}
             {timeOfDay === "morning" && (
               <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-300 rounded-full shadow-lg animate-sunrise"></div>
@@ -144,6 +145,14 @@ function Sidebar() {
           {darkMode ? '☀️' : '🌙'}
         </button>
       </div>
+
+      {/* Tombol untuk membuka/tutup sidebar pada perangkat mobile */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden absolute top-4 left-4 p-2 bg-gray-800 text-white rounded-full"
+      >
+        {isOpen ? '✖️' : '☰'}
+      </button>
     </section>
   );
 }
