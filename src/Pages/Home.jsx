@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react";
 import Sidebar from "../Component/Sidebar.jsx";
-import Particle from "../Component/particle.jsx";
 import WavingHand from "../assets/Image/wavinghand.png";
 import InstagramIcon from "../assets/Icon/instagram.svg";
 import Linkedinicon from "../assets/Icon/linkedin.svg";
@@ -9,7 +9,6 @@ import ShareIcon from "../assets/Icon/share.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { useDarkMode } from "../Component/DarkMode.jsx";
 
 const hire = [
@@ -32,8 +31,8 @@ const hire = [
 ];
 
 function Home() {
-  const { darkMode, toggleDarkMode } = useDarkMode();
-  const [isOpen, setIsOpen] = useState(false); 
+  const { darkMode } = useDarkMode();
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     AOS.init();
@@ -48,14 +47,14 @@ function Home() {
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
       <div className="flex relative z-10">
-        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} /> 
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
-        <div className={`flex-1 bg-transparent p-8 transition-all duration-300 ${isOpen ? 'ml-60' : 'mx-auto'}`}>
-          <div className="flex justify-between text-left">
+        <div className={`flex-1 p-8 transition-all duration-300 ${isOpen ? 'ml-60' : 'mx-auto'}`}>
+          <div className={`flex justify-between text-left ${isOpen ? 'opacity-100' : 'opacity-100'}`}>
             <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} font-poppins pt-2`}>
               HOME
             </h1>
-            <div className="text-right">
+            <div className={`text-right ${isOpen ? "" : "mr-10"}`}>
               <h2 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} font-poppins`}>
                 Hello, Bintang !
               </h2>
@@ -68,16 +67,6 @@ function Home() {
 
           <div className="flex items-center justify-between h-96 gap-5 p-10">
             <div className="pt-16 flex items-center gap-5">
-              <div
-                className={`w-4 h-4 ${darkMode ? 'bg-white' : 'bg-[#1d3557]'} rounded-full`}
-                data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="500"
-                data-aos-offset="0"
-              >
-                <div className={`w-1 h-36 mx-auto rounded-full bg-gradient-to-b ${darkMode ? 'from-white' : 'from-[#1d3557]'} to-transparent`}></div>
-              </div>
-
               <div className="pt-20">
                 <h1
                   className={`text-3xl font-poppins font-bold flex gap-2 ${darkMode ? 'text-white' : 'text-[#1d3557]'}`}

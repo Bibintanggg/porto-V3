@@ -6,20 +6,19 @@ import AboutIcon from "../assets/Icon/about.svg";
 import ProjectIcon from "../assets/Icon/project.svg";
 import ContactIcon from "../assets/Icon/contact.svg";
 import MoonPNG from "../assets/Image/moon.png";
-import { useDarkMode } from '../Component/DarkMode'; 
+import { useDarkMode } from '../Component/DarkMode';
 
-function Sidebar({isOpen, setIsOpen}) {
+function Sidebar({ isOpen, setIsOpen }) {
   const location = useLocation();
   const [activePosition, setActivePosition] = useState("translate-y-0");
   const [timeOfDay, setTimeOfDay] = useState("day");
-  const { darkMode, toggleDarkMode } = useDarkMode(); 
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   const activeRoutes = {
     "/": "-translate-y-10",
     "/about": "translate-y-2",
     "/project": "translate-y-14",
     "/contact": "translate-y-[110px]",
-    "/project/sleepwell": "translate-y-14",
   };
 
   useEffect(() => {
@@ -47,10 +46,10 @@ function Sidebar({isOpen, setIsOpen}) {
       <div className={`relative w-60 h-[100vh] ${darkMode ? 'bg-gray-900' : 'bg-[#ffff]'} transition-all duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
         <div className="flex flex-col">
           <div className={`w-60 h-40 rounded-b-3xl flex justify-center items-center transition-all duration-1000 ${timeOfDay === "morning"
-              ? "bg-gradient-to-r from-yellow-200 to-yellow-400"
-              : timeOfDay === "afternoon"
-                ? "bg-gradient-to-r from-orange-300 to-orange-500"
-                : "bg-gradient-to-r from-blue-800 to-indigo-900"
+            ? "bg-gradient-to-r from-yellow-200 to-yellow-400"
+            : timeOfDay === "afternoon"
+              ? "bg-gradient-to-r from-orange-300 to-orange-500"
+              : "bg-gradient-to-r from-blue-800 to-indigo-900"
             }`}
           >
             <div className="items-center justify-center flex flex-col pt-40">
