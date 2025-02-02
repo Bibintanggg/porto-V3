@@ -8,12 +8,11 @@ import ContactIcon from "../assets/Icon/contact.svg";
 import MoonPNG from "../assets/Image/moon.png";
 import { useDarkMode } from '../Component/DarkMode'; 
 
-function Sidebar() {
+function Sidebar({isOpen, setIsOpen}) {
   const location = useLocation();
   const [activePosition, setActivePosition] = useState("translate-y-0");
   const [timeOfDay, setTimeOfDay] = useState("day");
   const { darkMode, toggleDarkMode } = useDarkMode(); 
-  const [isOpen, setIsOpen] = useState(true); // State untuk mengatur sidebar terbuka/tutup
 
   const activeRoutes = {
     "/": "-translate-y-10",
@@ -61,7 +60,6 @@ function Sidebar() {
               />
               <p className={`${darkMode ? 'text-white' : 'text-black'} pt-2`}>Hello World</p>
             </div>
-            {/* Animasi berdasarkan waktu */}
             {timeOfDay === "morning" && (
               <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-300 rounded-full shadow-lg animate-sunrise"></div>
@@ -146,7 +144,6 @@ function Sidebar() {
         </button>
       </div>
 
-      {/* Tombol untuk membuka/tutup sidebar pada perangkat mobile */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden absolute top-4 left-4 p-2 bg-gray-800 text-white rounded-full"

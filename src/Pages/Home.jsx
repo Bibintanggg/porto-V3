@@ -33,6 +33,7 @@ const hire = [
 
 function Home() {
   const { darkMode, toggleDarkMode } = useDarkMode();
+  const [isOpen, setIsOpen] = useState(false); 
 
   useEffect(() => {
     AOS.init();
@@ -46,12 +47,10 @@ function Home() {
 
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
-      
-
       <div className="flex relative z-10">
-        <Sidebar />
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} /> 
 
-        <div className="flex-1 bg-transparent p-8">
+        <div className={`flex-1 bg-transparent p-8 transition-all duration-300 ${isOpen ? 'ml-60' : 'mx-auto'}`}>
           <div className="flex justify-between text-left">
             <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} font-poppins pt-2`}>
               HOME
