@@ -1,6 +1,8 @@
 import Sidebar from "../Component/Sidebar";
 import Dicoding from "../assets/Image/dicoding.png";
 import SleepWell from "../assets/Image/sleepwell.png";
+import SagasitasIMG from "../assets/Image/saga.jpg";
+import PeintagonsIMG from "../assets/Image/peintagons.jpg"
 import Porto_V1 from "../assets/Image/portov1.png"
 import ShareIcon from "../assets/Icon/share.svg";
 import { isCookie, useNavigate } from "react-router-dom";
@@ -37,6 +39,18 @@ function Project() {
       text: "SERTIFIKAT DICODING",
       desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
       image: Dicoding,
+    },
+    {
+      id: 2,
+      text: "SERTIFIKAT LOMBA SAGASITAS",
+      desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
+      image: SagasitasIMG,
+    },
+    {
+      id: 3,
+      text: "SERTIFIKAT JUARA 3 WEB DEV",
+      desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
+      image: PeintagonsIMG,
     },
   ];
 
