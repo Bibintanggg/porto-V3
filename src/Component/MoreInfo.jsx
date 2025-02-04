@@ -63,8 +63,9 @@ function MoreInfo() {
             <SleepWell sleepWellProject={sleepWellProject}/>
             <Portfolio_V1 portfolioInfo={portfolioInfo}/>
         </div>
-        
     );
 }
+
+
 
 export default MoreInfo;

@@ -3,7 +3,7 @@ import Dicoding from "../assets/Image/dicoding.png";
 import SleepWell from "../assets/Image/sleepwell.png";
 import Porto_V1 from "../assets/Image/portov1.png"
 import ShareIcon from "../assets/Icon/share.svg";
-import { useNavigate } from "react-router-dom";
+import { isCookie, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
 import { useState } from "react";
 
@@ -49,6 +49,7 @@ function Project() {
   const [toggleButton, setToggleButton] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleView = () => {
     setToggleButton(!toggleButton);
@@ -71,10 +72,10 @@ function Project() {
       }`}
     >
       <div className="w-[250px] h-screen fixed top-0 left-0">
-        <Sidebar />
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
       </div>
 
-      <div className="ml-[250px] w-full overflow-y-auto">
+      <div className={`ml-[250px] w-full overflow-y-auto transition-all duration-300 ${isOpen ? "" : "ml-0"}`}>
         <div className="bg-transparent p-8">
           <div className="flex justify-between text-left">
             <h1
@@ -125,7 +126,7 @@ function Project() {
               </p>
 
               <div>
-                <div className="flex gap-20 pt-5 font-jakarta">
+                <div className="flex gap-2 pt-5 font-jakarta">
                   <button
                     onClick={toggleView}
                     className={`w-40 h-10 rounded-lg ${

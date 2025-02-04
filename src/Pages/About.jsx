@@ -23,12 +23,10 @@ import PHPIcon from "../assets/TechIcon/PHP.svg";
 import ReactIcon from "../assets/TechIcon/React.svg";
 import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
 import TrelloIcon from "../assets/TechIcon/Trello.svg";
+import { useNavigate } from "react-router-dom";
 
 function About() {
-  const [activeStack, setActiveStack] = useState("FRAMEWORK");
-  const { darkMode } = useDarkMode();
-  const [isOpen, setIsOpen] = useState(true);
-
+  
   const dataProject = [
     {
       id: 1,
@@ -36,6 +34,7 @@ function About() {
       value: 5,
       desc: "TOTAL PROJECT I HAVE COMPLETED",
       icon: ProjectIcon,
+      path: "/project",
     },
     {
       id: 2,
@@ -43,6 +42,7 @@ function About() {
       value: 5,
       desc: "TOTAL CERTIFICATES I HAVE ACHIEVED",
       icon: CertiIcon,
+      path: "/project",
     },
     {
       id: 3,
@@ -50,9 +50,10 @@ function About() {
       value: 5,
       desc: "TOTAL EXPERIENCES I HAVE GAINED",
       icon: ExperienceIcon,
+      path: "/about/experience"
     },
   ];
-
+  
   const stack = [
     {
       id: 1,
@@ -65,12 +66,12 @@ function About() {
       icon: ToolsIcon,
     },
   ];
-
+  
   const toolsStack = [
     { id: 1, name: "GITHUB", icon: GithubIcon },
     { id: 2, name: "TRELLO", icon: TrelloIcon },
   ];
-
+  
   const TechStack = [
     { id: 1, name: "BOOTSTRAP", icon: BootstrapIcon },
     { id: 2, name: "CSS", icon: CSS3Icon },
@@ -84,41 +85,36 @@ function About() {
     { id: 10, name: "REACT", icon: ReactIcon },
     { id: 11, name: "TAILWINDCSS", icon: TailwindIcon },
   ];
-
+  
+  const [activeStack, setActiveStack] = useState("FRAMEWORK");
+  const { darkMode } = useDarkMode();
+  const [isOpen, setIsOpen] = useState(true);
   const displayedStack = activeStack === "TOOLS" ? toolsStack : TechStack;
-
+  const navigate = useNavigate();
+  const handleNavigate = (path) => {
+    navigate(path);
+  }
   return (
     <div
-      className={`relative min-h-screen flex transition-all duration-300 ${darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
-        } ${isOpen ? "" : "-ml-[17rem]"}`}
+    className={`relative min-h-screen flex transition-all duration-300 ${darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
+    } ${isOpen ? "" : "-ml-[17rem]"}`}
     >
       <div className="w-[250px] h-screen fixed top-0 left-0">
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
-      <div className="flex-1 ml-[250px] p-4 md:p-8 overflow-y-auto">
+      <div className="flex-1 ml-[250px] p-8 md:p-8 overflow-y-auto">
         <div className="bg-transparent">
-          <div className="flex flex-col md:flex-row justify-between text-left">
-            <h1
-              className={`text-base font-semibold font-poppins pt-2 ${darkMode ? "text-white" : "text-black"
-                }`}
-            >
-              ABOUT
+        <div className={`flex justify-between text-left ${isOpen ? 'opacity-100' : 'opacity-100'}`}>
+            <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} 
+            ${isOpen ? "ml-10" : "ml-10"} font-poppins pt-2`}>
+              HOME
             </h1>
-            <div
-              className={`text-right ${darkMode ? "text-white" : "text-black"
-                }`}
-            >
-              <h2
-                className={`text-base font-semibold font-poppins ${darkMode ? "text-white" : "text-black"
-                  }`}
-              >
-                Hello, Bintang!
+            <div className={`text-right ${isOpen ? "" : "mr-10"}`}>
+              <h2 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} font-poppins`}>
+                Hello, Bintang !
               </h2>
-              <p
-                className={`-translate-y-2 ${darkMode ? "text-white" : "text-black"
-                  }`}
-              >
+              <p className={`-translate-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Role &gt; Student
               </p>
             </div>
@@ -132,7 +128,7 @@ function About() {
                 rounded-xl shadow-lg ring-1 ring-black/5 ${darkMode
                     ? "bg-gradient-to-r from-black/20 to-black/20 "
                     : "bg-white/20"
-                  }`}
+                  } ${isOpen ? "" : "h-[46rem] "} `}
               >
                 <div className="p-6 flex items-center gap-4">
                   <h1
@@ -153,16 +149,16 @@ function About() {
                     <img src={FotoBintang} className="w-48 h-48 rounded-full" />
                     <div className="pt-3">
                       <p
-                        className={`max-w-lg tracking-wide text-sm ${darkMode ? "text-white" : "text-black"
-                          }`}
+                        className={`max-w-lg tracking-wide text-base ${darkMode ? "text-white" : "text-black"
+                          } ${isOpen ? "" : "text-balance"}`}
                       >
-                        <span className="ml-10 font-jakarta">Hello There!</span>{" "}
+                        <span className="ml-10 font-jakarta">Hello There!</span>
                         I'm Bintang Yudha Putra Purnomo, a creative front-end
                         developer and detail-oriented UI/UX designer based in
                         the bustling city of Jakarta, Indonesia.
                       </p>
                       <p
-                        className={`max-w-lg tracking-wide mt-5 text-sm ${darkMode ? "text-white" : "text-black"
+                        className={`max-w-lg tracking-wide mt-5 text-base ${darkMode ? "text-white" : "text-black"
                           }`}
                       >
                         <span className="ml-10 font-jakarta">
@@ -194,7 +190,8 @@ function About() {
                       : "bg-[#f2f2fc]"
                     }`}
                 >
-                  <div className="cursor-pointer">
+                  <div className="cursor-pointer" 
+                  onClick={() => handleNavigate(project.path)}>
                     <div className="flex items-center gap-5">
                       <div
                         className={`w-14 h-14 rounded-full justify-center items-center flex 
@@ -227,6 +224,7 @@ function About() {
                       </span>
                       <img src={ShareIcon} alt="" className="w-3 opacity-45" />
                     </div>
+
                   </div>
                 </div>
               ))}
