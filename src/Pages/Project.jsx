@@ -167,67 +167,42 @@ function Project() {
           </div>
 
           {toggleButton ? (
-            <div
-              className={`w-[30rem] h-[24rem] flex justify-center rounded-xl group overflow-hidden
-              hover:outline outline-1 transition duration-300 ease-in-out mt-10
-              ${
-                darkMode
-                  ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
-                  : "hover:outline-blue-500 bg-white text-black"
-              }`}
-            >
-              {certificates.map((data_certificate) => (
-                <div
-                  key={data_certificate.id}
-                  className="flex justify-center items-center cursor-pointer"
-                  onClick={() => openModal(data_certificate)}
-                >
-                  <div>
-                    <div className="overflow-hidden rounded-lg">
-                      <img
-                        src={data_certificate.image}
-                        alt=""
-                        className={`w-[26rem] rounded-lg transform transition-transform 
-                        duration-300 group-hover:scale-105`}
-                      />
-                    </div>
-                    <p className="font-jakarta text-[1.2rem] font-medium pt-2">
-                      {data_certificate.text}
-                    </p>
-                    <span className="font-jakarta text-sm text-wrap max-w-xs block pt-1">
-                      {data_certificate.desc}
-                    </span>
-                    <div className="flex justify-between items-center w-[26rem] gap-4 pt-3">
-                      <button className="flex items-center gap-2">
-                        <a
-                          href="https://example.com/certificate"
-                          className="text-[0.90rem] font-jakarta"
-                        >
-                          {data_certificate.path}
-                        </a>
-                        <img
-                          src={data_certificate.icon}
-                          alt=""
-                          className={`w-4 ${darkMode ? "invert" : ""}`}
-                        />
-                      </button>
-                      <button
-                        className="flex justify-center items-center  w-28 h-10 rounded-lg"
-                        onClick={() => handleNavigate("/certificate/dicoding")}
-                      >
-                        <a
-                          href=""
-                          className="text-xs font-jakarta text-[0.90rem]"
-                        >
-                          {data_certificate.secondText}
-                        </a>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+    {certificates.map((data_certificate) => (
+      <div
+        key={data_certificate.id}
+        className={`flex justify-center rounded-xl group overflow-hidden
+        hover:outline outline-1 transition duration-300 ease-in-out
+        ${
+          darkMode
+            ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
+            : "hover:outline-blue-500 bg-white text-black"
+        }`}
+      >
+        <div className="flex justify-center items-center p-4">
+          <div>
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src={data_certificate.image}
+                alt=""
+                className="w-full rounded-lg transform transition-transform 
+                duration-300 group-hover:scale-105"
+              />
             </div>
-          ) : (
+            <p className="font-jakarta text-[1.2rem] font-medium pt-2">
+              {data_certificate.text}
+            </p>
+            <span className="font-jakarta text-sm text-wrap max-w-xs block pt-1">
+              {data_certificate.desc}
+            </span>
+            {/* Tambahkan tombol/link jika diperlukan */}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+) : (
+  // Project section tetap sama
             <div className="flex flex-col md:flex-row gap-8 mt-10">
               {projects.map((data_project) => (
                 <div
