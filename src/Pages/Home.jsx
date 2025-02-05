@@ -49,7 +49,7 @@ function Home() {
       <div className="flex relative z-10">
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
-        <div className={`flex-1 p-8 transition-all duration-300 ${isOpen ? '' : '-ml-[17rem]'}`}>
+        <div className={`flex-1 p-8 transition-all duration-500 ease-in-out ${isOpen ? '' : '-ml-[17rem]'}`}>
           <div className={`flex justify-between text-left ${isOpen ? 'opacity-100' : 'opacity-100'}`}>
             <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} 
             ${isOpen ? "ml-10" : "ml-10"} font-poppins pt-2`}>

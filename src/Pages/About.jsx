@@ -108,7 +108,7 @@ function About() {
         <div className={`flex justify-between text-left ${isOpen ? 'opacity-100' : 'opacity-100'}`}>
             <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} 
             ${isOpen ? "ml-10" : "ml-10"} font-poppins pt-2`}>
-              HOME
+              ABOUT
             </h1>
             <div className={`text-right ${isOpen ? "" : "mr-10"}`}>
               <h2 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} font-poppins`}>
