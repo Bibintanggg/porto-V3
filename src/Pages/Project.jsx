@@ -81,9 +81,9 @@ function Project() {
 
   return (
     <div
-      className={`relative min-h-screen h-screen flex ${
+      className={`relative min-h-screen h-screen flex transition-all duration-500 ease-in-out ${
         darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
-      }`}
+      } ${isOpen ? "" : "-ml-[65%]"}`}
     >
       <div className="w-[250px] h-screen fixed top-0 left-0">
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
