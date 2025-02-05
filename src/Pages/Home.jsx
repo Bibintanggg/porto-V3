@@ -78,7 +78,7 @@ function Home() {
                   data-aos-duration="1000"
                 >
                   Hii, I'm Bintang Yudha!
-                  <img src={WavingHand} className="w-8 h-8" />
+                  <img src={WavingHand} className="w-8 h-8 transition-all origin-[70%_70%] animate-wave" />
                 </h1>
 
                 <p
