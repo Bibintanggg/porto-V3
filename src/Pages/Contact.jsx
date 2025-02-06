@@ -73,13 +73,13 @@ function Contact() {
 
   return (
     <div
-      className={`relative min-h-screen ${
+      className={`relative min-h-screen transition-all duration-500 ease-in-out ${
         darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
-      }`}
+      } ${isOpen ? "" : "-ml-[70%] flex flex-col"}`}
     >
       <div className="flex relative z-10">
         <div
-          className={`w-64 h-screen fixed top-0 left-0 ${
+          className={`w-1 h-screen fixed top-0 left-0 ${
             darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
           }`}
         >
@@ -124,22 +124,28 @@ function Contact() {
               <p
                 className={`text-center text-3xl font-jakarta font-bold mt-10 ${
                   darkMode ? "text-white" : "text-black"
-                }`}
+                } ${isOpen ? "" : "-ml-[24%] text-xl"}`}
               >
                 Contact Me
               </p>
               <span
-                className={`flex justify-center font-jakarta text-sm pt-1 ${
+                className={`flex justify-center font-jakarta pt-1 ${
                   darkMode ? "text-white" : ""
-                }`}
+                } ${isOpen ? "" : "-ml-[24%] text-sm"}`}
               >
                 Feel free to reach out to me anytime!
               </span>
             </div>
-            <div className={`flex mt-10 gap-10 items-center justify-center`}>
+            <div
+              className={`flex mt-10 gap-10 items-center justify-center ${
+                isOpen ? "" : "flex flex-col"
+              }`}
+            >
               <div
                 className={`w-[30rem] min-h-[30rem] isolate rounded-3xl bg-gradient-to-b 
-                from-black/20 to-black/30 shadow-lg `}
+                from-black/20 to-black/30 shadow-lg ${
+                  isOpen ? "" : "w-[22rem] -ml-[7rem] "
+                } `}
               >
                 <div className="p-10">
                   <div className="flex items-center justify-between">
