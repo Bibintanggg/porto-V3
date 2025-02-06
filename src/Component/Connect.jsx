@@ -45,7 +45,7 @@ const Connect = ({ title, darkMode, platforms }) => {
                   >
                     <img
                       src={platform.icon}
-                      className="w-6 h-6 invert"
+                      className={`w-6 h-6 ${darkMode ? "invert" : ""}`}
                       alt={platform.title}
                     />
                   </div>

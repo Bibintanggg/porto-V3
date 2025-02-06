@@ -87,7 +87,7 @@ function Contact() {
         </div>
 
         <div className="flex-1 bg-transparent p-8 ml-64">
-          <div className="flex justify-between text-left">
+          <div className={`flex justify-between text-left`}>
             <h1
               className={`text-base font-semibold ${
                 darkMode ? "text-white" : "text-gray-800"
@@ -95,7 +95,7 @@ function Contact() {
             >
               Contact
             </h1>
-            <div className="text-right">
+            <div className={`text-right ${isOpen ? "" : "mr-32"}`}>
               <h2
                 className={`text-base font-semibold ${
                   darkMode ? "text-white" : "text-gray-800"
