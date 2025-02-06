@@ -68,6 +68,9 @@ function Contact() {
     }
   };
 
+  const [isOpen, setIsOpen] = useState(true)
+
+
   return (
     <div
       className={`relative min-h-screen ${
@@ -80,7 +83,7 @@ function Contact() {
             darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
           }`}
         >
-          <Sidebar />
+          <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
 
         <div className="flex-1 bg-transparent p-8 ml-64">
