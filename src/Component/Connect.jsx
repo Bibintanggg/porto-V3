@@ -27,7 +27,7 @@ const Connect = ({ title, darkMode, platforms }) => {
 
 
           {isOpen && (
-            <div className="mt-6 flex flex-col gap-4 cursor-pointer">
+            <div className=" flex flex-col gap-4 cursor-pointer">
               {platforms.map((platform, index) => (
                 <div
                   key={index}

@@ -124,14 +124,14 @@ function Contact() {
               <p
                 className={`text-center text-3xl font-jakarta font-bold mt-10 ${
                   darkMode ? "text-white" : "text-black"
-                } ${isOpen ? "" : "-ml-[24%] text-xl"}`}
+                } ${isOpen ? "" : " text-xl"}`}
               >
                 Contact Me
               </p>
               <span
                 className={`flex justify-center font-jakarta pt-1 ${
                   darkMode ? "text-white" : ""
-                } ${isOpen ? "" : "-ml-[24%] text-sm"}`}
+                } ${isOpen ? "" : " text-sm"}`}
               >
                 Feel free to reach out to me anytime!
               </span>
@@ -144,7 +144,7 @@ function Contact() {
               <div
                 className={`w-[30rem] min-h-[30rem] isolate rounded-3xl bg-gradient-to-b 
                 from-black/20 to-black/30 shadow-lg ${
-                  isOpen ? "" : "w-[22rem] -ml-[7rem] "
+                  isOpen ? "" : "w-[20rem] "
                 } `}
               >
                 <div className="p-10">
@@ -229,7 +229,8 @@ function Contact() {
                 </div>
               </div>
 
-              <div className={`w-[30rem] h-[35rem] bg-white rounded-lg`}></div>
+              <div className={` h-[35rem] rounded-lg ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : ""}
+              ${isOpen ? "w-[30rem]" : "w-[20rem]"}`}></div>
             </div>
           </div>
         </div>
