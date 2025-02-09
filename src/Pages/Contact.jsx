@@ -171,49 +171,37 @@ function Contact() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </p>
 
-                  <form
-                    onSubmit={handleSubmit}
-                    className="font-poppins text-sm"
-                  >
+                  <form onSubmit={handleSubmit} className="font-poppins text-sm">
                     <Input
                       type="text"
                       name="username"
-                      value={formData.username}
-                      onChange={handleChange}
                       placeholder="Enter your username"
                       label="Username"
-                      error={errors.username}
                       darkMode={darkMode}
                       className="mt-4"
                     />
                     <Input
                       type="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
                       placeholder="Enter your email"
                       label="Email"
-                      error={errors.email}
                       darkMode={darkMode}
                       className="mt-1"
                     />
                     <Input
                       type="text"
-                      name="Message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="your message"
+                      name="message"
+                      placeholder="Your message"
                       label="Message"
                       darkMode={darkMode}
                       className="mt-2"
                     />
                     <button
                       type="submit"
-                      className={`w-full mt-6 py-2 px-4 rounded-md ${
-                        darkMode
+                      className={`w-full mt-6 py-2 px-4 rounded-md ${darkMode
                           ? "bg-blue-600 text-white hover:bg-blue-700"
                           : "bg-blue-500 text-white hover:bg-blue-600"
-                      } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                        } focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     >
                       Submit
                     </button>
@@ -229,7 +217,8 @@ function Contact() {
                 </div>
               </div>
 
-              <div className={` h-[35rem] rounded-lg ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : ""}
+              <div className={` w-[30rem] min-h-[53.5rem] isolate rounded-3xl bg-gradient-to-b 
+                from-black/20 to-black/30 shadow-lg  ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : "bg-gray-300"}
               ${isOpen ? "w-[30rem]" : "w-[20rem]"}`}></div>
             </div>
           </div>
