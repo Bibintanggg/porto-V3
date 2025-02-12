@@ -7,6 +7,7 @@ import FotoBintang from "../assets/Image/Image1.png";
 import ProjectIcon from "../assets/Icon/project.svg";
 import ShareIcon from "../assets/Icon/share.svg";
 import AOS from "aos";
+import Particles from '../Component/Particles.jsx';
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode.jsx";
@@ -47,8 +48,22 @@ function Home() {
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
       <div className="flex relative z-10">
-        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
+        <div style={{ width: '100%', height: '600px', position: 'absolute', zIndex: 'auto', }}>
+          <Particles
+            particleColors={['#0000', '#0000']}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+            cameraDistance={20}
+          />
+        </div>
+            <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+        
         <div className={`flex-1 p-8 transition-all duration-500 ease-in-out ${isOpen ? '' : '-ml-[17rem]'}`}>
           <div className={`flex justify-between text-left ${isOpen ? 'opacity-100' : 'opacity-100'}`}>
             <h1 className={`text-base font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} 
