@@ -29,6 +29,14 @@ const platforms = [
     link: "https://www.instagram.com/bintang.ydha_/",
   },
 ];
+
+const medSosial = [
+  { title: "Instagram", icon: InstagramIcon },
+  { title: "Tiktok", icon: InstagramIcon },
+  { title: "Github", icon: InstagramIcon },
+  { title: "Linkedin", icon: InstagramIcon },
+  { title: "YouTube", icon: InstagramIcon },
+]
 function Contact() {
   const { darkMode } = useDarkMode();
   const [formData, setFormData] = useState({
@@ -70,6 +78,7 @@ function Contact() {
 
   const [isOpen, setIsOpen] = useState(true)
 
+  
 
   return (
     <div
@@ -141,6 +150,26 @@ function Contact() {
                 isOpen ? "" : "flex flex-col"
               }`}
             >
+
+              <div className={` w-[30rem] min-h-[53.5rem] isolate rounded-3xl bg-gradient-to-b 
+                from-black/20 to-black/30 shadow-lg  ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : "bg-gray-300"}
+              ${isOpen ? "w-[30rem]" : "w-[20rem]"}`}>
+
+                <div className="flex justify-center">
+                  <div className="flex gap-10">
+                    <div>
+                    {medSosial.map((media, index) => (
+                      <div key={index} className="flex items-center gap-3 h-10">
+                        <img src={media.icon} className="w-5"/>
+                        <button className="font-poppins text-lg">{media.title}</button>
+                      </div>
+                    ))}
+                    </div>
+                    <hr className="w-0.5 bg-black h-60 rounded-full" />
+
+                  </div>
+                </div>
+              </div>
               <div
                 className={`w-[30rem] min-h-[30rem] isolate rounded-3xl bg-gradient-to-b 
                 from-black/20 to-black/30 shadow-lg ${
@@ -217,9 +246,6 @@ function Contact() {
                 </div>
               </div>
 
-              <div className={` w-[30rem] min-h-[53.5rem] isolate rounded-3xl bg-gradient-to-b 
-                from-black/20 to-black/30 shadow-lg  ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : "bg-gray-300"}
-              ${isOpen ? "w-[30rem]" : "w-[20rem]"}`}></div>
             </div>
           </div>
         </div>
