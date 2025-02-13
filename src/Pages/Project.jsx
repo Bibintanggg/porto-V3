@@ -195,14 +195,12 @@ function Project() {
             <span className="font-jakarta text-sm text-wrap max-w-xs block pt-1">
               {data_certificate.desc}
             </span>
-            {/* Tambahkan tombol/link jika diperlukan */}
           </div>
         </div>
       </div>
     ))}
   </div>
 ) : (
-  // Project section tetap sama
             <div className="flex flex-col md:flex-row gap-8 mt-10">
               {projects.map((data_project) => (
                 <div
