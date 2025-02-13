@@ -38,7 +38,6 @@ const medSosial = [
   { title: "Instagram", icon: InstagramIcon, image: InstagramImage },
   { title: "Tiktok", icon: InstagramIcon, image: TiktokImage },
   { title: "Github", icon: GithubIcon, image: GithubImage },
-  { title: "Linkedin", icon: LinkedinIcon },
   { title: "YouTube", icon: InstagramIcon, image: YoutubeImage },
 ]
 
@@ -83,7 +82,7 @@ function Contact() {
 
   const [isOpen, setIsOpen] = useState(true);
   const [positionActive, setPositionActive] = useState("instagram");
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedImage, setSelectedImage] = useState(InstagramImage)
 
   return (
     <div
