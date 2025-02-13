@@ -41,6 +41,7 @@ const medSosial = [
   { title: "Linkedin", icon: LinkedinIcon },
   { title: "YouTube", icon: InstagramIcon, image: YoutubeImage },
 ]
+
 function Contact() {
   const { darkMode } = useDarkMode();
   const [formData, setFormData] = useState({
@@ -81,20 +82,18 @@ function Contact() {
   };
 
   const [isOpen, setIsOpen] = useState(true);
-  const [positionActive, setPositionActive] = useState("");
+  const [positionActive, setPositionActive] = useState("instagram");
   const [selectedImage, setSelectedImage] = useState(null)
 
   return (
     <div
-      className={`relative min-h-screen transition-all duration-500 ease-in-out ${
-        darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
-      } ${isOpen ? "" : "-ml-[70%] flex flex-col"}`}
+      className={`relative min-h-screen transition-all duration-500 ease-in-out ${darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
+        } ${isOpen ? "" : "-ml-[70%] flex flex-col"}`}
     >
       <div className="flex relative z-10">
         <div
-          className={`w-1 h-screen fixed top-0 left-0 ${
-            darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
-          }`}
+          className={`w-1 h-screen fixed top-0 left-0 ${darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
+            }`}
         >
           <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
@@ -102,24 +101,21 @@ function Contact() {
         <div className="flex-1 bg-transparent p-8 ml-64">
           <div className={`flex justify-between text-left`}>
             <h1
-              className={`text-base font-semibold ${
-                darkMode ? "text-white" : "text-gray-800"
-              } font-poppins pt-2`}
+              className={`text-base font-semibold ${darkMode ? "text-white" : "text-gray-800"
+                } font-poppins pt-2`}
             >
               Contact
             </h1>
             <div className={`text-right ${isOpen ? "" : "mr-32"}`}>
               <h2
-                className={`text-base font-semibold ${
-                  darkMode ? "text-white" : "text-gray-800"
-                } font-poppins`}
+                className={`text-base font-semibold ${darkMode ? "text-white" : "text-gray-800"
+                  } font-poppins`}
               >
                 Hello, Bintang !
               </h2>
               <p
-                className={`-translate-y-2 ${
-                  darkMode ? "text-gray-300" : "text-gray-600"
-                }`}
+                className={`-translate-y-2 ${darkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
               >
                 Role &gt; Student
               </p>
@@ -127,96 +123,80 @@ function Contact() {
           </div>
 
           <div
-            className={`w-full h-0.5 ${
-              darkMode ? "bg-white" : "bg-black"
-            } mx-auto opacity-25`}
+            className={`w-full h-0.5 ${darkMode ? "bg-white" : "bg-black"
+              } mx-auto opacity-25`}
           ></div>
 
           <div>
             <div>
               <p
-                className={`text-center text-3xl font-jakarta font-bold mt-10 ${
-                  darkMode ? "text-white" : "text-black"
-                } ${isOpen ? "" : " text-xl"}`}
+                className={`text-center text-3xl font-jakarta font-bold mt-10 ${darkMode ? "text-white" : "text-black"
+                  } ${isOpen ? "" : " text-xl"}`}
               >
                 Contact Me
               </p>
               <span
-                className={`flex justify-center font-jakarta pt-1 ${
-                  darkMode ? "text-white" : ""
-                } ${isOpen ? "" : " text-sm"}`}
+                className={`flex justify-center font-jakarta pt-1 ${darkMode ? "text-white" : ""
+                  } ${isOpen ? "" : " text-sm"}`}
               >
                 Feel free to reach out to me anytime!
               </span>
             </div>
-            <div
-              className={`flex mt-10 gap-10 items-center justify-center ${
-                isOpen ? "" : "flex flex-col"
-              }`}
-            >
 
-              <div className="flex mt-10 gap-10 items-center justify-center">
-                <div
-                  className={`w-[30rem] min-h-[53.5rem] rounded-3xl shadow-lg ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : "bg-gray-300"
-                    }`}
-                >
-                  <div className="flex justify-center py-10">
-                    <div className="relative flex">
-                      <div className="flex flex-col gap-3">
-                        {medSosial.map((media, index) => (
-                          <div key={index} className="flex items-center gap-3 h-10">
-                            <img src={media.icon} className="w-5" alt={media.title} />
-                            <button
-                              onClick={() => {
-                                setPositionActive(media.title.toLowerCase());
-                                setSelectedImage(media.image);
-                              }}
-                              className={`font-poppins text-lg transition-all duration-300 ${positionActive === media.title.toLowerCase() ? "text-white" : "text-black"
-                                }`}
-                            >
-                              {media.title}
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-
-                      <hr className="w-0.5 bg-black h-60 rounded-full mx-4" />
-
-                      {selectedImage && (
-                        <img src={selectedImage} 
-                        className="object-cover w-56 h-96 rounded-lg"/>
-                      )}
+            <div className="flex justify-center gap-10 mt-10">
+              <div className={`w-[30rem] rounded-3xl ${darkMode ? "" : "bg-"}`}>
+                <div className="flex justify-center py-10">
+                  <div className="relative flex">
+                    <div className="flex flex-col gap-3">
+                      {medSosial.map((media, index) => (
+                        <div key={index} className="flex items-center gap-3 h-10">
+                          <img src={media.icon} className="w-5" alt={media.title} />
+                          <button
+                            onClick={() => {
+                              setPositionActive(media.title.toLowerCase());
+                              setSelectedImage(media.image);
+                            }}
+                            className={`font-poppins text-lg transition-all duration-300 ${positionActive === media.title.toLowerCase()
+                                ? "text-white"
+                                : "text-black"
+                              }`}
+                          >
+                            {media.title}
+                          </button>
+                        </div>
+                      ))}
                     </div>
+
+                    <hr className="w-0.5 bg-black h-60 rounded-full mx-4" />
+
+                    {selectedImage && (
+                      <img
+                        src={selectedImage}
+                        className="object-cover w-56 h-96 rounded-lg"
+                      />
+                    )}
                   </div>
                 </div>
-
               </div>
-              <div
-                className={`w-[30rem] min-h-[30rem] isolate rounded-3xl bg-gradient-to-b 
-                from-black/20 to-black/30 shadow-lg ${
-                  isOpen ? "" : "w-[20rem] "
-                } `}
-              >
+
+                <div className={`w-[30rem] rounded-3xl ${darkMode ? "" : "bg-"}`}>
                 <div className="p-10">
                   <div className="flex items-center justify-between">
                     <h1
-                      className={`font-poppins text-2xl font-bold 
-                        ${darkMode ? "text-white" : "text-black"}`}
+                      className={`font-poppins text-2xl font-bold ${darkMode ? "text-white" : "text-black"
+                        }`}
                     >
                       Get In Touch
                     </h1>
                     <img
                       src={ShareContactIcon}
-                      className={`w-8 
-                        ${darkMode ? "invert " : ""}`}
-                      alt="Share Contact"
+                      className={`w-8 ${darkMode ? "invert" : ""}`}
                     />
                   </div>
 
                   <p
-                    className={`font-poppins text-sm mt-2 
-                      ${darkMode ? "text-white" : "text-black"}
-                  `}
+                    className={`font-poppins text-sm mt-2 ${darkMode ? "text-white" : "text-black"
+                      }`}
                   >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </p>
@@ -257,16 +237,7 @@ function Contact() {
                     </button>
                   </form>
                 </div>
-                <div
-                  className={`w-60 h-1 rounded-full mx-auto ${
-                    darkMode ? "bg-white" : ""
-                  }`}
-                ></div>
-                <div>
-                  <Connect darkMode={darkMode} platforms={platforms} />
-                </div>
               </div>
-
             </div>
           </div>
         </div>
