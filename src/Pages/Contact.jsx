@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../Component/Sidebar";
 import ShareContactIcon from "../assets/Icon/shareContact.svg";
 import LinkedinIcon from "../assets/Icon/linkedin.svg";
@@ -76,9 +76,22 @@ function Contact() {
     }
   };
 
-  const [isOpen, setIsOpen] = useState(true)
-
+  const [isOpen, setIsOpen] = useState(true);
+  const [positionActive, setPositionActive] = useState("translate-y-0");
   
+  const activeMedsos = {
+    "instagram" : "-translate-y-0",
+    "tiktok": "-translate-y-10",
+    "github" : "-translate-y-2",
+    "linkedin": "-translate-y-11",
+    "youtube" : "-translate-y-3",
+  }
+
+  useEffect(() => {
+    const newPosition = activeMedsos[location.pathname] || "translate-y-0"
+    setPositionActive(newPosition)
+  }, [location.pathname])
+
 
   return (
     <div
@@ -161,7 +174,9 @@ function Contact() {
                     {medSosial.map((media, index) => (
                       <div key={index} className="flex items-center gap-3 h-10">
                         <img src={media.icon} className="w-5"/>
-                        <button className="font-poppins text-lg">{media.title}</button>
+                        <button 
+                        onClick={() => newPosition()}
+                        className="font-poppins text-lg">{media.title}</button>
                       </div>
                     ))}
                     </div>
