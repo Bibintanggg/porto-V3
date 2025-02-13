@@ -165,7 +165,7 @@ function Contact() {
             <div className="flex justify-center gap-10 mt-10">
               <div className={`w-[30rem] rounded-3xl ${darkMode ? "" : "bg-"}`}>
                 <div className="flex justify-center py-10">
-                  <div className="relative flex">
+                  <div className="relative flex gap-4">
                     <div className="flex flex-col gap-3">
                       {medSosial.map((media, index) => (
                         <div
