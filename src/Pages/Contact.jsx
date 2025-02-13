@@ -7,6 +7,10 @@ import InstagramIcon from "../assets/Icon/instagram.svg";
 import { useDarkMode } from "../Component/DarkMode";
 import Input from "../Component/Input";
 import Connect from "../Component/Connect";
+import InstagramImage from "../assets/Image/insta.jpg"
+import GithubImage from "../assets/Image/github.jpg"
+import TiktokImage from "../assets/Image/tiktok.jpg"
+import YoutubeImage from "../assets/Image/youtube.jpg"
 import { useNavigate } from "react-router-dom";
 
 const platforms = [
@@ -31,11 +35,11 @@ const platforms = [
 ];
 
 const medSosial = [
-  { title: "Instagram", icon: InstagramIcon },
-  { title: "Tiktok", icon: InstagramIcon },
-  { title: "Github", icon: InstagramIcon },
-  { title: "Linkedin", icon: InstagramIcon },
-  { title: "YouTube", icon: InstagramIcon },
+  { title: "Instagram", icon: InstagramIcon, image: InstagramImage },
+  { title: "Tiktok", icon: InstagramIcon, image: TiktokImage },
+  { title: "Github", icon: GithubIcon, image: GithubImage },
+  { title: "Linkedin", icon: LinkedinIcon },
+  { title: "YouTube", icon: InstagramIcon, image: YoutubeImage },
 ]
 function Contact() {
   const { darkMode } = useDarkMode();
@@ -77,21 +81,8 @@ function Contact() {
   };
 
   const [isOpen, setIsOpen] = useState(true);
-  const [positionActive, setPositionActive] = useState("translate-y-0");
-  
-  const activeMedsos = {
-    "instagram" : "-translate-y-0",
-    "tiktok": "-translate-y-10",
-    "github" : "-translate-y-2",
-    "linkedin": "-translate-y-11",
-    "youtube" : "-translate-y-3",
-  }
-
-  useEffect(() => {
-    const newPosition = activeMedsos[location.pathname] || "translate-y-0"
-    setPositionActive(newPosition)
-  }, [location.pathname])
-
+  const [positionActive, setPositionActive] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null)
 
   return (
     <div
@@ -164,26 +155,41 @@ function Contact() {
               }`}
             >
 
-              <div className={` w-[30rem] min-h-[53.5rem] isolate rounded-3xl bg-gradient-to-b 
-                from-black/20 to-black/30 shadow-lg  ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : "bg-gray-300"}
-              ${isOpen ? "w-[30rem]" : "w-[20rem]"}`}>
-
-                <div className="flex justify-center">
-                  <div className="flex gap-10">
-                    <div>
-                    {medSosial.map((media, index) => (
-                      <div key={index} className="flex items-center gap-3 h-10">
-                        <img src={media.icon} className="w-5"/>
-                        <button 
-                        onClick={() => newPosition()}
-                        className="font-poppins text-lg">{media.title}</button>
+              <div className="flex mt-10 gap-10 items-center justify-center">
+                <div
+                  className={`w-[30rem] min-h-[53.5rem] rounded-3xl shadow-lg ${darkMode ? "bg-gradient-to-b from-black/20 to-black/30" : "bg-gray-300"
+                    }`}
+                >
+                  <div className="flex justify-center py-10">
+                    <div className="relative flex">
+                      <div className="flex flex-col gap-3">
+                        {medSosial.map((media, index) => (
+                          <div key={index} className="flex items-center gap-3 h-10">
+                            <img src={media.icon} className="w-5" alt={media.title} />
+                            <button
+                              onClick={() => {
+                                setPositionActive(media.title.toLowerCase());
+                                setSelectedImage(media.image);
+                              }}
+                              className={`font-poppins text-lg transition-all duration-300 ${positionActive === media.title.toLowerCase() ? "text-white" : "text-black"
+                                }`}
+                            >
+                              {media.title}
+                            </button>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                    </div>
-                    <hr className="w-0.5 bg-black h-60 rounded-full" />
 
+                      <hr className="w-0.5 bg-black h-60 rounded-full mx-4" />
+
+                      {selectedImage && (
+                        <img src={selectedImage} 
+                        className="object-cover w-56 h-96 rounded-lg"/>
+                      )}
+                    </div>
                   </div>
                 </div>
+
               </div>
               <div
                 className={`w-[30rem] min-h-[30rem] isolate rounded-3xl bg-gradient-to-b 
