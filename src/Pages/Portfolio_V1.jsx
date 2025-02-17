@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import StarIcon from "../assets/Icon/star.svg";
 import Sidebar from "../Component/Sidebar";
-import PortoImage from "../assets/Image/portov1.png"
+import Porto from "../assets/Image/portov1.png"
 import CodeIcon from "../assets/Icon/code.svg";
 import GithubIcon from "../assets/TechIcon/GitHub.svg";
 import ShareIcon from "../assets/Icon/share.svg";
@@ -36,7 +36,7 @@ const portfolioInfo = {
   id: 2,
   title: "Portfolio V1",
   desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp lorem ipsum waokaoda oakwoad oakwad oawkda aokdad aokd oakdad aokdad aokdwa",
-  image: PortoImage,
+  image: Porto,
 
   title2_tech: "Technologies Used",
   image2_tech: CodeIcon,

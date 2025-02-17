@@ -254,7 +254,7 @@ function Project() {
                           onClick={() =>
                             handleNavigate(
                               `/project/${
-                                data_project.id === 3
+                                data_project.id === 2
                                   ? "portfolio-v1"
                                   : "sleepwell"
                               }`

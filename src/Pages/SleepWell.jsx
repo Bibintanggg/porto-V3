@@ -33,26 +33,28 @@ const valueProject = [
 ]
 
 const sleepWellProject = {
-        id: 1,
-        title: "Website Kesehatan Tidur",
-        desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp lorem ipsum waokaoda oakwoad oakwad oawkda aokdad aokd oakdad aokdad aokdwa",
-        image: SleepWellImage,
+  id: 1,
+  title: "Website Kesehatan Tidur",
+  desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp lorem ipsum waokaoda oakwoad oakwad oawkda aokdad aokd oakdad aokdad aokdwa",
+  image: SleepWellImage,
 
-        title2_tech: "Technologies Used",
-        image2_tech: CodeIcon,
+  title2_tech: "Technologies Used",
+  image2_tech: CodeIcon,
 
-        tech_used: ["TailwindCSS", "ReactJS", "CSS", "DataAOS", "Vite", "ChartJS"],
-        tech_icon: [TailwindIcon, ReactIcon, CSS3Icon, ChartJSIcon, ViteIcon],
+  tech_used: ["TailwindCSS", "ReactJS", "CSS", "DataAOS", "Vite", "ChartJS"],
+  tech_icon: [TailwindIcon, ReactIcon, CSS3Icon, ChartJSIcon, ViteIcon],
 
-        total_tech: 5,
-        tech_text: "Total Teknologi",
+  total_tech: 5,
+  tech_text: "Total Teknologi",
 
-        feature_tech: "Fitur Utama",
-        total_feature: 5,
+  feature_tech: "Fitur Utama",
+  total_feature: 5,
 
-        demo_text: ["Live Demo", "Github"],
-        demo_icon: [ShareIcon, GithubIcon],
-    };
+  demo_text: ["Live Demo", "Github"],
+  demo_icon: [ShareIcon, GithubIcon],
+  path: "https://sleepwell-calypso.vercel.app/",
+  gitPath: "https://github.com/mybezen/sleepWell",
+};
 
 
 
@@ -149,7 +151,16 @@ function SleepWell() {
 
                                 <div className="mt-6 flex gap-5">
                                     {sleepWellProject.demo_text.map((text, index) => (
-                                        <button key={index} className={`flex items-center gap-2 mb-2 w-[8.8rem] h-14 rounded-lg justify-center
+                                        <button 
+                                        onClick={() => {
+                                            if(text === 'Live Demo') {
+                                                window.open(sleepWellProject.path, '_blank')
+                                            } else if (text === "Github") {
+                                                window.open(sleepWellProject.gitPath, '_blank')
+                                            }
+                                        }}
+                                        key={index} 
+                                        className={`flex items-center gap-2 mb-2 w-[8.8rem] h-14 rounded-lg justify-center
                                         ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'text-black bg-white'}`}>
                                             <img src={sleepWellProject.demo_icon[index]} alt={text} className={`w-6 h-6
                                                 ${darkMode ? 'invert brightness-75' : ''}`} />
