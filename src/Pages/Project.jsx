@@ -31,6 +31,16 @@ function Project() {
       icon: ShareIcon,
       secondText: "DETAILS",
     },
+    {
+      id: 3,
+      text: "PORTFOLIO V1",
+      desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
+      image: Porto_V1,
+      demo: "LIVE DEMO",
+      path: "https://portofolio-bin.vercel.app/",
+      icon: ShareIcon,
+      secondText: "DETAILS",
+    },
   ];
 
   const certificates = [
@@ -171,7 +181,7 @@ function Project() {
           </div>
 
           {toggleButton ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
               {certificates.map((data_certificate) => (
                 <div
                   key={data_certificate.id}
