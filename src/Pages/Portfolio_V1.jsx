@@ -52,6 +52,8 @@ const portfolioInfo = {
 
   demo_text: ["Live Demo", "Github"],
   demo_icon: [ShareIcon, GithubIcon],
+  path: "https://portofolio-bin.vercel.app/",
+  gitPath: "https://github.com/Bibintanggg/porto_V1",
 };
 
 function Portfolio_V1() {
@@ -139,6 +141,13 @@ function Portfolio_V1() {
                                 <div className="mt-6 flex gap-5">
                                     {portfolioInfo.demo_text.map((text, index) => (
                                         <button
+                                            onClick={() => {
+                                                if(text === "Live Demo") {
+                                                    window.open(portfolioInfo.path, '_blank')
+                                                } else if (text === "Github") {
+                                                    window.open(portfolioInfo.gitPath, "_blank")
+                                                }
+                                            }}
                                             key={index}
                                             className={`flex items-center gap-2 mb-2 w-[8.8rem] h-14 rounded-lg justify-center ${darkMode ? "bg-gradient-to-r from-black/50 to-black/30" : "text-black bg-white"}`}
                                         >
