@@ -7,11 +7,9 @@ import GithubIcon from "../assets/TechIcon/GitHub.svg";
 import ShareIcon from "../assets/Icon/share.svg";
 import { useDarkMode } from "../Component/DarkMode";
 
+import HTMLIcon from "../assets/TechIcon/HTML5.svg"
+import JavaScriptIcon from "../assets/TechIcon/JavaScript.svg"
 import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
-import ReactIcon from "../assets/TechIcon/React.svg";
-import CSS3Icon from "../assets/TechIcon/CSS3.svg";
-import ChartJSIcon from "../assets/TechIcon/chartjs.svg";
-import ViteIcon from "../assets/TechIcon/vitejs.svg";
 
 const valueProject = [
     {
@@ -41,14 +39,14 @@ const portfolioInfo = {
   title2_tech: "Technologies Used",
   image2_tech: CodeIcon,
 
-  tech_used: ["TailwindCSS", "ReactJS", "CSS", "DataAOS", "Vite", "ChartJS"],
-  tech_icon: [TailwindIcon, ReactIcon, CSS3Icon, ChartJSIcon, ViteIcon],
+  tech_used: ["TailwindCSS", "JavaScript", "HTML", "DataAOS",],
+  tech_icon: [TailwindIcon, JavaScriptIcon, HTMLIcon, ],
 
-  total_tech: 5,
+  total_tech: 3,
   tech_text: "Total Teknologi",
 
   feature_tech: "Fitur Utama",
-  total_feature: 5,
+  total_feature: 0,
 
   demo_text: ["Live Demo", "Github"],
   demo_icon: [ShareIcon, GithubIcon],

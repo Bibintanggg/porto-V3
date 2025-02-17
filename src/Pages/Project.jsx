@@ -4,6 +4,7 @@ import SleepWell from "../assets/Image/sleepwell.png";
 import SagasitasIMG from "../assets/Image/saga.jpg";
 import PeintagonsIMG from "../assets/Image/peintagons.jpg"
 import Porto_V1 from "../assets/Image/portov1.png"
+import JejakPemudaIMG from "../assets/Image/jejakpemuda.png"
 import ShareIcon from "../assets/Icon/share.svg";
 import { isCookie, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
@@ -33,9 +34,9 @@ function Project() {
     },
     {
       id: 3,
-      text: "PORTFOLIO V1",
+      text: "JEJAK PEMUDA",
       desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
-      image: Porto_V1,
+      image: JejakPemudaIMG,
       demo: "LIVE DEMO",
       path: "https://portofolio-bin.vercel.app/",
       icon: ShareIcon,
@@ -186,12 +187,12 @@ function Project() {
                 <div
                   key={data_certificate.id}
                   className={`flex justify-center rounded-xl group overflow-hidden
-        hover:outline outline-1 transition duration-300 ease-in-out
-        ${
-          darkMode
-            ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
-            : "hover:outline-blue-500 bg-white text-black"
-        }`}
+                    hover:outline outline-1 transition duration-300 ease-in-out
+                    ${
+                      darkMode
+                        ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
+                        : "hover:outline-blue-500 bg-white text-black"
+                    }`}
                 >
                   <div className="flex justify-center items-center p-4">
                     <div>
@@ -200,7 +201,7 @@ function Project() {
                           src={data_certificate.image}
                           alt=""
                           className="w-full rounded-lg transform transition-transform 
-                duration-300 group-hover:scale-105"
+                          duration-300 group-hover:scale-105"
                         />
                       </div>
                       <p className="font-jakarta text-[1.2rem] font-medium pt-2">
@@ -215,11 +216,11 @@ function Project() {
               ))}
             </div>
           ) : (
-            <div className="flex flex-col md:flex-row gap-8 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
               {projects.map((data_project) => (
                 <div
                   key={data_project.id}
-                  className={`w-full md:w-1/2 flex justify-center rounded-xl group overflow-hidden
+                  className={`flex justify-center rounded-xl group overflow-hidden
                     hover:outline outline-1 transition duration-300 ease-in-out
                     ${
                       darkMode
@@ -233,8 +234,8 @@ function Project() {
                         <img
                           src={data_project.image}
                           alt=""
-                          className={`w-full rounded-lg transform transition-transform 
-                          duration-300 group-hover:scale-105`}
+                          className="w-full rounded-lg transform transition-transform 
+                          duration-300 group-hover:scale-105"
                         />
                       </div>
                       <p className="font-jakarta text-[1.2rem] font-medium pt-2">
