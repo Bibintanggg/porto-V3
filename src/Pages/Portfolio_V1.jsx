@@ -1,12 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import StarIcon from "../assets/Icon/star.svg";
 import Sidebar from "../Component/Sidebar";
+import PortoImage from "../assets/Image/portov1.png"
+import CodeIcon from "../assets/Icon/code.svg";
+import GithubIcon from "../assets/TechIcon/GitHub.svg";
+import ShareIcon from "../assets/Icon/share.svg";
 import { useDarkMode } from "../Component/DarkMode";
+
+import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
+import ReactIcon from "../assets/TechIcon/React.svg";
+import CSS3Icon from "../assets/TechIcon/CSS3.svg";
+import ChartJSIcon from "../assets/TechIcon/chartjs.svg";
+import ViteIcon from "../assets/TechIcon/vitejs.svg";
 
 const valueProject = [
     {
         id: 1,
-        title: "Musik Relaksasi",
+        title: "Musik Relaksasiiii",
     },
     {
         id: 2,
@@ -22,7 +32,29 @@ const valueProject = [
     },
 ];
 
-function Portfolio_V1({ portfolioInfo }) {
+const portfolioInfo = {
+  id: 2,
+  title: "Portfolio V1",
+  desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp lorem ipsum waokaoda oakwoad oakwad oawkda aokdad aokd oakdad aokdad aokdwa",
+  image: PortoImage,
+
+  title2_tech: "Technologies Used",
+  image2_tech: CodeIcon,
+
+  tech_used: ["TailwindCSS", "ReactJS", "CSS", "DataAOS", "Vite", "ChartJS"],
+  tech_icon: [TailwindIcon, ReactIcon, CSS3Icon, ChartJSIcon, ViteIcon],
+
+  total_tech: 5,
+  tech_text: "Total Teknologi",
+
+  feature_tech: "Fitur Utama",
+  total_feature: 5,
+
+  demo_text: ["Live Demo", "Github"],
+  demo_icon: [ShareIcon, GithubIcon],
+};
+
+function Portfolio_V1() {
     const { darkMode } = useDarkMode();
     const navigate = useNavigate();
     const handleNavigate = (path) => {
@@ -60,7 +92,7 @@ function Portfolio_V1({ portfolioInfo }) {
 
                         <div className="items-center flex font-jakarta gap-2">
                             <p className={`text-opacity-40 text-black ${darkMode ? "text-white" : "text-black"}`}>Project</p>
-                            <span>&gt; {portfolioInfo.title}</span> {/* Dinamis */}
+                            <span>&gt; {portfolioInfo.title}</span> 
                         </div>
                     </div>
 

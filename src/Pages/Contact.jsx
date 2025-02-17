@@ -178,7 +178,8 @@ function Contact() {
                             data-aos-delay={index * 100}
                             data-aos-duration="800"
                             data-aos-easing="ease-out-cubic"
-                            className="w-5 group-hover:-translate-x-1 transition-all duration-300"
+                            className={`w-5 group-hover:-translate-x-1 transition-all duration-300 
+                            ${darkMode ? "invert" : ""}`}
                           />
                           <button
                             onClick={() => {
@@ -189,7 +190,7 @@ function Contact() {
                               positionActive === media.title.toLowerCase()
                                 ? "text-white"
                                 : "text-black"
-                            }`}
+                            } ${darkMode ? "text-white" : ""}`}
                           >
                             {media.title}
                           </button>
@@ -200,7 +201,10 @@ function Contact() {
                     <hr className="w-0.5 bg-black h-60 rounded-full mx-4" />
 
                     {selectedImage && (
-                      <div className="overflow-hidden rounded-lg cursor-pointer group">
+                      <div
+                        className={`overflow-hidden rounded-lg cursor-pointer group
+                      `}
+                      >
                         <img
                           data-aos="fade-zoom-in"
                           data-aos-easing="ease-in-out"

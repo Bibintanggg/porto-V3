@@ -86,10 +86,14 @@ function Project() {
       } ${isOpen ? "" : "-ml-[65%]"}`}
     >
       <div className="w-[250px] h-screen fixed top-0 left-0">
-        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
-      <div className={`ml-[250px] w-full overflow-y-auto transition-all duration-300 ${isOpen ? "" : "ml-0"}`}>
+      <div
+        className={`ml-[250px] w-full overflow-y-auto transition-all duration-300 ${
+          isOpen ? "" : "ml-0"
+        }`}
+      >
         <div className="bg-transparent p-8">
           <div className="flex justify-between text-left">
             <h1
@@ -167,40 +171,40 @@ function Project() {
           </div>
 
           {toggleButton ? (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-    {certificates.map((data_certificate) => (
-      <div
-        key={data_certificate.id}
-        className={`flex justify-center rounded-xl group overflow-hidden
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+              {certificates.map((data_certificate) => (
+                <div
+                  key={data_certificate.id}
+                  className={`flex justify-center rounded-xl group overflow-hidden
         hover:outline outline-1 transition duration-300 ease-in-out
         ${
           darkMode
             ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
             : "hover:outline-blue-500 bg-white text-black"
         }`}
-      >
-        <div className="flex justify-center items-center p-4">
-          <div>
-            <div className="overflow-hidden rounded-lg">
-              <img
-                src={data_certificate.image}
-                alt=""
-                className="w-full rounded-lg transform transition-transform 
+                >
+                  <div className="flex justify-center items-center p-4">
+                    <div>
+                      <div className="overflow-hidden rounded-lg">
+                        <img
+                          src={data_certificate.image}
+                          alt=""
+                          className="w-full rounded-lg transform transition-transform 
                 duration-300 group-hover:scale-105"
-              />
+                        />
+                      </div>
+                      <p className="font-jakarta text-[1.2rem] font-medium pt-2">
+                        {data_certificate.text}
+                      </p>
+                      <span className="font-jakarta text-sm text-wrap max-w-xs block pt-1">
+                        {data_certificate.desc}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <p className="font-jakarta text-[1.2rem] font-medium pt-2">
-              {data_certificate.text}
-            </p>
-            <span className="font-jakarta text-sm text-wrap max-w-xs block pt-1">
-              {data_certificate.desc}
-            </span>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
-) : (
+          ) : (
             <div className="flex flex-col md:flex-row gap-8 mt-10">
               {projects.map((data_project) => (
                 <div
@@ -249,7 +253,11 @@ function Project() {
                           } w-28 h-10 rounded-lg`}
                           onClick={() =>
                             handleNavigate(
-                              `/project/${data_project.id === 3 ? "sleepwell" : "portfolio-v1"}`
+                              `/project/${
+                                data_project.id === 3
+                                  ? "portfolio-v1"
+                                  : "sleepwell"
+                              }`
                             )
                           }
                         >
