@@ -20,7 +20,9 @@ function Preload({ onLoaded }) {
         return () => clearInterval(interval);
     }, [onLoaded]);
     return (
-        <Terminal>
+        <div className="fixed inset-0 flex items-center justify-center">
+
+        <Terminal className="p-4 w-fit max-w-md ">
       <TypingAnimation>&gt; Initializing Portfolio...</TypingAnimation>
  
       <AnimatedSpan delay={1500} className="text-green-500">
@@ -44,26 +46,14 @@ function Preload({ onLoaded }) {
       </AnimatedSpan>
  
       <AnimatedSpan delay={4000} className="text-green-500">
-        <span>✔ Checking registry.</span>
-      </AnimatedSpan>
- 
-      <AnimatedSpan delay={4500} className="text-green-500">
         <span>✔ Updating tailwind.config.ts</span>
       </AnimatedSpan>
  
-      <AnimatedSpan delay={5000} className="text-green-500">
-        <span>✔ Updating app/globals.css</span>
-      </AnimatedSpan>
- 
-      <AnimatedSpan delay={5500} className="text-green-500">
-        <span>✔ Installing dependencies.</span>
-      </AnimatedSpan>
-
- 
-      <TypingAnimation delay={6500} className="text-muted-foreground">
+      <TypingAnimation delay={4500} className="text-muted-foreground">
       Success! Portfolio is ready to explore.
       </TypingAnimation>
     </Terminal>
+        </div>
     )
 }
 
