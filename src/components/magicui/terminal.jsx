@@ -79,11 +79,12 @@ export const Terminal = ({
   className
 }) => {
   return (
-    (<div
+    <div
       className={cn(
-        "z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border border-border bg-background",
+        "z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border border-border bg-white bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-10",
         className
-      )}>
+      )}
+    >
       <div className="flex flex-col gap-y-2 border-b border-border p-4">
         <div className="flex flex-row gap-x-2">
           <div className="h-2 w-2 rounded-full bg-red-500"></div>
@@ -94,6 +95,6 @@ export const Terminal = ({
       <pre className="p-4">
         <code className="grid gap-y-1 overflow-auto">{children}</code>
       </pre>
-    </div>)
+    </div>
   );
 };
