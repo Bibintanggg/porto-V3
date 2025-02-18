@@ -28,7 +28,7 @@ const SpotlightCard = ({
   };
 
   const handleMouseEnter = () => {
-    setOpacity(0.6);
+    setOpacity(0.65);
   };
 
   const handleMouseLeave = () => {
