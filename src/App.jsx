@@ -7,11 +7,27 @@ import SleepWell from "./Pages/SleepWell";
 import { DarkModeProvider } from "./Component/DarkMode"; // Import DarkModeProvider
 import Experience from "./Pages/Experience";
 import Portfolio_V1 from "./Pages/Portfolio_V1";
+import { useEffect, useState } from "react";
+import Preload from "./Component/Preload";
+
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const timer =  setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [])
   return (
-    <DarkModeProvider> {/* Wrap everything with DarkModeProvider */}
-      <BrowserRouter>
+    <DarkModeProvider>
+      {loading ? (
+        <Preload/>
+      ) : (
+        
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -22,6 +38,7 @@ function App() {
           <Route path="/about/experience" element={<Experience />} />
         </Routes>
       </BrowserRouter>
+      )}
     </DarkModeProvider>
   );
 }

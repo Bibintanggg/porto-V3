@@ -13,6 +13,7 @@ import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode.jsx";
 import { Meteors } from "../components/magicui/meteors.jsx";
+import Preload from "../Component/Preload.jsx";
 
 const hire = [
   {
@@ -174,6 +175,7 @@ function Home() {
             <div className="mx-auto pt-20 rounded-md">
             <IconCloud images={images}/>
             </div>
+            
           </div>
         </div>
       </div>
