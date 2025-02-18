@@ -12,6 +12,7 @@ import { IconCloud } from "../components/magicui/icon-cloud.jsx";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode.jsx";
+import { Meteors } from "../components/magicui/meteors.jsx";
 
 const hire = [
   {
@@ -42,6 +43,9 @@ const slugs = [
   "vercel",
   "git",
   "laravel",
+  "tailwindcss",
+  "materialui",
+  'bootstrap',
   "github",
   "visualstudiocode",
   "figma",
@@ -67,8 +71,8 @@ function Home() {
 
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
-      <div className="flex relative z-10">
-        <div style={{ width: '100%', height: '600px', position: 'absolute', zIndex: 'auto', }}>
+      <div className="flex relative z-10 min-h-screen overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
           {/* <Particles
             particleColors={['#0000', '#0000']}
             particleCount={200}
@@ -80,6 +84,7 @@ function Home() {
             disableRotation={false}
             cameraDistance={20}
           /> */}
+          <Meteors number={30}/>
         </div>
             <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         
@@ -150,7 +155,7 @@ function Home() {
                   <a href="" data-aos="fade-up" data-aos-duration="2500">
                     <img
                       src={InstagramIcon}
-                      className={`w-6 animate-bounce duration-100 ease-in-out hover:opacity-20 
+                      className={`w-6 animate-bounce ease-in-out hover:opacity-20 
                       transition hover:duration-100 ${darkMode ? "invert brightness-200" : ''}`}
                     />
                   </a>
@@ -158,7 +163,7 @@ function Home() {
                   <a href="" data-aos="fade-up" data-aos-duration="3000">
                     <img
                       src={Linkedinicon}
-                      className={`w-6 animate-bounce duration-100 ease-in-out hover:opacity-20 
+                      className={`w-6 animate-bounce  ease-in-out hover:opacity-20 
                       transition hover:duration-100 ${darkMode ? "invert brightness-200" : ''}`}
                     />
                   </a>

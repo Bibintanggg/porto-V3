@@ -27,10 +27,24 @@ export default {
   				'60%, 100%': {
   					transform: 'rotate(0deg)'
   				}
+  			},
+  			meteor: {
+  				'0%': {
+  					transform: 'rotate(var(--angle)) translateX(0)',
+  					opacity: '1'
+  				},
+  				'70%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'rotate(var(--angle)) translateX(-500px)',
+  					opacity: '0'
+  				}
   			}
   		},
   		animation: {
-  			wave: 'wave 2.5s ease-in-out infinite'
+  			wave: 'wave 2.5s ease-in-out infinite',
+  			meteor: 'meteor 5s linear infinite'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
