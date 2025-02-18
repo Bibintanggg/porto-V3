@@ -8,6 +8,7 @@ import ProjectIcon from "../assets/Icon/project.svg";
 import ShareIcon from "../assets/Icon/share.svg";
 import AOS from "aos";
 import Particles from '../Component/Particles.jsx';
+import { IconCloud } from "../components/magicui/icon-cloud.jsx";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode.jsx";
@@ -31,6 +32,25 @@ const hire = [
   },
 ];
 
+const slugs = [
+  "javascript",
+  "dart",
+  "react",
+  "html5",
+  "css3",
+  "firebase",
+  "vercel",
+  "git",
+  "laravel",
+  "github",
+  "visualstudiocode",
+  "figma",
+];
+
+const images = slugs.map(
+  (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`,
+);
+
 function Home() {
   const { darkMode } = useDarkMode();
   const [isOpen, setIsOpen] = useState(true);
@@ -48,9 +68,8 @@ function Home() {
   return (
     <div className={`relative min-h-screen ${darkMode ? 'bg-[#131523]' : 'bg-[#f2f2fc]'}`}>
       <div className="flex relative z-10">
-
         <div style={{ width: '100%', height: '600px', position: 'absolute', zIndex: 'auto', }}>
-          <Particles
+          {/* <Particles
             particleColors={['#0000', '#0000']}
             particleCount={200}
             particleSpread={10}
@@ -60,7 +79,7 @@ function Home() {
             alphaParticles={false}
             disableRotation={false}
             cameraDistance={20}
-          />
+          /> */}
         </div>
             <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         
@@ -148,7 +167,7 @@ function Home() {
             </div>
 
             <div className="mx-auto pt-20 rounded-md">
-              <img src={FotoBintang} className="w-72 h-72" />
+            <IconCloud images={images}/>
             </div>
           </div>
         </div>
