@@ -33,7 +33,7 @@ const valueProject = [
 const portfolioInfo = {
   id: 2,
   title: "Portfolio V1",
-  desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp lorem ipsum waokaoda oakwoad oakwad oawkda aokdad aokd oakdad aokdad aokdwa",
+  desc: "Proyek pertama saya dalam dunia programming. Website ini saya buat untuk mengasah keterampilan dasar dalam pengembangan web dan memahami proses pembuatan sebuah aplikasi dari nol.",
   image: Porto,
 
   title2_tech: "Technologies Used",

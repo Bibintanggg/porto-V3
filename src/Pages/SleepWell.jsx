@@ -35,7 +35,7 @@ const valueProject = [
 const sleepWellProject = {
   id: 1,
   title: "Website Kesehatan Tidur",
-  desc: "Web ini dirancang untuk membuat para pengidap insomnia atau gangguan tidur dan memahami pentingnya tidur yang cukup dan berkualitas, project ini dibuat atas kebutuhan untuk bootcamp lorem ipsum waokaoda oakwoad oakwad oawkda aokdad aokd oakdad aokdad aokdwa",
+  desc: "Sebuah platform edukasi yang bertujuan meningkatkan kesadaran akan pentingnya tidur yang sehat, khususnya bagi pengidap insomnia dan gangguan tidur. Dibuat sebagai proyek dalam bootcamp untuk eksplorasi pengembangan web.",
   image: SleepWellImage,
 
   title2_tech: "Technologies Used",
