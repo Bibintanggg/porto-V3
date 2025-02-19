@@ -9,6 +9,7 @@ import Experience from "./Pages/Experience";
 import Portfolio_V1 from "./Pages/Portfolio_V1";
 import { useEffect, useState } from "react";
 import Preload from "./Component/Preload";
+import JejakPemuda from "./Pages/JejakPemuda";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/project/sleepwell" element={<SleepWell />} />
           <Route path="/project/portfolio-v1" element={<Portfolio_V1 />} />
+          <Route path="/project/jejakpemuda" element={<JejakPemuda />} />
           <Route path="/about/experience" element={<Experience />} />
         </Routes>
       </BrowserRouter>

@@ -275,13 +275,19 @@ function Project() {
                           } w-28 h-10 rounded-lg`}
                           onClick={() =>
                             handleNavigate(
-                              `/project/${
-                                data_project.id === 2
-                                  ? "portfolio-v1"
-                                  : "sleepwell"
+                              `/project/${data_project.id === 2
+                                ? "portfolio-v1"
+                                : data_project.id === 1
+                                  ? "sleepwell"
+                                  : data_project.id === 3
+                                    ? "jejakpemuda"
+                                    : data_project.id === 4
+                                      ? "mounttrack"
+                                      : "" 
                               }`
                             )
                           }
+
                         >
                           <span className="text-xs font-jakarta text-[0.90rem]">
                             {data_project.secondText}
