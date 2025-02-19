@@ -5,6 +5,7 @@ import SagasitasIMG from "../assets/Image/saga.jpg";
 import PeintagonsIMG from "../assets/Image/peintagons.jpg"
 import Porto_V1 from "../assets/Image/portov1.png"
 import JejakPemudaIMG from "../assets/Image/jejakpemuda.png"
+import MoneyTrackIMG from "../assets/Image/moneytrack.png"
 import ShareIcon from "../assets/Icon/share.svg";
 import { isCookie, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
@@ -37,6 +38,16 @@ function Project() {
       text: "JEJAK PEMUDA",
       desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
       image: JejakPemudaIMG,
+      demo: "LIVE DEMO",
+      path: "https://portofolio-bin.vercel.app/",
+      icon: ShareIcon,
+      secondText: "DETAILS",
+    },
+    {
+      id: 4,
+      text: "MONEY TRACK",
+      desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
+      image: MoneyTrackIMG,
       demo: "LIVE DEMO",
       path: "https://portofolio-bin.vercel.app/",
       icon: ShareIcon,
