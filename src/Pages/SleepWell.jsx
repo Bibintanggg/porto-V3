@@ -7,8 +7,11 @@ import GithubIcon from "../assets/TechIcon/GitHub.svg";
 import ShareIcon from "../assets/Icon/share.svg";
 import { useDarkMode } from "../Component/DarkMode";
 
+import BlenderIcon from "../assets/Icon/Blender.svg"
 import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
 import ReactIcon from "../assets/TechIcon/React.svg";
+import FirebaseIcon from "../assets/TechIcon/Firebase.svg"
+import ThreeJsIcon from "../assets/TechIcon/Three.js.svg"
 import CSS3Icon from "../assets/TechIcon/CSS3.svg";
 import ChartJSIcon from "../assets/TechIcon/chartjs.svg";
 import ViteIcon from "../assets/TechIcon/vitejs.svg";
@@ -41,14 +44,14 @@ const sleepWellProject = {
   title2_tech: "Technologies Used",
   image2_tech: CodeIcon,
 
-  tech_used: ["TailwindCSS", "ReactJS", "CSS", "DataAOS", "Vite", "ChartJS"],
-  tech_icon: [TailwindIcon, ReactIcon, CSS3Icon, ChartJSIcon, ViteIcon],
+  tech_used: ["TailwindCSS", "ReactJS", "CSS", "DataAOS", "Vite", "Blender", "ThreeJS", "Firebase"],
+  tech_icon: [TailwindIcon, ReactIcon, CSS3Icon, ChartJSIcon, ViteIcon, BlenderIcon, ThreeJsIcon, FirebaseIcon],
 
-  total_tech: 5,
+  total_tech: 8,
   tech_text: "Total Teknologi",
 
   feature_tech: "Fitur Utama",
-  total_feature: 5,
+  total_feature: 4,
 
   demo_text: ["Live Demo", "Github"],
   demo_icon: [ShareIcon, GithubIcon],
@@ -212,7 +215,7 @@ function SleepWell() {
                                     <div className="flex flex-col gap-3 items-center mt-4">
                                         {valueProject.map((value) => (
                                             <div key={value.id }>
-                                                <div className={`flex gap-3 items-center  h-10 w-[21rem] rounded-lg 
+                                                <div className={`flex gap-3 items-center  h-10 w-[21rem] rounded-lg transition-all duration-300
                                                     ${darkMode ? 'bg-gradient-to-r hover:from-[#1B1A55] to-[#9290C3] transition-all duration-300 ease-in-out  ' : 'bg-gray-100'}`}>
                                                 <div 
                                                 className={`  w-[0.80rem] h-[0.60rem] rounded-full items-center ml-3 
