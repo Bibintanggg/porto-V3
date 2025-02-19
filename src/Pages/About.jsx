@@ -239,8 +239,8 @@ function About() {
                         />
                       </div>
                       <p
-                        className={`font-poppins text-white ${
-                          darkMode ? "" : ""
+                        className={`font-poppins ${
+                          darkMode ? "text-white" : "text-black"
                         }`}
                       >
                         {project.value}
@@ -248,7 +248,7 @@ function About() {
                     </div>
                     <p
                       className={`text-sm translate-y-3 font-poppins ${
-                        darkMode ? "text-white" : "text-white"
+                        darkMode ? "text-white" : "text-black"
                       }`}
                     >
                       {project.title}
@@ -256,12 +256,13 @@ function About() {
                     <div className="translate-y-4 font-poppins flex gap-5 mb-">
                       <span
                         className={`text-[0.65rem] ${
-                          darkMode ? "text-white" : "text-white"
+                          darkMode ? "text-white" : "text-black"
                         }`}
                       >
                         {project.desc}
                       </span>
-                      <img src={ShareIcon} alt="" className="w-3 opacity-45 invert" />
+                      <img src={ShareIcon} alt="" className={`w-3 opacity-45  
+                        ${darkMode ? "invert" : ""}`} />
                     </div>
                   </div>
                 </SpotlightCard>
