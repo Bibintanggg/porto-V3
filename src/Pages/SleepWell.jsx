@@ -15,6 +15,7 @@ import ThreeJsIcon from "../assets/TechIcon/Three.js.svg"
 import CSS3Icon from "../assets/TechIcon/CSS3.svg";
 import ChartJSIcon from "../assets/TechIcon/chartjs.svg";
 import ViteIcon from "../assets/TechIcon/vitejs.svg";
+import { useState } from "react";
 
 const valueProject = [
     {
@@ -60,22 +61,27 @@ const sleepWellProject = {
 };
 
 
-
 function SleepWell() {
     const {darkMode, toggleDarkMode} = useDarkMode()
+    const [isOpen, setIsOpen] = useState(true)
+
     const navigate = useNavigate();
+
     const handleNavigate = (path) => {
         navigate(path);
     }
     return (
-        <div className={`relative min-h-screen h-screen flex ${darkMode ? 'text-white bg-[#131523]' : 'text-black bg-[#f2f2fc]'}`}>
+        <div className={`relative min-h-screen h-screen flex 
+        ${darkMode ? 'text-white bg-[#131523]' : 'text-black bg-[#f2f2fc]'}
+        ${isOpen ? "" : ""}`}>
             <div className="w-[250px] h-screen fixed top-0 left-0">
-                <Sidebar />
+                <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/>
             </div>
 
-            <div className="ml-[250px] w-full overflow-y-auto">
+            <div className={`ml-[250px] w-full overflow-y-auto ${isOpen ? "" : ""}`}>
                 <div className="bg-transparent p-8">
-                    <div className="flex justify-between text-left">
+                    <div className={`flex justify-between text-left
+                        ${isOpen ? "" : ""} `}>
                         <h1 className={`text-base font-semibold text-gray-800 font-poppins pt-2 
                             ${darkMode ? 'text-white' : 'text-black'}`}>
                             PROJECT

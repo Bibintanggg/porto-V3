@@ -8,6 +8,7 @@ import ShareIcon from "../assets/Icon/share.svg";
 import { useDarkMode } from "../Component/DarkMode";
 
 import HTMLIcon from "../assets/TechIcon/HTML5.svg"
+import JejakPemudaIMG from "../assets/Image/jejakpemuda.png"
 import JavaScriptIcon from "../assets/TechIcon/JavaScript.svg"
 import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
 
@@ -32,9 +33,9 @@ const valueProject = [
 
 const portfolioInfo = {
   id: 2,
-  title: "Portfolio V1",
+  title: "Jejak Pemuda",
   desc: "Proyek pertama saya dalam dunia programming. Website ini saya buat untuk mengasah keterampilan dasar dalam pengembangan web dan memahami proses pembuatan sebuah aplikasi dari nol.",
-  image: Porto,
+  image: JejakPemudaIMG,
 
   title2_tech: "Technologies Used",
   image2_tech: CodeIcon,
