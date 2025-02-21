@@ -98,7 +98,7 @@ function SleepWell() {
                     </div>
 
                     {/* Navigation */}
-                    <div className="flex flex-col items-center md:flex-row md:items-start gap-4 pt-7">
+                    <div className="flex flex-col items-center md:flex-row md:items-center gap-4 pt-7">
                         <button 
                             className={`w-24 h-10 rounded-lg font-jakarta
                             ${darkMode ? 'text-white bg-gradient-to-r from-black/30 to-black/30' : 'text-black bg-white'}`}
@@ -141,7 +141,8 @@ function SleepWell() {
                                 </p>
 
                                 {/* Stats Cards */}
-                                <div className="flex flex-col md:flex-row gap-4 md:gap-5 pt-6 md:pt-10">
+                                <div className={`flex flex-col md:flex-row gap-4 md:gap-5 pt-6 md:pt-10
+                                    ${isOpen ? "" : "w-52 bgw"}`}>
                                     {/* Tech Stats Card */}
                                     <div className={`relative w-full md:w-52 h-14 rounded-lg overflow-hidden
                                         ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-gray-100'}`}>
@@ -165,8 +166,9 @@ function SleepWell() {
                                     </div>
 
                                     {/* Feature Stats Card */}
-                                    <div className={`relative w-full md:w-52 h-14 rounded-lg overflow-hidden
-                                        ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-gray-100'}`}>
+                                    <div className={`relative w-full md:w-40 h-14 rounded-lg overflow-hidden
+                                        ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-gray-100'}
+                                        ${isOpen ? "" : "w-40 "}`}>
                                         <div className="relative flex items-center gap-3 text-sm ml-4">
                                             <div className={`rounded-full w-10 h-10 flex items-center justify-center mt-auto 
                                                 ${darkMode ? 'bg-black/60' : 'bg-slate-200'}`}>
@@ -188,7 +190,8 @@ function SleepWell() {
                                 </div>
 
                                 {/* Demo Buttons */}
-                                <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+                                <div className={`mt-6 flex flex-wrap justify-center md:justify-start gap-4
+                                    ${isOpen ? "" : "flex flex-col"}`}>
                                     {sleepWellProject.demo_text.map((text, index) => (
                                         <button 
                                             key={index}
@@ -214,12 +217,14 @@ function SleepWell() {
 
                                 {/* Technologies Section */}
                                 <div className="mt-6">
-                                    <div className={`flex gap-2 w-full md:w-[18.8rem] h-14 items-center justify-center rounded-lg
+                                    <div className={`flex gap-2 w-full md:w-[18.8rem] h-14 items-center justify-center rounded-lg 
                                         ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-white'}`}>
                                         <img 
                                             src={sleepWellProject.image2_tech} 
                                             alt="" 
-                                            className={`w-7 ${darkMode ? 'invert brightness-75' : ''}`} 
+                                            className={`w-7 
+                                                ${darkMode ? 'invert brightness-7 ' : ''}
+                                                ${isOpen ? "" : ""}`} 
                                         />
                                         <p>{sleepWellProject.title2_tech}</p>
                                     </div>
