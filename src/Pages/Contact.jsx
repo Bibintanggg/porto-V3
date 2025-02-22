@@ -111,20 +111,22 @@ function Contact() {
           <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
 
-        <div className="flex-1 bg-transparent p-8 ml-64">
-          <div className={`flex justify-between text-left`}>
+        <div className={`flex-1 bg-transparent p-8 ml-60`}>
+          <div className={`flex justify-between text-left ${isOpen ? "translate-x-0 " : "translate-x-11"}`}>
             <h1
               className={`text-base font-semibold ${
                 darkMode ? "text-white" : "text-gray-800"
-              } font-poppins pt-2`}
+              } font-poppins pt-2
+              ${isOpen ? "translate-x-10" : ""}`}
             >
               Contact
             </h1>
-            <div className={`text-right ${isOpen ? "" : "mr-32"}`}>
+            <div className={`text-right ${isOpen ? "" : "mr-[100vh]"}`}>
               <h2
-                className={`text-base font-semibold ${
+                className={`text-base font-semibold font-poppins ${
                   darkMode ? "text-white" : "text-gray-800"
-                } font-poppins`}
+                }
+                ${isOpen ? "" : ""}`}
               >
                 Hello, Bintang !
               </h2>
@@ -145,7 +147,7 @@ function Contact() {
           ></div>
 
           <div>
-            <div>
+            <div className={`${isOpen ? "" : "text-center flex flex-col -translate-x-[32%]"}`}>
               <p
                 className={`text-center text-3xl font-jakarta font-bold mt-10 ${
                   darkMode ? "text-white" : "text-black"
@@ -163,10 +165,12 @@ function Contact() {
             </div>
 
             <div className="flex justify-center gap-10 mt-10">
-              <div className={`w-[30rem] rounded-3xl ${darkMode ? "" : "bg-"}`}>
-                <div className="flex justify-center py-10">
+              <div className={`w-[30rem] rounded-3xl ${darkMode ? "" : ""}`}>
+                <div className={`flex justify-center py-10 
+                ${isOpen ? "" : "-translate-x-10"}`}>
                   <div className="relative flex gap-4">
-                    <div className="flex flex-col gap-3">
+                    <div className={`flex flex-col gap-3
+                    ${isOpen ? "" : "-translate-x-1"}`}>
                       {medSosial.map((media, index) => (
                         <div
                           key={index}
@@ -190,7 +194,8 @@ function Contact() {
                               positionActive === media.title.toLowerCase()
                                 ? "text-white"
                                 : "text-black"
-                            } ${darkMode ? "text-white" : ""}`}
+                            } ${darkMode ? "text-white" : ""}
+                            `}
                           >
                             {media.title}
                           </button>
@@ -211,7 +216,8 @@ function Contact() {
                           data-aos-delay="300"
                           data-aos-offset="0"
                           src={selectedImage}
-                          className="object-cover w-56 h-96 rounded-lg transition-all duration-300 group-hover:scale-105"
+                          className={`object-cover rounded-lg transition-all duration-300 group-hover:scale-105
+                          ${isOpen ? "w-60" : "w-40"}`}
                         />
                       </div>
                     )}
@@ -296,6 +302,8 @@ function Contact() {
                   </form>
                 </div>
               </div>
+
+              
             </div>
           </div>
         </div>

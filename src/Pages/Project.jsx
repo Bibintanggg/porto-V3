@@ -76,6 +76,13 @@ function Project() {
     },
   ];
 
+  const projectRoutes = {
+    1: "sleepwell",
+    2: "portfolio-v1",
+    3: "jejakpemuda",
+    4: "moneytrack",
+  }
+
   const navigate = useNavigate();
   const handleNavigate = (path) => {
     navigate(path);
@@ -273,15 +280,7 @@ function Project() {
                           className={`flex justify-center items-center ${
                             darkMode ? "bg-gray-700" : "bg-gray-500"
                           } w-28 h-10 rounded-lg`}
-                          onClick={() =>
-                            handleNavigate(
-                              `/project/${
-                                data_project.id === 2
-                                  ? "portfolio-v1"
-                                  : "sleepwell"
-                              }`
-                            )
-                          }
+                          onClick={() => handleNavigate(`/project/${projectRoutes[data_project.id] || "sleepwell"}`)}
                         >
                           <span className="text-xs font-jakarta text-[0.90rem]">
                             {data_project.secondText}
