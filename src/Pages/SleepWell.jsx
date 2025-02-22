@@ -65,23 +65,25 @@ function SleepWell() {
     };
 
     return (
-        <div className={`relative min-h-screen h-screen flex transition-all duration-300 ease-in-out
+        <div className={`relative min-h-screen h-screen flex transition-all duration-300 ease-in-out 
+            overflow-x-hidden
             ${darkMode ? 'text-white bg-[#131523]' : 'text-black bg-[#f2f2fc]'}
             ${isOpen ? "" : "-ml-[65%]"}`}>
             
-            {/* Sidebar - Hidden on mobile */}
-            <div className={`w-[250px] h-screen fixed top-0 left-0
+            <div className={`w-[250px] h-screen fixed top-0 left-0 z-50
                 ${isOpen ? "" : ""}`}>
                 <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
 
             {/* Main Content */}
-            <div className={`w-full md:ml-[250px] overflow-y-auto px-4 md:px-8`}>
+            <div className={`w-full md:ml-[250px] overflow-y-auto px-4 md:px-8 z-10`}>
                 <div className="bg-transparent py-8">
                     {/* Header */}
-                    <div className="flex flex-col md:flex-row md:justify-between text-left gap-4 md:gap-0">
+                    <div className={`flex  md:flex-row md:justify-between text-left gap-4 md:gap-0
+                        ${isOpen ? "" : "flex justify-between items-center"}`}>
                         <h1 className={`text-base font-semibold font-poppins pt-2 
-                            ${darkMode ? 'text-white' : 'text-black'}`}>
+                            ${darkMode ? 'text-white' : 'text-black'} 
+                            ${isOpen ? "" : "ml-64"}`}>
                             PROJECT
                         </h1>
                         <div className="text-right">
@@ -99,18 +101,22 @@ function SleepWell() {
                     </div>
 
                     {/* Navigation */}
-                    <div className="flex flex-col items-center md:flex-row md:items-center gap-4 pt-7">
+                    <div className={`flex items-center md:flex-row md:items-center gap-4 pt-7
+                        ${isOpen ? "" : "flex items-center justify-center"}`}>
                         <button 
                             className={`w-24 h-10 rounded-lg font-jakarta
-                            ${darkMode ? 'text-white bg-gradient-to-r from-black/30 to-black/30' : 'text-black bg-white'}`}
+                            ${darkMode ? 'text-white bg-gradient-to-r from-black/30 to-black/30' : 'text-black bg-white'}
+                            ${isOpen ? "" : "ml-64"}`}
                             onClick={() => handleNavigate("/project")}>
                             Kembali
                         </button>
                         <div className="flex items-center font-jakarta gap-2 text-center md:text-left">
-                            <p className={`text-opacity-40 ${darkMode ? 'text-white' : 'text-black'}`}>
+                            <p className={`text-opacity-40 
+                                ${darkMode ? 'text-white' : 'text-black'}
+                                ${isOpen ? "" : ""}`}>
                                 Project
                             </p>
-                            <span>&gt; Website Kesehatan Tidur</span>
+                            <span className={`${isOpen ? "" : "mt-6 "}`}>&gt; Website Kesehatan Tidur</span>
                         </div>
                     </div>
 
@@ -264,12 +270,12 @@ function SleepWell() {
                                                     <div 
                                                         key={value.id} 
                                                         className={`flex gap-3 items-center h-10 w-full rounded-lg px-4
-                                                            ${darkMode ? 'bg-gradient-to-r from-[#1B1A55] to-[#9290C3]' : 'bg-gray-100'}`}
+                                                            ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-gray-100'}`}
                                                     >
                                                         <div className={`w-2 h-2 rounded-full
                                                             ${darkMode ? "bg-white" : "bg-black"}`}>
                                                         </div>
-                                                        <p className={`font-jakarta ${darkMode ? 'text-white' : 'text-black'}`}>
+                                                        <p className={`font-jakarta  ${darkMode ? 'text-white' : 'text-black'}`}>
                                                             {value.title}
                                                         </p>
                                                     </div>
