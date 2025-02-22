@@ -9,6 +9,7 @@ import TechIcon from "../assets/Icon/tech.svg";
 import FrameworkIcon from "../assets/Icon/framework.svg";
 import ToolsIcon from "../assets/Icon/tools.svg";
 import { useDarkMode } from "../Component/DarkMode.jsx";
+import BadgesProfile from "../Component/BadgesProfile.jsx"
 import SpotlightCard from "../Component/SpotlightCard.jsx";
 
 import BootstrapIcon from "../assets/TechIcon/Bootstrap.svg";
@@ -171,7 +172,7 @@ function About() {
                 </div>
                 <div className="px-16">
                   <div className="flex flex-col md:flex-row items-start gap-5">
-                    <img src={FotoBintang} className="w-48 h-48 rounded-full" />
+                    <BadgesProfile/>
                     <div className="pt-3">
                       <p
                         className={`max-w-lg tracking-wide text-base ${
@@ -283,7 +284,7 @@ function About() {
                     darkMode ? "text-white" : "text-black"
                   }`}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  The technologies I use for web and app development..
                 </span>
               </div>
 

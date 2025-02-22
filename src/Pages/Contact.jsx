@@ -35,7 +35,7 @@ function Contact() {
   });
   const [isOpen, setIsOpen] = useState(true);
   const [positionActive, setPositionActive] = useState("instagram");
-  const [selectedImage, setSelectedImage] = useState(InstagramImage);
+  const [selectedImage, setSelectedImage] = useState(medSosial[0]);
 
   useEffect(() => {
     Aos.init({
@@ -69,6 +69,12 @@ function Contact() {
       console.log("Form Data:", formData);
     }
   };
+
+  const handleImageClick = () => {
+    if(selectedImage?.path) {
+      window.open(selectedImage.path, "_blank")
+    }
+  }
 
   return (
     <div
@@ -110,7 +116,7 @@ function Contact() {
           <div className={`w-full h-0.5 ${darkMode ? "bg-white" : "bg-black"} mx-auto opacity-25`}></div>
 
           <div>
-            <div className="text-left mt-10">
+            <div className="text-center mt-10">
               <p
                 className={`text-3xl font-jakarta font-bold ${darkMode ? "text-white" : "text-black"
                   }`}
@@ -122,9 +128,7 @@ function Contact() {
               </span>
             </div>
 
-            {/* Responsive container for social media and form */}
             <div className="flex flex-col lg:flex-row justify-start gap-10 mt-10 max-w-[90rem]">
-              {/* Social Media Section */}
               <div className={`w-full lg:w-[30rem] rounded-3xl`}>
                 <div className="flex justify-start py-10">
                   <div className="relative flex gap-4">
@@ -144,7 +148,7 @@ function Contact() {
                           <button
                             onClick={() => {
                               setPositionActive(media.title.toLowerCase());
-                              setSelectedImage(media.image);
+                              setSelectedImage(media);
                             }}
                             className={`font-poppins text-lg transition-all duration-300 group-hover:translate-x-1 
                             ${positionActive === media.title.toLowerCase() ? "text-white" : "text-black"}
@@ -159,22 +163,24 @@ function Contact() {
                     <hr className="w-0.5 bg-black h-60 rounded-full mx-4" />
 
                     {selectedImage && (
-                      <div className="overflow-hidden rounded-lg cursor-pointer group">
+                      <button
+                      onClick={handleImageClick}
+                       className="overflow-hidden rounded-lg cursor-pointer group">
                         <img
                           data-aos="fade-zoom-in"
                           data-aos-easing="ease-in-out"
                           data-aos-delay="300"
-                          src={selectedImage}
+                          src={selectedImage.image}
                           className={`object-cover rounded-lg transition-all duration-300 group-hover:scale-105
                           ${isOpen ? "w-60" : "w-40"}`}
                         />
-                      </div>
+                      </button>
                     )}
                   </div>
                 </div>
               </div>
 
-              <div className={`w-full lg:w-[30rem] rounded-3xl`}>
+              <div className={`w-full lg:w-[30rem] rounded-3xl `}>
                 <div className="p-6 lg:p-10">
                   <div className="flex items-center justify-between">
                     <h1
