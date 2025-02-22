@@ -70,7 +70,8 @@ function SleepWell() {
             ${isOpen ? "" : "-ml-[65%]"}`}>
             
             {/* Sidebar - Hidden on mobile */}
-            <div className="w-[250px] h-screen fixed top-0 left-0 ">
+            <div className={`w-[250px] h-screen fixed top-0 left-0
+                ${isOpen ? "" : ""}`}>
                 <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
 
@@ -141,12 +142,12 @@ function SleepWell() {
                                 </p>
 
                                 {/* Stats Cards */}
-                                <div className={`flex flex-col md:flex-row gap-4 md:gap-5 pt-6 md:pt-10
-                                    ${isOpen ? "" : "w-52 bgw"}`}>
+                                <div className={`flex  md:flex-row gap-4 md:gap-5 pt-6 md:pt-10
+                                    ${isOpen ? "" : "max-w-96"}`}>
                                     {/* Tech Stats Card */}
                                     <div className={`relative w-full md:w-52 h-14 rounded-lg overflow-hidden
                                         ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-gray-100'}`}>
-                                        <div className="relative flex items-center gap-3 text-sm ml-4">
+                                        <div className={`relative flex items-center gap-3 text-sm ml-4`}>
                                             <div className={`rounded-full w-10 h-10 flex items-center justify-center mt-auto 
                                                 ${darkMode ? 'bg-black/60' : 'bg-slate-200'}`}>
                                                 <img src={sleepWellProject.image2_tech} 
@@ -191,7 +192,7 @@ function SleepWell() {
 
                                 {/* Demo Buttons */}
                                 <div className={`mt-6 flex flex-wrap justify-center md:justify-start gap-4
-                                    ${isOpen ? "" : "flex flex-col"}`}>
+                                    ${isOpen ? "" : "flex"}`}>
                                     {sleepWellProject.demo_text.map((text, index) => (
                                         <button 
                                             key={index}
@@ -203,7 +204,8 @@ function SleepWell() {
                                                 }
                                             }}
                                             className={`flex items-center gap-2 w-[8.8rem] h-14 rounded-lg justify-center
-                                                ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-white'}`}
+                                                ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-white'}
+                                                ${isOpen ? "" : "w-[26.2vh] flex"}`}
                                         >
                                             <img 
                                                 src={sleepWellProject.demo_icon[index]} 
