@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useDarkMode } from "./DarkMode";
+import Sidebar from "./Sidebar";
 
 const SpotlightCard = ({
   children,
@@ -37,6 +38,8 @@ const SpotlightCard = ({
     setOpacity(0);
   };
 
+  const [isOpen, setIsOpen] = useState(true)
+
   return (
     <div
       ref={divRef}
@@ -51,7 +54,8 @@ const SpotlightCard = ({
     >
       <div
         className={`pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out
-          ${darkmode ? "bg-white" : ""}`}
+          ${darkmode ? "bg-white" : ""}
+          ${isOpen ? "" : ""}`}
         style={{
           opacity,
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,

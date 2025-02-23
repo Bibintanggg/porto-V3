@@ -1,12 +1,15 @@
 import React from 'react';
 import FotoBintang from "../assets/Image/Image1.png";
+import { useDarkMode } from './DarkMode';
 
 function BadgesProfile(){
     const badges = [
-        { id: 1, label: "Frontend Developer", color: "bg-blue-500" },
-        { id: 2, label: "Backend Developer", color: "bg-green-500" },
-        { id: 3, label: "UI/UX Designer", color: "bg-purple-500" }
+        { id: 1, label: "Frontend Developer", color: "bg-gray-700 rounded-full bg-clip-padding backdrop-filter bg-opacity-50", offset:  "translate-x-10" },
+        { id: 2, label: "Backend Developer", color: "bg-gray-700 rounded-full bg-clip-padding backdrop-filter bg-opacity-50", offset:  "translate-x-1" },
+        { id: 3, label: "UI/UX Designer", color: "bg-gray-700 rounded-full bg-clip-padding backdrop-filter bg-opacity-50", offset:  "translate-x-0" }
     ];
+
+    const {darkMode} = useDarkMode()
 
     return (
         <div className="relative inline-block">
@@ -17,18 +20,17 @@ function BadgesProfile(){
                     alt="Profile"
                 />
 
-                <div className="absolute -right-4 top-0 flex flex-col gap-2">
+                <div className="absolute -right-10 top-0 flex flex-col gap-2">
                     {badges.map((badge, index) => (
                         <div
                             key={badge.id}
-                            className={`${badge.color} text-white px-4 py-1 rounded-full text-sm font-medium
-                transform transition-all duration-300 hover:scale-105
-                shadow-lg backdrop-blur-sm
-                translate-x-${index * 4} -translate 
-                animate-fadeIn`}
-                            style={{
-                                animationDelay: `${index * 200}ms`
-                            }}
+                            className={`
+                                ${badge.color}
+                                ${badge.offset}
+                                ${darkMode ? "text-white" : "text-black"} px-4 py-1 rounded-full 
+                                text-sm font-medium hover:scale-105 shadow-lg backdrop-blur-sm
+                                translate-x-${index * 5} font-poppins text-center my-3 hover:scale-105 transform
+                                transition-all duration-300 ease-in-out`}
                         >
                             {badge.label}
                         </div>

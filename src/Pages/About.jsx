@@ -173,28 +173,17 @@ function About() {
                 <div className="px-16">
                   <div className="flex flex-col md:flex-row items-start gap-5">
                     <BadgesProfile/>
-                    <div className="pt-3">
+                    <div className={`pt-3 font-poppins
+                      ${isOpen ? "translate-x-10" : "text-lg text-balance"}`}>
                       <p
                         className={`max-w-lg tracking-wide text-base ${
                           darkMode ? "text-white" : "text-black"
-                        } ${isOpen ? "" : "text-balance"}`}
+                        } ${isOpen ? "" : ""}`}
                       >
                         <span className="ml-10 font-jakarta">Hello There!</span>
                         I'm Bintang Yudha Putra Purnomo, a creative front-end
                         developer and detail-oriented UI/UX designer based in
                         the bustling city of Jakarta, Indonesia.
-                      </p>
-                      <p
-                        className={`max-w-lg tracking-wide mt-5 text-base ${
-                          darkMode ? "text-white" : "text-black"
-                        }`}
-                      >
-                        <span className="ml-10 font-jakarta">
-                          I'm passionate
-                        </span>{" "}
-                        about turning innovative ideas into functional designs
-                        and writing clean, efficient code to create seamless
-                        user experiences.
                       </p>
                     </div>
                   </div>
@@ -203,22 +192,24 @@ function About() {
             </div>
 
             <div
-              className={`w-full md:w-[60rem] h-48 mt-10 flex gap-10 items-center justify-center
+              className={`w-full md:w-[60rem] h-48 mt-10 gap-10 items-center justify-center
               isolate aspect-video rounded-xl shadow-lg ${
                 darkMode
                   ? "bg-gradient-to-r from-black/30 to-black/10"
                   : "bg-white"
-              }`}
+              }
+              ${isOpen ? "flex" : "flex flex-col h-[35rem] "}`}
             >
               {dataProject.map((project) => (
                 <SpotlightCard
                   key={project.id}
-                  className={`p-4 rounded-lg h-36 w-full md:w-[17rem] 
+                  className={`p-4 rounded-lg h-36  w-full md:w-[17rem] 
                   isolate aspect-video shadow-lg ${
                     darkMode
                       ? "bg-gradient-to-r from-black/30 to-black/20 "
                       : "bg-[#f2f2fc]"
-                  }`}
+                  }
+                  ${isOpen ? "" : ""}`}
                   spotlightColor="rgba(0, 229, 255, 0.2)"
                 >
                   <div
