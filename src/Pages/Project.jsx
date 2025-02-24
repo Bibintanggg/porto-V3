@@ -200,7 +200,8 @@ function Project() {
           </div>
 
           {toggleButton ? (
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div className={`md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10
+             ${isOpen ? "grid grid-cols-2" : "grid grid-cols-1"}`}>
               {certificates.map((data_certificate) => (
                 <div
                   key={data_certificate.id}
@@ -296,7 +297,7 @@ function Project() {
 
           {isModalOpen && (
             <div
-              className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+              className={`fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50`}
               onClick={closeModal}
             >
               <div
@@ -307,7 +308,7 @@ function Project() {
               >
                 <button
                   onClick={closeModal}
-                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                  className={`absolute top-2 right-2 text-gray-500 hover:text-gray-700 `}
                 >
                   &times;
                 </button>
