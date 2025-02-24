@@ -1,34 +1,32 @@
 import { useNavigate } from "react-router-dom";
 import StarIcon from "../assets/Icon/star.svg";
 import Sidebar from "../Component/Sidebar";
-import Porto from "../assets/Image/portov1.png"
+import JejakPemudaIMG from "../assets/Image/jejakpemuda.png"
 import CodeIcon from "../assets/Icon/code.svg";
 import GithubIcon from "../assets/TechIcon/GitHub.svg";
 import ShareIcon from "../assets/Icon/share.svg";
 import { useDarkMode } from "../Component/DarkMode";
-
-import HTMLIcon from "../assets/TechIcon/HTML5.svg"
-import JejakPemudaIMG from "../assets/Image/jejakpemuda.png"
-import JavaScriptIcon from "../assets/TechIcon/JavaScript.svg"
-import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
 import { useState } from "react";
+
+import BlenderIcon from "../assets/Icon/Blender.svg"
+import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
+import ReactIcon from "../assets/TechIcon/React.svg";
+import ThreeJsIcon from "../assets/TechIcon/Three.js.svg"
+import ViteIcon from "../assets/TechIcon/vitejs.svg";
+import MaterialUI from "../assets/TechIcon/MaterialUI.svg"
 
 const valueProject = [
     {
         id: 1,
-        title: "Musik Relaksasiiii",
+        title: "Perjuangan Singkat",
     },
     {
         id: 2,
-        title: "Artikel Kesehatan Tidur",
+        title: "Ikrar",
     },
     {
         id: 3,
-        title: "Dongeng Online",
-    },
-    {
-        id: 4,
-        title: "Tes Kualitas Tidur",
+        title: "Blog",
     },
 ];
 
@@ -41,19 +39,19 @@ const portfolioInfo = {
   title2_tech: "Technologies Used",
   image2_tech: CodeIcon,
 
-  tech_used: ["TailwindCSS", "JavaScript", "HTML", "DataAOS",],
-  tech_icon: [TailwindIcon, JavaScriptIcon, HTMLIcon, ],
+  tech_used: ["TailwindCSS", "React", "Blender", "ThreeJS", "Vite", "Material UI"],
+  tech_icon: [TailwindIcon, ReactIcon, BlenderIcon, ThreeJsIcon, ViteIcon, MaterialUI ],
 
-  total_tech: 3,
+  total_tech: 6,
   tech_text: "Total Teknologi",
 
   feature_tech: "Fitur Utama",
-  total_feature: 0,
+  total_feature: 3,
 
   demo_text: ["Live Demo", "Github"],
   demo_icon: [ShareIcon, GithubIcon],
   path: "https://portofolio-bin.vercel.app/",
-  gitPath: "https://github.com/Bibintanggg/porto_V1",
+    gitPath: "https://github.com/mybezen/prj-sagas",
 };
 
 function JejakPemuda() {
@@ -116,7 +114,7 @@ function JejakPemuda() {
                                 ${isOpen ? "" : ""}`}>
                                 Project
                             </p>
-                            <span className={`${isOpen ? "" : "mt-6 "}`}>&gt; Website Kesehatan Tidur</span>
+                            <span className={`${isOpen ? "" : "mt-6 "}`}>&gt; Jejak Pemuda</span>
                         </div>
                     </div>
 

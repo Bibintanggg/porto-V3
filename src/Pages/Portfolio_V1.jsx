@@ -15,19 +15,19 @@ import { useState } from "react";
 const valueProject = [
     {
         id: 1,
-        title: "Musik Relaksasiiii",
+        title: "Home",
     },
     {
         id: 2,
-        title: "Artikel Kesehatan Tidur",
+        title: "About",
     },
     {
         id: 3,
-        title: "Dongeng Online",
+        title: "Project",
     },
     {
         id: 4,
-        title: "Tes Kualitas Tidur",
+        title: "Contact",
     },
 ];
 
@@ -43,15 +43,15 @@ const portfolioInfo = {
   tech_used: ["TailwindCSS", "JavaScript", "HTML", "DataAOS",],
   tech_icon: [TailwindIcon, JavaScriptIcon, HTMLIcon, ],
 
-  total_tech: 3,
+  total_tech: 4,
   tech_text: "Total Teknologi",
 
   feature_tech: "Fitur Utama",
-  total_feature: 0,
+  total_feature: 4,
 
   demo_text: ["Live Demo", "Github"],
   demo_icon: [ShareIcon, GithubIcon],
-  path: "https://portofolio-bin.vercel.app/",
+    path: "https://jejakpemuda.vercel.app/",
   gitPath: "https://github.com/Bibintanggg/porto_V1",
 };
 

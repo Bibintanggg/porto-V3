@@ -19,7 +19,7 @@ import GithubIcon from "../assets/TechIcon/GitHub.svg";
 import HTML5Icon from "../assets/TechIcon/HTML5.svg";
 import JavaScriptIcon from "../assets/TechIcon/JavaScript.svg";
 import LaravelIcon from "../assets/TechIcon/Laravel.svg";
-import MaterialUiIcon from "../assets/TechIcon/Material UI.svg";
+import MaterialUiIcon from "../assets/TechIcon/MaterialUI.svg";
 import MYSQLIcon from "../assets/TechIcon/MYSQL.svg";
 import PHPIcon from "../assets/TechIcon/PHP.svg";
 import ReactIcon from "../assets/TechIcon/React.svg";
