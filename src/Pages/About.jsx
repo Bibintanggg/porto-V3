@@ -152,7 +152,7 @@ function About() {
                   darkMode
                     ? "bg-gradient-to-r from-black/20 to-black/20 "
                     : "bg-white/20"
-                } ${isOpen ? "" : "h-[46rem] "} `}
+                } ${isOpen ? "" : "h-[35rem] translate-x-2"} `}
               >
                 <div className="p-6 flex items-center gap-4">
                   <h1
@@ -166,25 +166,44 @@ function About() {
                     <div
                       className={`absolute w-24 h-0.5 left-1 ${
                         darkMode ? "bg-white" : "bg-black"
-                      }`}
+                      } 
+                      ${isOpen ? "" : "translate-x-10"}`}
                     ></div>
                   </div>
                 </div>
                 <div className="px-16">
-                  <div className="flex flex-col md:flex-row items-start gap-5">
+                  <div className="flex flex-col justify-between md:flex-row items-start gap-5">
+                    <div className={`${isOpen ? "" : "-translate-x-8"}`}>
                     <BadgesProfile/>
-                    <div className={`pt-3 font-poppins
-                      ${isOpen ? "translate-x-10" : "text-lg text-balance"}`}>
+                    </div>
+                    <div className={`pt-3 font-poppins flex flex-col
+                      ${isOpen ? "translate-x-10" : "text-lg text-balance -translate-x-12"}`}>
+                        <p className={` font-bold mb-1 
+                          ${darkMode ? "text-white" : "text-black"}
+                          ${isOpen ? "text-4xl" : "text-3xl text-center"}`}>Hello There !</p>
                       <p
-                        className={`max-w-lg tracking-wide text-base ${
+                        className={`max-w-lg tracking-wide ${
                           darkMode ? "text-white" : "text-black"
-                        } ${isOpen ? "" : ""}`}
+                        } ${isOpen ? "text-base" : " text-sm text-center"}`}
                       >
-                        <span className="ml-10 font-jakarta">Hello There!</span>
+                        <span className={` font-jakarta 
+                          ${isOpen ? "" : ""}`}></span>
                         I'm Bintang Yudha Putra Purnomo, a creative front-end
                         developer and detail-oriented UI/UX designer based in
                         the bustling city of Jakarta, Indonesia.
                       </p>
+
+                      <div className={`${isOpen ? "" : "text-sm"}`}>
+                        <div className="mt-4 flex items-center gap-3">
+                          <p className="text-white">Creative</p>
+                          <div className="w-0.5 h-5 bg-white rounded-full"></div>
+
+                          <p className="text-white text-center">Detail Oriented</p>
+                          <div className="w-0.5 h-5 bg-white rounded-full"></div>
+
+                          <p className="text-white">Aesthetic</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -349,13 +368,13 @@ function About() {
                   {displayedStack.map((icons) => (
                     <div
                       key={icons.id}
-                      className="flex items-center justify-center"
+                      className={`flex items-center justify-center ${isOpen ? "" : "translate-x-2"}`}
                     >
                       <div
                         className={`relative flex items-center justify-center w-48 h-6 rounded p-10 gap-3 
                           overflow-hidden group transition-all duration-300 ease-in-out backdrop-blur-md backdrop-brightness-75 ${
                             darkMode
-                              ? "bg-gradient-to-r from-black/30 to-black/20 border border-white/10"
+                              ? "bg-gradient-to-r from-black/30 to-black/20 border border-white"
                               : "bg-white"
                           }`}
                       >

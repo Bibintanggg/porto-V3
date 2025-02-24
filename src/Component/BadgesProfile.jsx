@@ -20,7 +20,7 @@ function BadgesProfile(){
                     alt="Profile"
                 />
 
-                <div className="absolute -right-10 top-0 flex flex-col gap-2">
+                <div className="absolute -right-14 top-0 flex flex-col gap-2">
                     {badges.map((badge, index) => (
                         <div
                             key={badge.id}
@@ -29,7 +29,7 @@ function BadgesProfile(){
                                 ${badge.offset}
                                 ${darkMode ? "text-white" : "text-black"} px-4 py-1 rounded-full 
                                 text-sm font-medium hover:scale-105 shadow-lg backdrop-blur-sm
-                                translate-x-${index * 5} font-poppins text-center my-3 hover:scale-105 transform
+                                translate-x-${index * 5} font-poppins text-center my-2 hover:scale-105 transform
                                 transition-all duration-300 ease-in-out`}
                         >
                             {badge.label}
