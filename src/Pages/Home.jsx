@@ -93,7 +93,7 @@ function Home() {
           animate={{ opacity: fadeIn ? 1 : 0 }}
           transition={{ duration: 1 }}
           className={`flex-1 p-8 transition-all duration-500 ease-in-out ${
-            isOpen ? "" : "-ml-[17rem]"
+            isOpen ? "" : "-ml-[2rem]"
           }`}
         >
           <div
