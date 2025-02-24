@@ -38,6 +38,7 @@ function About() {
       value: 5,
       desc: "TOTAL PROJECT I HAVE COMPLETED",
       icon: ProjectIcon,
+      valueDuration: 2000,
       iconDuration: 2500,
       path: "/project",
     },
@@ -47,7 +48,8 @@ function About() {
       value: 5,
       desc: "TOTAL CERTIFICATES I HAVE ACHIEVED",
       icon: CertiIcon,
-      iconDuration: 2000,
+      valueDuration: 2500,
+      iconDuration: 3000,
       path: "/project",
     },
     {
@@ -56,7 +58,8 @@ function About() {
       value: 5,
       desc: "TOTAL EXPERIENCES I HAVE GAINED",
       icon: ExperienceIcon,
-      iconDuration: 2500,
+      valueDuration: 3000,
+      iconDuration: 3500,
       path: "/about/experience"
     },
   ];
@@ -276,7 +279,7 @@ function About() {
                       </div>
                       <p
                       data-aos="fade-up"
-                      data-aos-duration=""
+                      data-aos-duration={project.valueDuration}
                         className={`font-poppins ${
                           darkMode ? "text-white" : "text-black"
                         }`}
