@@ -10,6 +10,7 @@ import Portfolio_V1 from "./Pages/Portfolio_V1";
 import { useEffect, useState } from "react";
 import Preload from "./Component/Preload";
 import JejakPemuda from "./Pages/JejakPemuda";
+import MoneyTrack from "./Pages/MoneyTrack";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   useEffect(() => {
     const timer =  setTimeout(() => {
       setLoading(false);
-    }, 8000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [])
@@ -36,7 +37,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/project/sleepwell" element={<SleepWell />} />
           <Route path="/project/portfolio-v1" element={<Portfolio_V1 />} />
-          <Route path="/project/jejakpemuda" element={<JejakPemuda />} />
+          <Route path="/project/moneytrack" element={<JejakPemuda />} />
+          <Route path="/project/jejakpemuda" element={<MoneyTrack />} />
           <Route path="/about/experience" element={<Experience />} />
         </Routes>
       </BrowserRouter>

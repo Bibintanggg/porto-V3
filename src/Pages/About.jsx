@@ -26,6 +26,8 @@ import ReactIcon from "../assets/TechIcon/React.svg";
 import TailwindIcon from "../assets/TechIcon/TailwindCSS.svg";
 import TrelloIcon from "../assets/TechIcon/Trello.svg";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function About() {
   
@@ -36,6 +38,7 @@ function About() {
       value: 5,
       desc: "TOTAL PROJECT I HAVE COMPLETED",
       icon: ProjectIcon,
+      iconDuration: 2500,
       path: "/project",
     },
     {
@@ -44,6 +47,7 @@ function About() {
       value: 5,
       desc: "TOTAL CERTIFICATES I HAVE ACHIEVED",
       icon: CertiIcon,
+      iconDuration: 2000,
       path: "/project",
     },
     {
@@ -52,6 +56,7 @@ function About() {
       value: 5,
       desc: "TOTAL EXPERIENCES I HAVE GAINED",
       icon: ExperienceIcon,
+      iconDuration: 2500,
       path: "/about/experience"
     },
   ];
@@ -96,6 +101,12 @@ function About() {
   const handleNavigate = (path) => {
     navigate(path);
   }
+
+  useEffect(() => {
+    AOS.init({
+      once: false,
+    })
+  })
   return (
     <div
       className={`relative min-h-screen flex transition-all duration-300 ${
@@ -180,13 +191,19 @@ function About() {
                       ${isOpen ? "translate-x-10" : "text-lg text-balance -translate-x-12"}`}>
                         <p className={` font-bold mb-1 
                           ${darkMode ? "text-white" : "text-black"}
-                          ${isOpen ? "text-4xl" : "text-3xl text-center"}`}>Hello There !</p>
+                          ${isOpen ? "text-4xl" : "text-3xl text-center"}
+                          `}
+                        data-aos="fade-left"
+                        data-aos-duration="1500">Hello There !</p>
                       <p
+                        data-aos="fade-left"
+                        data-aos-duration="2500"
                         className={`max-w-lg tracking-wide ${
                           darkMode ? "text-white" : "text-black"
                         } ${isOpen ? "text-base" : " text-sm text-center"}`}
                       >
-                        <span className={` font-jakarta 
+                        <span 
+                        className={` font-jakarta 
                           ${isOpen ? "" : ""}`}></span>
                         I'm Bintang Yudha Putra Purnomo, a creative front-end
                         developer and detail-oriented UI/UX designer based in
@@ -195,13 +212,19 @@ function About() {
 
                       <div className={`${isOpen ? "" : "text-sm"}`}>
                         <div className="mt-4 flex items-center gap-3">
-                          <p className="text-white">Creative</p>
+                          <p className="text-white"
+                            data-aos="fade-up"
+                            data-aos-duration="2000">Creative</p>
                           <div className="w-0.5 h-5 bg-white rounded-full"></div>
 
-                          <p className="text-white text-center">Detail Oriented</p>
+                          <p className="text-white text-center"
+                            data-aos="fade-up"
+                            data-aos-duration="2500">Detail Oriented</p>
                           <div className="w-0.5 h-5 bg-white rounded-full"></div>
 
-                          <p className="text-white">Aesthetic</p>
+                          <p className="text-white"
+                            data-aos="fade-up"
+                            data-aos-duration="3000">Aesthetic</p>
                         </div>
                       </div>
                     </div>
@@ -245,11 +268,15 @@ function About() {
                         }`}
                       >
                         <img
+                          data-aos="fade-in"
+                          data-aos-duration={project.iconDuration}
                           src={project.icon}
                           className={`${darkMode ? "" : "invert"}`}
                         />
                       </div>
                       <p
+                      data-aos="fade-up"
+                      data-aos-duration=""
                         className={`font-poppins ${
                           darkMode ? "text-white" : "text-black"
                         }`}

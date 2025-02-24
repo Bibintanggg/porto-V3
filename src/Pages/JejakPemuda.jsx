@@ -33,7 +33,7 @@ const valueProject = [
 const portfolioInfo = {
   id: 2,
   title: "Jejak Pemuda",
-  desc: "Proyek pertama saya dalam dunia programming. Website ini saya buat untuk mengasah keterampilan dasar dalam pengembangan web dan memahami proses pembuatan sebuah aplikasi dari nol.",
+    desc: "Jejak Pemuda adalah proyek yang saya dan tim kembangkan dalam kompetisi website, bertujuan untuk memperingati Hari Sumpah Pemuda serta mengasah keterampilan dalam pengembangan web.",
   image: JejakPemudaIMG,
 
   title2_tech: "Technologies Used",

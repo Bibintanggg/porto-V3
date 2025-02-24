@@ -51,7 +51,7 @@ const portfolioInfo = {
 
   demo_text: ["Live Demo", "Github"],
   demo_icon: [ShareIcon, GithubIcon],
-    path: "https://jejakpemuda.vercel.app/",
+  path: "https://portofolio-bin.vercel.app/",
   gitPath: "https://github.com/Bibintanggg/porto_V1",
 };
 

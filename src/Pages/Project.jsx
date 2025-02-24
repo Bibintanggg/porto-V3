@@ -16,7 +16,7 @@ function Project() {
     {
       id: 1,
       text: "WEBSITE KESEHATAN TIDUR",
-      desc: "Web ini dirancang untuk membuat para pengidap insomnia...",
+      desc: "Sebuah platform edukasi yang bertujuan meningkatkan kesadaran...",
       image: SleepWell,
       demo: "LIVE DEMO",
       path: "https://sleepwell-calypso.vercel.app/",
@@ -26,7 +26,7 @@ function Project() {
     {
       id: 2,
       text: "PORTFOLIO V1",
-      desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
+      desc: "Proyek pertama saya dalam dunia programming. Website ini saya buat...",
       image: Porto_V1,
       demo: "LIVE DEMO",
       path: "https://portofolio-bin.vercel.app/",
@@ -36,20 +36,20 @@ function Project() {
     {
       id: 3,
       text: "JEJAK PEMUDA",
-      desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
+      desc: "Jejak Pemuda adalah proyek yang saya dan tim kembangkan dalam kompetisi website...",
       image: JejakPemudaIMG,
       demo: "LIVE DEMO",
-      path: "https://portofolio-bin.vercel.app/",
+      path: "https://jejakpemuda.vercel.app/",
       icon: ShareIcon,
       secondText: "DETAILS",
     },
     {
       id: 4,
       text: "MONEY TRACK",
-      desc: "Portfolio pertama saya yang dibuat dengan html dan tailwindcss...",
+      desc: "MoneyTrack adalah proyek pribadi saya yang dirancang untuk mempermudah...",
       image: MoneyTrackIMG,
       demo: "LIVE DEMO",
-      path: "https://portofolio-bin.vercel.app/",
+      path: "https://github.com/Bibintanggg",
       icon: ShareIcon,
       secondText: "DETAILS",
     },
@@ -79,8 +79,8 @@ function Project() {
   const projectRoutes = {
     1: "sleepwell",
     2: "portfolio-v1",
-    3: "jejakpemuda",
-    4: "moneytrack",
+    3: "moneytrack",
+    4: "jejakpemuda",
   }
 
   const navigate = useNavigate();
@@ -281,7 +281,7 @@ function Project() {
                           className={`flex justify-center items-center ${
                             darkMode ? "bg-gray-700" : "bg-gray-500"
                           } w-28 h-10 rounded-lg`}
-                          onClick={() => handleNavigate(`/project/${projectRoutes[data_project.id] || "sleepwell"}`)}
+                          onClick={() => handleNavigate(`/project/${projectRoutes[data_project.id] || ""}`)}
                         >
                           <span className="text-xs font-jakarta text-[0.90rem]">
                             {data_project.secondText}
