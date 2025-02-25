@@ -55,13 +55,6 @@ function Experience() {
                             <span className={`${isOpen ? "text-white " : "mt-6 text-white "}`}>&gt; Experience</span>
                         </div>
                     </div>
-
-                    <div>
-
-                    <BentoDemo>
-
-                    </BentoDemo>
-                    </div>
             
           </div>
         </div>
