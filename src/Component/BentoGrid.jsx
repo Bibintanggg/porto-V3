@@ -5,12 +5,12 @@ import {
     GlobeIcon,
     InputIcon,
   } from "@radix-ui/react-icons";
-  
+  import OneIcon from "../assets/Icon/one.svg"
   import { BentoCard, BentoGrid } from "../components/magicui/bento-grid";
   
   const features = [
     {
-      Icon: InputIcon,
+      Icon: {OneIcon},
       name: "Full text search",
       description: "Search through all your files in one place.",
       href: "/",
@@ -24,7 +24,7 @@ import {
     return (
       <BentoGrid className="lg:grid-rows-3">
         {features.map((feature) => (
-          <BentoCard key={feature.name} {...feature} />
+          <BentoCard key={feature.name} {...feature} Icon={feature.Icon} />
         ))}
       </BentoGrid>
     );
