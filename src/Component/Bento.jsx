@@ -11,13 +11,13 @@ import {
   const features = [
     {
       Icon: () => <img src={OneIcon} className="w-10"/>,
-      name: "Full text search",
+      name: "Full text ",
       description: "Search through all your files in one place.",
       href: "/",
-      cta: "Learn more",
+      cta: "ini tahun experience",
       background: <img className="absolute -right-20 -top-20 opacity-60" />,
       className:
-        "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 w-96 h-96",
+        "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 w-80 h-80",
     },
   ];
   
