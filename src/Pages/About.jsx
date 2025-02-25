@@ -260,7 +260,7 @@ function About() {
                       ? "bg-gradient-to-r from-black/30 to-black/20 "
                       : "bg-[#f2f2fc]"
                   }
-                  ${isOpen ? "" : ""}`}
+                  ${isOpen ? "" :        ""}`}
                   spotlightColor="rgba(0, 229, 255, 0.2)"
                 >
                   <div
