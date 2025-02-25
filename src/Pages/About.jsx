@@ -39,7 +39,9 @@ function About() {
       desc: "TOTAL PROJECT I HAVE COMPLETED",
       icon: ProjectIcon,
       valueDuration: 2000,
-      iconDuration: 2500,
+      iconDuration: 2000,
+      titleDuration: 1500,
+      descDuration: 1500,
       path: "/project",
     },
     {
@@ -48,8 +50,10 @@ function About() {
       value: 5,
       desc: "TOTAL CERTIFICATES I HAVE ACHIEVED",
       icon: CertiIcon,
-      valueDuration: 2500,
-      iconDuration: 3000,
+      valueDuration: 2000,
+      iconDuration: 2000,
+      titleDuration: 1500,
+      descDuration: 1500,
       path: "/project",
     },
     {
@@ -58,8 +62,10 @@ function About() {
       value: 5,
       desc: "TOTAL EXPERIENCES I HAVE GAINED",
       icon: ExperienceIcon,
-      valueDuration: 3000,
-      iconDuration: 3500,
+      valueDuration: 2000,
+      iconDuration: 2000,
+      titleDuration: 1500,
+      descDuration: 1500,
       path: "/about/experience"
     },
   ];
@@ -288,6 +294,8 @@ function About() {
                       </p>
                     </div>
                     <p
+                    data-aos="fade-right"
+                    data-aos-duration={project.titleDuration}
                       className={`text-sm translate-y-3 font-poppins ${
                         darkMode ? "text-white" : "text-black"
                       }`}
@@ -296,6 +304,8 @@ function About() {
                     </p>
                     <div className="translate-y-4 font-poppins flex gap-5 mb-">
                       <span
+                      data-aos="fade-up"
+                      data-aos-duration={project.descDuration}
                         className={`text-[0.65rem] ${
                           darkMode ? "text-white" : "text-black"
                         }`}

@@ -6,6 +6,8 @@ const SpotlightCard = ({
   children,
   className = "",
   spotlightColor = "rgba(255, 255, 255, 0.25)",
+  aosType = "fade-right",
+  aosTypeDuration = "2500"
 }) => {
   const divRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -48,6 +50,8 @@ const SpotlightCard = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      data-aos={aosType}
+      data-aos-duration={aosTypeDuration}
       className={`relative rounded-3xl border overflow-hidden p-8 
         ${className}
         ${darkmode ? "border-neutral-800 bg-neutral-900" : ""}`}
