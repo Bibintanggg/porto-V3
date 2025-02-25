@@ -2,8 +2,8 @@ import { useState} from "react";
 import Sidebar from "../Component/Sidebar";
 import { useDarkMode } from "../Component/DarkMode";
 import { useNavigate } from "react-router-dom";
-import { BentoGrid } from "../components/magicui/bento-grid";
-import { BentoDemo } from "../Component/BentoGrid";
+import { BentoCard, BentoGrid } from "../components/magicui/bento-grid";
+import { BentoDemo } from "../Component/Bento";
 
 
 function Experience() {
@@ -54,6 +54,10 @@ function Experience() {
                             </p>
                             <span className={`${isOpen ? "text-white " : "mt-6 text-white "}`}>&gt; Experience</span>
                         </div>
+                    </div>
+
+                    <div>
+                    <BentoDemo/>
                     </div>
             
           </div>
