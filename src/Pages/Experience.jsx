@@ -96,7 +96,7 @@ function Experience() {
               </div>
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col mt-10">
               <BentoDemo />
               <div className="w-1 h-32 bg-white -mt-44 ml-32"></div>
               <div className="w-44 h-1 bg-white -mt-1 ml-32 rounded-full"></div>
