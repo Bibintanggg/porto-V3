@@ -17,7 +17,7 @@ import {
       cta: "2023 | September",
       background: <img className="absolute -right-20 -top-20 opacity-60" />,
       className:
-        "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 w-96 h-56",
+        "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 w-72 h-42",
     },
   ];
   

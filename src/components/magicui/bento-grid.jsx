@@ -40,13 +40,13 @@ const BentoCard = ({
     {...props}>
     <div>{background}</div>
     <div
-      className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-10 transition-all duration-300 group-hover:-translate-y-10">
+      className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-10 transition-all duration-300 group-hover:-translate-y-4">
       <Icon
         className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
-      <h3 className="text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+      <h3 className="text-base font-semibold text-neutral-700 dark:text-neutral-300">
         {name}
       </h3>
-      <p className="max-w-lg text-neutral-400">{description}</p>
+      <p className="max-w-lg text-sm text-neutral-400">{description}</p>
     </div>
 
     <div
