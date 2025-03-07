@@ -8,7 +8,23 @@ function Experience() {
   const { darkMode } = useDarkMode();
   const [isOpen, setIsOpen] = useState(true);
   const navigate = useNavigate();
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedEducation, setSelectedEducation] = useState(null);
+  const [toggleButton, setToggleButton] = useState(false);
+
+  const toggleView = () => {
+    setToggleButton(!toggleButton);
+  }
+
+  const openModal = (education) => {
+    setSelectedEducation(true)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setSelectedEducation(null)
+    setIsModalOpen(false)
+  }
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -97,11 +113,26 @@ function Experience() {
             <div className="text-white flex">
               <div className="bg-red-500 flex gap-10 text-xl font-poppins w-96 rounded-2xl justify-center 
               h-10 items-center">
-                <button className="hover:bg-black rounded-2xl w-96 h-8 ml-3 transition-all duration-300 ease-in-out">01 ⎯ Experience</button>
-                <button className="hover:bg-black rounded-2xl w-96 h-8 mr-3 transition-all duration-300 ease-in-out">Education ⎯ 02</button>
+                <button 
+                onClick={toggleView}
+                className="hover:bg-black rounded-2xl w-96 h-8 ml-3 transition-all duration-300 ease-in-out">01 ⎯ Experience</button>
+
+                <button 
+                onClick={toggleView}
+                className="hover:bg-black rounded-2xl w-96 h-8 mr-3 transition-all duration-300 ease-in-out">Education ⎯ 02</button>
               </div>
             </div>
           </div>
+
+          {toggleButton ? (
+            <div>
+              
+            </div>
+          ) : (
+            <div>
+              
+            </div>
+          )}
 
         </div>
       </div>
