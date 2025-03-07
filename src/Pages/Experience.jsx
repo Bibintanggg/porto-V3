@@ -8,6 +8,7 @@ function Experience() {
   const { darkMode } = useDarkMode();
   const [isOpen, setIsOpen] = useState(true);
   const navigate = useNavigate();
+  
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -87,43 +88,21 @@ function Experience() {
             </div>
           </div>
 
-          {/* Timeline Section - Horizontal ZigZag dengan Connector */}
-          <div className="mt-24 px-8">
-            <div className="relative">
-              {/* Main Timeline Line */}
-              <div className="absolute left-0 w-full h-1 bg-white opacity-70" style={{ top: '50%' }}></div>
+          <div className="flex flex-col items-center ">
+          <p className={`font-poppins text-3xl text-center font-bold text-white`}>Experience</p>
+          <hr className="w-20 h-1 rounded-full bg-white mt-2"/>
+          </div>
 
-              {/* Timeline Items Container */}
-              <div className="flex justify-between relative z-10">
-                {/* Timeline Item 1 - Top */}
-                <div className="flex flex-col items-center">
-                  <div className="w-64 mb-6">
-                    <BentoDemo />
-                  </div>
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
-                  <div className="h-16 w-1 bg-white opacity-0"></div>
-                </div>
-
-                {/* Timeline Item 2 - Bottom */}
-                <div className="flex flex-col items-center">
-                  <div className="h-16 w-1 bg-white opacity-0"></div>
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
-                  <div className="w-64 mt-6">
-                    <BentoDemo />
-                  </div>
-                </div>
-
-                {/* Timeline Item 3 - Top */}
-                <div className="flex flex-col items-center">
-                  <div className="w-64 mb-6">
-                    <BentoDemo />
-                  </div>
-                  <div className="w-4 h-4 bg-white rounded-full"></div>
-                  <div className="h-16 w-1 bg-white opacity-0"></div>
-                </div>
+          <div className="flex justify-center items-center mt-5">
+            <div className="text-white flex">
+              <div className="bg-red-500 flex gap-10 text-xl font-poppins w-96 rounded-2xl justify-center 
+              h-10 items-center">
+                <button className="hover:bg-black rounded-2xl w-96 h-8 ml-3 transition-all duration-300 ease-in-out">01 ⎯ Experience</button>
+                <button className="hover:bg-black rounded-2xl w-96 h-8 mr-3 transition-all duration-300 ease-in-out">Education ⎯ 02</button>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
