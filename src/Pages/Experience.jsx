@@ -163,8 +163,25 @@ function Experience() {
               ))}
             </div>
           ) : (
-            <div>
-              
+            <div className="grid grid-cols-3">
+              {experience.map((data_experience) => (
+                <div
+                key={data_experience.id}
+                className="">
+                  <div className="flex justify-center">
+                    <div className="flex items-center mt-10 gap-1">
+                      <div className="overflow-hidden">
+                        <img src={OneIcon} className="w-full " />
+                      </div>
+                      <div className="flex flex-col">
+                        <h1 className="text-xl font-poppins text-white">{data_experience.title}</h1>
+                        <h2>{data_experience.desc}</h2>
+                        <p>{data_experience.date}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
 
