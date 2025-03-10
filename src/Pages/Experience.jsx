@@ -4,7 +4,24 @@ import { useDarkMode } from "../Component/DarkMode";
 import { useNavigate } from "react-router-dom";
 import { BentoDemo } from "../Component/Bento";
 
+import OneIcon from "../assets/Icon/one.svg"
+
 function Experience() {
+  const experience = [
+    {id: 1, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
+    {id: 2, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
+    {id: 3, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
+    {id: 4, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
+    {id: 5, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
+    {id: 6, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk" },
+  ]
+
+  const education = [
+    { id: 1, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw"},
+    { id: 2, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw" },
+    { id: 3, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw" },
+    { id: 4, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw" },
+  ]
   const { darkMode } = useDarkMode();
   const [isOpen, setIsOpen] = useState(true);
   const navigate = useNavigate();
@@ -125,8 +142,21 @@ function Experience() {
           </div>
 
           {toggleButton ? (
-            <div>
-              
+            <div className="grid grid-cols-3 ">
+              {education.map((data_education) => (
+                <div 
+                key={data_education.id}
+                className="">
+                  <div className="flex justify-center">
+                    <div className="flex items-center">
+                      <div className="overflow-hidden">
+                        <img src={OneIcon} className="w-full " />
+                      </div>
+                      <p>{data_education.title}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           ) : (
             <div>
