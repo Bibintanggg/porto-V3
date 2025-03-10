@@ -224,12 +224,16 @@ function About() {
                           <p className="text-white"
                             data-aos="fade-up"
                             data-aos-duration="2000">Creative</p>
-                          <div className="w-0.5 h-5 bg-white rounded-full"></div>
+                          <div className="w-0.5 h-5 bg-white rounded-full"
+                          data-aos="fade-in"
+                            data-aos-duration="1500"></div>
 
                           <p className="text-white text-center"
                             data-aos="fade-up"
                             data-aos-duration="2500">Detail Oriented</p>
-                          <div className="w-0.5 h-5 bg-white rounded-full"></div>
+                          <div className="w-0.5 h-5 bg-white rounded-full"
+                            data-aos="fade-in"
+                            data-aos-duration="2000"></div>
 
                           <p className="text-white"
                             data-aos="fade-up"
@@ -408,7 +412,7 @@ function About() {
                   {displayedStack.map((icons) => (
                     <div
                       key={icons.id}
-                      className={`flex items-center justify-center ${isOpen ? "" : "translate-x-2"}`}
+                      className={`flex items-center justify-center ${isOpen ? "" : "translate-x-2 "}`}
                     >
                       <div
                         className={`relative flex items-center justify-center w-48 h-6 rounded p-10 gap-3 
