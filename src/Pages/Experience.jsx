@@ -148,11 +148,15 @@ function Experience() {
                 key={data_education.id}
                 className="">
                   <div className="flex justify-center">
-                    <div className="flex items-center">
+                    <div className="flex items-center mt-10 gap-1">
                       <div className="overflow-hidden">
                         <img src={OneIcon} className="w-full " />
                       </div>
-                      <p>{data_education.title}</p>
+                      <div className="flex flex-col">
+                      <h1 className="text-xl font-poppins text-white">{data_education.title}</h1>
+                      <h2>{data_education.desc}</h2>
+                      <p>{data_education.date}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
