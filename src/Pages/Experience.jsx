@@ -60,26 +60,30 @@ function Experience() {
             }`}
         >
           <div
-            className={`flex justify-between text-left ${isOpen ? "opacity-100" : "opacity-100"
-              }`}
+            className={`flex justify-between text-left ${
+              isOpen ? "opacity-100" : "opacity-100"
+            }`}
           >
             <h1
-              className={`text-base font-semibold ${darkMode ? "text-white" : "text-gray-800"
-                } 
-                            ${isOpen ? "ml-10" : "ml-10"} font-poppins pt-2`}
+              className={`text-base font-semibold ${
+                darkMode ? "text-white" : "text-gray-800"
+              } 
+            ${isOpen ? "ml-10" : "ml-10"} font-poppins pt-2`}
             >
-              EXPERIENCE
+              ABOUT
             </h1>
             <div className={`text-right ${isOpen ? "" : "mr-10"}`}>
               <h2
-                className={`text-base font-semibold ${darkMode ? "text-white" : "text-gray-800"
-                  } font-poppins`}
+                className={`text-base font-semibold ${
+                  darkMode ? "text-white" : "text-gray-800"
+                } font-poppins`}
               >
                 Hello, Bintang !
               </h2>
               <p
-                className={`-translate-y-2 ${darkMode ? "text-gray-300" : "text-gray-600"
-                  }`}
+                className={`-translate-y-2 ${
+                  darkMode ? "text-gray-300" : "text-gray-600"
+                }`}
               >
                 Role &gt; Student
               </p>
@@ -122,31 +126,36 @@ function Experience() {
           </div>
 
           <div className="flex flex-col items-center ">
-          <p className={`font-poppins text-3xl text-center font-bold text-white`}>Experience</p>
-          <hr className="w-20 h-1 rounded-full bg-white mt-2"/>
+          <p className={`font-poppins text-3xl text-center font-bold text-white 
+            ${isOpen ? "" : "translate-x-32 mt-4"}`}>Experience</p>
+          <hr className={`w-20 h-1 rounded-full bg-white mt-2 
+            ${isOpen ? "" : "translate-x-32"}`}/>
           </div>
 
           <div className="flex justify-center items-center mt-5">
             <div className="text-white flex">
-              <div className="bg-red-500 flex gap-10 text-xl font-poppins w-96 rounded-2xl justify-center 
-              h-10 items-center">
+              <div className={`bg-red-500 flex gap-10 text-xl font-poppins rounded-2xl justify-center 
+              h-10 items-center
+              ${isOpen ? "w-96" : "translate-x-32 w-80"}`}>
                 <button 
                 onClick={toggleView}
-                className="hover:bg-black rounded-2xl w-96 h-8 ml-3 transition-all duration-300 ease-in-out">01 ⎯ Experience</button>
+                className={`hover:bg-black rounded-2xl w-96 h-8 ml-3 transition-all duration-300 ease-in-out
+                ${isOpen ? "" : "text-base"}`}>01 ⎯ Experience</button>
 
                 <button 
                 onClick={toggleView}
-                className="hover:bg-black rounded-2xl w-96 h-8 mr-3 transition-all duration-300 ease-in-out">Education ⎯ 02</button>
+                className={`hover:bg-black rounded-2xl w-96 h-8 mr-3 transition-all duration-300 ease-in-out
+                ${isOpen ? "" : "text-base"}`}>Education ⎯ 02</button>
               </div>
             </div>
           </div>
 
           {toggleButton ? (
-            <div className="grid grid-cols-3">
+            <div className={`grid ${isOpen ? "grid-cols-3" : "grid-cols-1"}`}>
             {education.map((data_education) => (
               <div
                 key={data_education.id}
-                className="">
+                className={`${isOpen ? "" : "translate-x-36"}`}>
                 <div className="flex justify-center">
                   <div className="flex flex-col items-start mt-10 gap-1">
                     <div className="flex items-center">
