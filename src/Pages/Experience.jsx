@@ -142,47 +142,47 @@ function Experience() {
           </div>
 
           {toggleButton ? (
-            <div className="grid grid-cols-3 ">
-              {education.map((data_education) => (
-                <div 
+            <div className="grid grid-cols-3">
+            {education.map((data_education) => (
+              <div
                 key={data_education.id}
                 className="">
-                  <div className="flex justify-center">
-                    <div className="flex items-center mt-10 gap-1">
-                      <div className="overflow-hidden">
-                        <img src={OneIcon} className="w-full " />
-                      </div>
-                      <div className="flex flex-col">
-                      <h1 className="text-xl font-poppins text-white">{data_education.title}</h1>
-                      <h2>{data_education.desc}</h2>
-                      <p>{data_education.date}</p>
-                      </div>
+                <div className="flex justify-center">
+                  <div className="flex flex-col items-start mt-10 gap-1">
+                    <div className="flex items-center">
+                      <img src={OneIcon} className="w-10 invert" />
+                      <h1 className="text-xl font-poppins text-white ml-2">{data_education.title}</h1>
+                    </div>
+                    <div className="flex flex-col ml-12">
+                      <p className="text-white font-poppins">{data_education.date}</p>
+                      <h2 className="text-white font-poppins">{data_education.desc}</h2>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
           ) : (
             <div className="grid grid-cols-3">
-              {experience.map((data_experience) => (
-                <div
+            {experience.map((data_experience) => (
+              <div
                 key={data_experience.id}
                 className="">
-                  <div className="flex justify-center">
-                    <div className="flex items-center mt-10 gap-1">
-                      <div className="overflow-hidden">
-                        <img src={OneIcon} className="w-full " />
-                      </div>
-                      <div className="flex flex-col">
-                        <h1 className="text-xl font-poppins text-white">{data_experience.title}</h1>
-                        <h2>{data_experience.desc}</h2>
-                        <p>{data_experience.date}</p>
-                      </div>
+                <div className="flex justify-center">
+                  <div className="flex flex-col items-start mt-10 gap-1">
+                    <div className="flex items-center">
+                      <img src={OneIcon} className="w-10 invert" />
+                      <h1 className="text-xl font-poppins text-white ml-2">{data_experience.title}</h1>
+                    </div>
+                    <div className="flex flex-col ml-12">
+                      <p className="text-white font-poppins">{data_experience.date}</p>
+                      <h2 className="text-white font-poppins">{data_experience.desc}</h2>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
           )}
 
         </div>

@@ -396,12 +396,15 @@ function About() {
                         <div className="flex items-center justify-center mx-auto gap-2">
                           <img
                             src={items.icon}
-                            alt=""
+                            data-aos="fade-in"
+                        data-aos-duration="1500"
                             className={`w-6 h-6 ${
                               darkMode ? "invert brightness-75" : ""
                             }`}
                           />
-                          <p className="text-sm">{items.title}</p>
+                          <p className="text-sm"
+                          data-aos="fade-in"
+                          data-aos-duration="2000">{items.title}</p>
                         </div>
                       </div>
                     ))}
@@ -413,6 +416,8 @@ function About() {
                     <div
                       key={icons.id}
                       className={`flex items-center justify-center ${isOpen ? "" : "translate-x-2 "}`}
+                      data-aos={isOpen ? "" : "fade-up"}
+                      data-aos-duration="1000"
                     >
                       <div
                         className={`relative flex items-center justify-center w-48 h-6 rounded p-10 gap-3 
