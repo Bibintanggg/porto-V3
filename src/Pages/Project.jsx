@@ -10,6 +10,7 @@ import ShareIcon from "../assets/Icon/share.svg";
 import { isCookie, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
 import { useEffect, useState } from "react";
+import AOS from "aos";
 
 function Project() {
   const projects = [
@@ -110,9 +111,17 @@ function Project() {
     setIsModalOpen(false);
   };
 
+  const animations = ["fade-right" , 'fade-down', 'fade-left']
+
   useEffect(() => {
-    
-  })
+    AOS.init({
+      duration: 1000,
+      mirror: false,
+      once: true,
+    });
+
+    AOS.refresh()
+  }, [toggleButton])
   return (
     <div
       className={`relative min-h-screen h-screen flex transition-all duration-500 ease-in-out ${
