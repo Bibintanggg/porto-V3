@@ -118,11 +118,11 @@ function Project() {
     AOS.init({
       duration: 1000,
       mirror: false,
-      once: true,
+      once: false,
     });
 
     AOS.refresh()
-  }, [toggleButton])
+  }, [])
   return (
     <div
       className={`relative min-h-screen h-screen flex transition-all duration-500 ease-in-out ${
@@ -145,7 +145,7 @@ function Project() {
                 darkMode ? "text-white" : "text-black"
               }`}
             >
-              PROJECT
+              PROJECT 
             </h1>
             <div className="text-right">
               <h2
