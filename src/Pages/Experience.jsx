@@ -172,11 +172,11 @@ function Experience() {
             ))}
           </div>
           ) : (
-            <div className="grid grid-cols-3">
+            <div className={`grid ${isOpen ? "grid-cols-3" : "grid-cols-1"}`}>
             {experience.map((data_experience) => (
               <div
                 key={data_experience.id}
-                className="">
+                className={`${isOpen ? "" : "translate-x-36"}`}>
                 <div className="flex justify-center">
                   <div className="flex flex-col items-start mt-10 gap-1">
                     <div className="flex items-center">
@@ -185,7 +185,7 @@ function Experience() {
                     </div>
                     <div className="flex flex-col ml-12">
                       <p className="text-white font-poppins">{data_experience.date}</p>
-                      <h2 className="text-white font-poppins">{data_experience.desc}</h2>
+                      <h2 className={`text-white font-poppins max-w-60`}>{data_experience.desc}</h2>
                     </div>
                   </div>
                 </div>
