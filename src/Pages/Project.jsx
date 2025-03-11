@@ -11,6 +11,7 @@ import { isCookie, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
 import { useEffect, useState } from "react";
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Project() {
   const projects = [
@@ -216,9 +217,13 @@ function Project() {
           {toggleButton ? (
             <div className={`md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10
              ${isOpen ? "grid grid-cols-2" : "grid grid-cols-1"}`}>
-              {certificates.map((data_certificate) => (
+              {certificates.map((data_certificate, index) => (
                 <div
                   key={data_certificate.id}
+                  data-aos={animations[index % 3]}
+                  data-aos-duration="1500"
+                  data-aos-delay={ `${index * 100}`}
+                  // onClick={openModal}
                   className={`flex justify-center rounded-xl group overflow-hidden
                     hover:outline outline-1 transition duration-300 ease-in-out
                     ${
@@ -250,9 +255,13 @@ function Project() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-              {projects.map((data_project) => (
+              {projects.map((data_project, index) => (
                 <div
                   key={data_project.id}
+                  data-aos={animations[index % 3]}
+                  data-aos-duration="1500"
+                  data-aos-delay={`${index * 100}`}
+                  onClick={openModal}
                   className={`flex justify-center rounded-xl group overflow-hidden
                     hover:outline outline-1 transition duration-300 ease-in-out
                     ${
