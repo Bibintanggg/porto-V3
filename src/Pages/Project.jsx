@@ -9,7 +9,7 @@ import MoneyTrackIMG from "../assets/Image/moneytrack.png"
 import ShareIcon from "../assets/Icon/share.svg";
 import { isCookie, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Project() {
   const projects = [
@@ -22,6 +22,8 @@ function Project() {
       path: "https://sleepwell-calypso.vercel.app/",
       icon: ShareIcon,
       secondText: "DETAILS",
+      animation: "fade-left",
+      animationDuration: "2000"
     },
     {
       id: 2,
@@ -108,6 +110,9 @@ function Project() {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    
+  })
   return (
     <div
       className={`relative min-h-screen h-screen flex transition-all duration-500 ease-in-out ${
@@ -235,7 +240,7 @@ function Project() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
               {projects.map((data_project) => (
                 <div
                   key={data_project.id}
