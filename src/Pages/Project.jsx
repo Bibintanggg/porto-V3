@@ -122,7 +122,7 @@ function Project() {
     });
 
     AOS.refresh()
-  }, [])
+  }, [toggleButton, isOpen])
   return (
     <div
       className={`relative min-h-screen h-screen flex transition-all duration-500 ease-in-out ${
