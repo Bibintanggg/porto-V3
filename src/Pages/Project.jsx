@@ -145,7 +145,7 @@ function Project() {
                 darkMode ? "text-white" : "text-black"
               }`}
             >
-              PROJECT 
+              PROJECT
             </h1>
             <div className="text-right">
               <h2
@@ -215,15 +215,17 @@ function Project() {
           </div>
 
           {toggleButton ? (
-            <div className={`md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10
-             ${isOpen ? "grid grid-cols-2" : "grid grid-cols-1"}`}>
+            <div
+              className={`md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10
+             ${isOpen ? "grid grid-cols-2" : "grid grid-cols-1"}`}
+            >
               {certificates.map((data_certificate, index) => (
                 <div
                   key={data_certificate.id}
                   data-aos={animations[index % 3]}
                   data-aos-duration="1500"
-                  data-aos-delay={ `${index * 100}`}
-                  // onClick={openModal}
+                  data-aos-delay={`${index * 100}`}
+                  onClick={() => openModal(data_project)}
                   className={`flex justify-center rounded-xl group overflow-hidden
                     hover:outline outline-1 transition duration-300 ease-in-out
                     ${
@@ -261,14 +263,13 @@ function Project() {
                   data-aos={animations[index % 3]}
                   data-aos-duration="1500"
                   data-aos-delay={`${index * 100}`}
-                  onClick={openModal}
                   className={`flex justify-center rounded-xl group overflow-hidden
-                    hover:outline outline-1 transition duration-300 ease-in-out
-                    ${
-                      darkMode
-                        ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
-                        : "hover:outline-blue-500 bg-white text-black"
-                    }`}
+      hover:outline outline-1 transition duration-300 ease-in-out
+      ${
+        darkMode
+          ? "bg-gradient-to-r from-black/30 to-black/10 hover:outline-blue-500 text-white"
+          : "hover:outline-blue-500 bg-white text-black"
+      }`}
                 >
                   <div className="flex justify-center items-center p-4">
                     <div>
@@ -277,7 +278,7 @@ function Project() {
                           src={data_project.image}
                           alt=""
                           className="w-full rounded-lg transform transition-transform 
-                          duration-300 group-hover:scale-105"
+            duration-300 group-hover:scale-105"
                         />
                       </div>
                       <p className="font-jakarta text-[1.2rem] font-medium pt-2">
@@ -287,24 +288,31 @@ function Project() {
                         {data_project.desc}
                       </span>
                       <div className="flex justify-between items-center w-full gap-4 pt-3">
-                        <button className="flex items-center gap-2">
-                          <a
-                            href={data_project.path}
-                            className="text-[0.90rem] font-jakarta"
-                          >
-                            {data_project.demo}
-                          </a>
+                        {/* Tombol Live Demo */}
+                        <a
+                          href={data_project.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-[0.90rem] font-jakarta"
+                        >
+                          {data_project.demo}
                           <img
                             src={data_project.icon}
                             alt=""
                             className={`w-4 ${darkMode ? "invert" : ""}`}
                           />
-                        </button>
+                        </a>
+
+                        {/* Tombol Details */}
                         <button
+                          onClick={() =>
+                            handleNavigate(
+                              `/project/${projectRoutes[data_project.id] || ""}`
+                            )
+                          }
                           className={`flex justify-center items-center ${
                             darkMode ? "bg-gray-700" : "bg-gray-500"
                           } w-28 h-10 rounded-lg`}
-                          onClick={() => handleNavigate(`/project/${projectRoutes[data_project.id] || ""}`)}
                         >
                           <span className="text-xs font-jakarta text-[0.90rem]">
                             {data_project.secondText}
