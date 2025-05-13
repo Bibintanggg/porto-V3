@@ -5,22 +5,21 @@ import { useNavigate } from "react-router-dom";
 import { BentoDemo } from "../Component/Bento";
 
 import OneIcon from "../assets/Icon/one.svg"
+import TwoIcon from "../assets/Icon/two.svg"
+import ThreeIcon from "../assets/Icon/three.svg"
+import FourIcon from "../assets/Icon/four.svg"
+import FiveIcon from "../assets/Icon/five.svg"
+import SixIcon from "../assets/Icon/six.svg"
 
 function Experience() {
   const experience = [
-    {id: 1, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
-    {id: 2, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
-    {id: 3, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
-    {id: 4, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
-    {id: 5, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk"},
-    {id: 6, title: "Lorem Ipsum", date: "2024 | September", desc: "Lorem ipsum dolor sit amet aokwoakwawk" },
+    {id: 1, title: "Creating LMS", date: "2024 | September", desc: "Create a learning management system for my school", icon: OneIcon},
+    { id: 2, title: "Kompetisi Website", date: "2024 | September", desc: "Create a learning management system for my school", icon: TwoIcon },
   ]
 
   const education = [
-    { id: 1, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw"},
-    { id: 2, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw" },
-    { id: 3, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw" },
-    { id: 4, title: "SDN Lorem Ipsum", date: "2011 | Agustus", desc: "Lorem Ipsum aowkoakwoakw" },
+    { id: 1, title: "Juara 3 Trelogy Website Competition | SMKN8 Jakarta", date: "2024 | Oktober", icon: OneIcon},
+    { id: 2, title: "Juara 2 Youth Science Competition | Bahasa Inggris", date: "2025 | Mei", desc: "Lorem Ipsum aowkoakwoakw", icon: TwoIcon },
   ]
   const { darkMode } = useDarkMode();
   const [isOpen, setIsOpen] = useState(true);
@@ -139,19 +138,19 @@ function Experience() {
               ${isOpen ? "w-96" : "translate-x-32 w-80"}`}>
                 <button 
                 onClick={toggleView}
-                className={`hover:bg-black rounded-2xl w-96 h-8 ml-3 transition-all duration-300 ease-in-out
-                ${isOpen ? "" : "text-base"}`}>01 ⎯ Experience</button>
+                className={`hover:bg-black rounded-2xl w-96 h-8 ml-3 transition-all duration-300 ease-in-out whitespace-nowrap
+                ${isOpen ? "" : "text-base"}`}>01 ⎯ Pengalaman</button>
 
                 <button 
                 onClick={toggleView}
                 className={`hover:bg-black rounded-2xl w-96 h-8 mr-3 transition-all duration-300 ease-in-out
-                ${isOpen ? "" : "text-base"}`}>Education ⎯ 02</button>
+                ${isOpen ? "" : "text-base"}`}>Kompetisi ⎯ 02</button>
               </div>
             </div>
           </div>
 
           {toggleButton ? (
-            <div className={`grid ${isOpen ? "grid-cols-3" : "grid-cols-1"}`}>
+            <div className={`grid ${isOpen ? "grid-cols-2 justify-center mx-auto" : "grid-cols-1"}`}>
             {education.map((data_education) => (
               <div
                 key={data_education.id}
@@ -159,12 +158,11 @@ function Experience() {
                 <div className="flex justify-center">
                   <div className="flex flex-col items-start mt-10 gap-1">
                     <div className="flex items-center">
-                      <img src={OneIcon} className="w-10 invert" />
-                      <h1 className="text-xl font-poppins text-white ml-2">{data_education.title}</h1>
+                      <img src={data_education.icon} className="w-10 h-10 invert opacity-50"/>
+                      <h1 className="text-xl font-poppins text-white ml-2 font-semibold max-w-[20rem]">{data_education.title}</h1>
                     </div>
                     <div className="flex flex-col ml-12">
                       <p className="text-white font-poppins">{data_education.date}</p>
-                      <h2 className="text-white font-poppins">{data_education.desc}</h2>
                     </div>
                   </div>
                 </div>
@@ -180,7 +178,7 @@ function Experience() {
                 <div className="flex justify-center">
                   <div className="flex flex-col items-start mt-10 gap-1">
                     <div className="flex items-center">
-                      <img src={OneIcon} className="w-10 invert" />
+                      <img src={data_experience.icon} className="w-10 invert opacity-50" />
                       <h1 className="text-xl font-poppins text-white ml-2">{data_experience.title}</h1>
                     </div>
                     <div className="flex flex-col ml-12">
