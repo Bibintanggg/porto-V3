@@ -126,6 +126,8 @@ function Contact() {
               <span className={`block font-jakarta pt-1 ${darkMode ? "text-white" : ""}`}>
                 Feel free to reach out to me anytime!
               </span>
+              
+              <p className="text-white mt-1 font-poppins text-xs">*click img for mutual :p</p>
             </div>
 
             <div className="flex flex-col lg:flex-row justify-start gap-10 mt-10 max-w-[90rem]">
@@ -171,7 +173,7 @@ function Contact() {
                           data-aos-easing="ease-in-out"
                           data-aos-delay="300"
                           src={selectedImage.image}
-                          className={`object-cover rounded-lg transition-all duration-300 group-hover:scale-105
+                          className={`object-cover rounded-lg transition-all duration-300
                           ${isOpen ? "w-60" : "w-40"}`}
                         />
                       </button>

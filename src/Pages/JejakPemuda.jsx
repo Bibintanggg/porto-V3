@@ -63,20 +63,18 @@ function JejakPemuda() {
     };
 
     return (
-        <div className={`relative min-h-screen h-screen flex transition-all duration-300 ease-in-out 
+        <div className={`relative min-h-screen  flex transition-all duration-300 ease-in-out 
             overflow-x-hidden
             ${darkMode ? 'text-white bg-[#131523]' : 'text-black bg-[#f2f2fc]'}
             ${isOpen ? "" : "-ml-[65%]"}`}>
 
-            <div className={`w-[250px] h-screen fixed top-0 left-0 z-50
+            <div className={`w-[250px] h-screen fixed z-50
                 ${isOpen ? "" : ""}`}>
                 <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
 
-            {/* Main Content */}
             <div className={`w-full md:ml-[250px] overflow-y-auto px-4 md:px-8 z-10`}>
                 <div className="bg-transparent py-8">
-                    {/* Header */}
                     <div className={`flex  md:flex-row md:justify-between text-left gap-4 md:gap-0
                         ${isOpen ? "" : "flex justify-between items-center"}`}>
                         <h1 className={`text-base font-semibold font-poppins pt-2 
@@ -93,12 +91,10 @@ function JejakPemuda() {
                         </div>
                     </div>
 
-                    {/* Divider */}
                     <div className={`w-full h-0.5 mx-auto opacity-25
                         ${darkMode ? 'bg-white' : 'bg-black'}`}>
                     </div>
 
-                    {/* Navigation */}
                     <div className={`flex items-center md:flex-row md:items-center gap-4 pt-7
                         ${isOpen ? "" : "flex items-center justify-center"}`}>
                         <button
@@ -114,7 +110,7 @@ function JejakPemuda() {
                                 ${isOpen ? "" : ""}`}>
                                 Project
                             </p>
-                            <span className={`${isOpen ? "" : "mt-6 "}`}>&gt; Jejak Pemuda</span>
+                            <span className={`${isOpen ? "" : ""}`}>&gt; Jejak Pemuda</span>
                         </div>
                     </div>
 

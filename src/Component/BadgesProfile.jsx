@@ -8,9 +8,7 @@ function BadgesProfile(){
     const badges = [
         { id: 1, label: "Frontend Developer", color: "bg-gray-700 rounded-full bg-clip-padding backdrop-filter bg-opacity-50", 
             offset:  "translate-x-15", animation: "fade-left", duration: 2000 },
-        { id: 2, label: "Backend Developer", color: "bg-gray-700 rounded-full bg-clip-padding backdrop-filter bg-opacity-50", 
-            offset:  "translate-x-1", animation: "fade-left", duration: 2500 },
-        { id: 3, label: "UI/UX Designer", color: "bg-gray-700 rounded-full bg-clip-padding backdrop-filter bg-opacity-50", 
+        { id: 2, label: "UI/UX Designer", color: "bg-gray-700 rounded-full bg-clip-padding backdrop-filter bg-opacity-50", 
             offset:  "translate-x-0", animation: "fade-left", duration: 3000 }
     ];
 

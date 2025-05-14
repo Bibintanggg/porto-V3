@@ -64,12 +64,12 @@ function Portfolio_V1() {
     };
 
     return (
-        <div className={`relative min-h-screen h-screen flex transition-all duration-300 ease-in-out 
+        <div className={`relative min-h-screen flex transition-all duration-300 ease-in-out 
             overflow-x-hidden
             ${darkMode ? 'text-white bg-[#131523]' : 'text-black bg-[#f2f2fc]'}
             ${isOpen ? "" : "-ml-[65%]"}`}>
 
-            <div className={`w-[250px] h-screen fixed top-0 left-0 z-50
+            <div className={`w-[250px] h-screen fixed z-50
                 ${isOpen ? "" : ""}`}>
                 <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>

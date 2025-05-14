@@ -78,6 +78,12 @@ function Project() {
       desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
       image: PeintagonsIMG,
     },
+    {
+      id: 4,
+      text: "SERTIFIKAT JUARA 3 WEB DEV",
+      desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
+      image: PeintagonsIMG,
+    },
   ];
 
   const projectRoutes = {
@@ -129,7 +135,7 @@ function Project() {
         darkMode ? "bg-[#131523]" : "bg-[#f2f2fc]"
       } ${isOpen ? "" : "-ml-[65%]"}`}
     >
-      <div className="w-[250px] h-screen fixed top-0 left-0">
+      <div className="w-[250px] h-screen fixed top-0 ">
         <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
@@ -222,9 +228,6 @@ function Project() {
               {certificates.map((data_certificate, index) => (
                 <div
                   key={data_certificate.id}
-                  data-aos={animations[index % 3]}
-                  data-aos-duration="1500"
-                  data-aos-delay={`${index * 100}`}
                   onClick={() => openModal(data_project)}
                   className={`flex justify-center rounded-xl group overflow-hidden
                     hover:outline outline-1 transition duration-300 ease-in-out
@@ -260,9 +263,6 @@ function Project() {
               {projects.map((data_project, index) => (
                 <div
                   key={data_project.id}
-                  data-aos={animations[index % 3]}
-                  data-aos-duration="1500"
-                  data-aos-delay={`${index * 100}`}
                   className={`flex justify-center rounded-xl group overflow-hidden
       hover:outline outline-1 transition duration-300 ease-in-out
       ${
@@ -288,7 +288,6 @@ function Project() {
                         {data_project.desc}
                       </span>
                       <div className="flex justify-between items-center w-full gap-4 pt-3">
-                        {/* Tombol Live Demo */}
                         <a
                           href={data_project.path}
                           target="_blank"

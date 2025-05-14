@@ -65,12 +65,12 @@ function SleepWell() {
     };
 
     return (
-        <div className={`relative min-h-screen h-screen flex transition-all duration-300 ease-in-out 
+        <div className={`relative min-h-screen flex transition-all duration-300 ease-in-out 
             overflow-x-hidden
             ${darkMode ? 'text-white bg-[#131523]' : 'text-black bg-[#f2f2fc]'}
             ${isOpen ? "" : "-ml-[65%]"}`}>
             
-            <div className={`w-[250px] h-screen fixed top-0 left-0 z-50
+            <div className={`w-[250px] h-screen fixed z-50
                 ${isOpen ? "" : ""}`}>
                 <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
@@ -223,7 +223,6 @@ function SleepWell() {
                                     ))}
                                 </div>
 
-                                {/* Technologies Section */}
                                 <div className="mt-6">
                                     <div className={`flex gap-2 w-full md:w-[18.8rem] h-14 items-center justify-center rounded-lg 
                                         ${darkMode ? 'bg-gradient-to-r from-black/50 to-black/30' : 'bg-white'}`}>

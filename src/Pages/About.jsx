@@ -220,22 +220,22 @@ function About() {
                       </p>
 
                       <div className={`${isOpen ? "" : "text-sm"}`}>
-                        <div className="mt-4 flex items-center gap-3">
-                          <p className="text-white"
+                          <div className={`mt-4 flex items-center gap-3 ${darkMode ? "text-white" : "text-black"}`}>
+                          <p className=""
                             data-aos="fade-up"
                             data-aos-duration="2000">Creative</p>
                           <div className="w-0.5 h-5 bg-white rounded-full"
                           data-aos="fade-in"
                             data-aos-duration="1500"></div>
 
-                          <p className="text-white text-center"
+                          <p className=" text-center"
                             data-aos="fade-up"
                             data-aos-duration="2500">Detail Oriented</p>
                           <div className="w-0.5 h-5 bg-white rounded-full"
                             data-aos="fade-in"
                             data-aos-duration="2000"></div>
 
-                          <p className="text-white"
+                          <p className=""
                             data-aos="fade-up"
                             data-aos-duration="3000">Aesthetic</p>
                         </div>

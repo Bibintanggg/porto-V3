@@ -15,6 +15,8 @@ function Experience() {
   const experience = [
     {id: 1, title: "Creating LMS", date: "2024 | September", desc: "Create a learning management system for my school", icon: OneIcon},
     { id: 2, title: "Kompetisi Website", date: "2024 | September", desc: "Create a learning management system for my school", icon: TwoIcon },
+    { id: 3, title: "Kompetisi Website", date: "2024 | September", desc: "Create a learning management system for my school", icon: ThreeIcon },
+    
   ]
 
   const education = [
@@ -67,11 +69,11 @@ function Experience() {
               className={`text-base font-semibold ${
                 darkMode ? "text-white" : "text-gray-800"
               } 
-            ${isOpen ? "ml-10" : "ml-10"} font-poppins pt-2`}
+            ${isOpen ? "ml-10" : "ml-72"} font-poppins pt-2`}
             >
               ABOUT
             </h1>
-            <div className={`text-right ${isOpen ? "" : "mr-10"}`}>
+            <div className={`text-right ${isOpen ? "" : "mr-1"}`}>
               <h2
                 className={`text-base font-semibold ${
                   darkMode ? "text-white" : "text-gray-800"
@@ -154,7 +156,7 @@ function Experience() {
             {education.map((data_education) => (
               <div
                 key={data_education.id}
-                className={`${isOpen ? "" : "translate-x-36"}`}>
+                className={`${isOpen ? "" : "translate-x-36 transition-all ease-in-out duration-300"}`}>
                 <div className="flex justify-center">
                   <div className="flex flex-col items-start mt-10 gap-1">
                     <div className="flex items-center">
