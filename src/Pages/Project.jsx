@@ -2,10 +2,10 @@ import Sidebar from "../Component/Sidebar";
 import Dicoding from "../assets/Image/dicoding.png";
 import SleepWell from "../assets/Image/sleepwell.png";
 import SagasitasIMG from "../assets/Image/saga.jpg";
-import PeintagonsIMG from "../assets/Image/peintagons.jpg"
-import Porto_V1 from "../assets/Image/portov1.png"
-import JejakPemudaIMG from "../assets/Image/jejakpemuda.png"
-import MoneyTrackIMG from "../assets/Image/moneytrack.png"
+import PeintagonsIMG from "../assets/Image/peintagons.jpg";
+import Porto_V1 from "../assets/Image/portov1.png";
+import JejakPemudaIMG from "../assets/Image/jejakpemuda.png";
+import MoneyTrackIMG from "../assets/Image/moneytrack.png";
 import ShareIcon from "../assets/Icon/share.svg";
 import { isCookie, useNavigate } from "react-router-dom";
 import { useDarkMode } from "../Component/DarkMode";
@@ -17,20 +17,20 @@ function Project() {
   const projects = [
     {
       id: 1,
-      text: "WEBSITE KESEHATAN TIDUR",
-      desc: "Sebuah platform edukasi yang bertujuan meningkatkan kesadaran...",
+      text: "SLEEP HEALTH WEBSITE",
+      desc: "An educational platform that aims to raise awareness...",
       image: SleepWell,
       demo: "LIVE DEMO",
       path: "https://sleepwell-calypso.vercel.app/",
       icon: ShareIcon,
       secondText: "DETAILS",
       animation: "fade-left",
-      animationDuration: "2000"
+      animationDuration: "2000",
     },
     {
       id: 2,
       text: "PORTFOLIO V1",
-      desc: "Proyek pertama saya dalam dunia programming. Website ini saya buat...",
+      desc: "My first project in programming world. I made this website...",
       image: Porto_V1,
       demo: "LIVE DEMO",
       path: "https://portofolio-bin.vercel.app/",
@@ -40,7 +40,7 @@ function Project() {
     {
       id: 3,
       text: "JEJAK PEMUDA",
-      desc: "Jejak Pemuda adalah proyek yang saya dan tim kembangkan dalam kompetisi website...",
+      desc: "Jejak Pemuda is a project that my team and I developed in a website competition...",
       image: JejakPemudaIMG,
       demo: "LIVE DEMO",
       path: "https://jejakpemuda.vercel.app/",
@@ -50,7 +50,7 @@ function Project() {
     {
       id: 4,
       text: "MONEY TRACK",
-      desc: "MoneyTrack adalah proyek pribadi saya yang dirancang untuk mempermudah...",
+      desc: "MoneyTrack is my personal project designed to make it easier...",
       image: MoneyTrackIMG,
       demo: "LIVE DEMO",
       path: "https://github.com/Bibintanggg",
@@ -62,26 +62,20 @@ function Project() {
   const certificates = [
     {
       id: 1,
-      text: "SERTIFIKAT DICODING",
-      desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
+      text: "DICODING CERTIFICATE ",
+      desc: "This certificate is awarded upon completion of the course...",
       image: Dicoding,
     },
     {
       id: 2,
-      text: "SERTIFIKAT LOMBA SAGASITAS",
-      desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
+      text: "SAGASITAS COMPETITION CERTIFICATE",
+      desc: "This certificate is given for participation in the competition from the Sagasitas Foundation..",
       image: SagasitasIMG,
     },
     {
       id: 3,
-      text: "SERTIFIKAT JUARA 3 WEB DEV",
-      desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
-      image: PeintagonsIMG,
-    },
-    {
-      id: 4,
-      text: "SERTIFIKAT JUARA 3 WEB DEV",
-      desc: "Sertifikat ini diberikan setelah menyelesaikan kursus...",
+      text: "WEB DEV 3RD PLACE CERTIFICATE",
+      desc: "This certificate is given after winning the web development competition at the Tragora Cup event...",
       image: PeintagonsIMG,
     },
   ];
@@ -91,7 +85,7 @@ function Project() {
     2: "portfolio-v1",
     3: "moneytrack",
     4: "jejakpemuda",
-  }
+  };
 
   const navigate = useNavigate();
   const handleNavigate = (path) => {
@@ -118,7 +112,7 @@ function Project() {
     setIsModalOpen(false);
   };
 
-  const animations = ["fade-right" , 'fade-down', 'fade-left']
+  const animations = ["fade-right", "fade-down", "fade-left"];
 
   useEffect(() => {
     AOS.init({
@@ -127,8 +121,8 @@ function Project() {
       once: false,
     });
 
-    AOS.refresh()
-  }, [toggleButton, isOpen])
+    AOS.refresh();
+  }, [toggleButton, isOpen]);
   return (
     <div
       className={`relative min-h-screen h-screen flex transition-all duration-500 ease-in-out ${

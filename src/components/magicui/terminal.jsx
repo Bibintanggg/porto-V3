@@ -1,20 +1,16 @@
-"use client";;
+"use client";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-export const AnimatedSpan = ({
-  children,
-  delay = 0,
-  className,
-  ...props
-}) => (
+export const AnimatedSpan = ({ children, delay = 0, className, ...props }) => (
   <motion.div
     initial={{ opacity: 0, y: -5 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3, delay: delay / 1000 }}
     className={cn("grid text-sm font-normal tracking-tight", className)}
-    {...props}>
+    {...props}
+  >
     {children}
   </motion.div>
 );
@@ -65,19 +61,17 @@ export const TypingAnimation = ({
   }, [children, duration, started]);
 
   return (
-    (<MotionComponent
+    <MotionComponent
       ref={elementRef}
       className={cn("text-sm font-normal tracking-tight", className)}
-      {...props}>
+      {...props}
+    >
       {displayedText}
-    </MotionComponent>)
+    </MotionComponent>
   );
 };
 
-export const Terminal = ({
-  children,
-  className
-}) => {
+export const Terminal = ({ children, className }) => {
   return (
     <div
       className={cn(
