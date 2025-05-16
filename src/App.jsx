@@ -12,36 +12,34 @@ import Preload from "./Component/Preload";
 import JejakPemuda from "./Pages/JejakPemuda";
 import MoneyTrack from "./Pages/MoneyTrack";
 
-
 function App() {
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
-    const timer =  setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 8000);
 
     return () => clearTimeout(timer);
-  }, [])
+  }, []);
   return (
     <DarkModeProvider>
       {loading ? (
-        <Preload/>
+        <Preload />
       ) : (
-        
         <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/project/sleepwell" element={<SleepWell />} />
-          <Route path="/project/portfolio-v1" element={<Portfolio_V1 />} />
-          <Route path="/project/moneytrack" element={<JejakPemuda />} />
-          <Route path="/project/jejakpemuda" element={<MoneyTrack />} />
-          <Route path="/about/experience" element={<Experience />} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/project" element={<Project />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/project/sleepwell" element={<SleepWell />} />
+            <Route path="/project/portfolio-v1" element={<Portfolio_V1 />} />
+            <Route path="/project/moneytrack" element={<JejakPemuda />} />
+            <Route path="/project/jejakpemuda" element={<MoneyTrack />} />
+            <Route path="/about/experience" element={<Experience />} />
+          </Routes>
+        </BrowserRouter>
       )}
     </DarkModeProvider>
   );
