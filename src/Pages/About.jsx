@@ -239,6 +239,15 @@ function About() {
                             data-aos="fade-up"
                             data-aos-duration="3000">Aesthetic</p>
                         </div>
+
+                        <div className="mt-5 bg-red-300 w-32 text-center rounded-lg h-9 flex ">
+                          <a href="/cv-bintang.pdf" 
+                          target="_blank"
+                          download='cv-bintang.pdf'
+                          className="text-white flex font-poppins text-sm items-center mx-auto">
+                            Install My CV
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

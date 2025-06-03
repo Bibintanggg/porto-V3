@@ -76,6 +76,19 @@ function Home() {
     navigate(path);
   };
 
+  const handleClick = (nav) => {
+  if (item.text === 'Hire Me') {
+    const link = document.createElement('a');
+    link.href = nav.path;
+    link.download = 'cv.pfg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } else if (nav.text === 'My CV') {
+    window.open(nav.path, '_blank');
+  }
+};
+
   return (
     <div
       className={`relative min-h-screen ${
@@ -162,14 +175,14 @@ function Home() {
 
                 <div className="flex gap-5 pt-2 mb-2">
                   {hire.map((nav) => (
-                    <button
+                    <a
                       key={nav.id}
                       className={`relative flex items-center w-32 h-10 ${
                         darkMode
                           ? "bg-gray-50 text-black"
                           : "bg-white text-black"
                       } rounded-lg overflow-hidden group transition-all duration-300 ease-in-out`}
-                      onClick={() => handleNavigate(nav.path)}
+                      onClick={() => handleNavigate(nav.path, '_blank')}
                       data-aos={nav.animation}
                       data-aos-duration="2000"
                     >
@@ -185,12 +198,12 @@ function Home() {
                           className="w-4 transition-transform duration-700 ease-in-out group-hover:rotate-45"
                         />
                       </div>
-                    </button>
+                    </a>
                   ))}
                 </div>
 
                 <div className="flex gap-3 translate-y-3">
-                  <a href="" data-aos="fade-up" data-aos-duration="2500">
+                  <a href="http://instagram.com/bintang.ydha_" target="_blank" data-aos="fade-up" data-aos-duration="2500">
                     <img
                       src={InstagramIcon}
                       className={`w-6 animate-bounce ease-in-out hover:opacity-20 
@@ -200,7 +213,7 @@ function Home() {
                     />
                   </a>
 
-                  <a href="" data-aos="fade-up" data-aos-duration="3000">
+                  <a href="https://www.linkedin.com/in/bintang-yudha-putra-purnomo-120117324/" target="_blank" data-aos="fade-up" data-aos-duration="3000">
                     <img
                       src={Linkedinicon}
                       className={`w-6 animate-bounce  ease-in-out hover:opacity-20 
