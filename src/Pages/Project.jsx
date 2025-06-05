@@ -5,6 +5,10 @@ import SagasitasIMG from "../assets/Image/saga.jpg";
 import PeintagonsIMG from "../assets/Image/peintagons.jpg";
 import Porto_V1 from "../assets/Image/portov1.png";
 import JejakPemudaIMG from "../assets/Image/jejakpemuda.png";
+import ITB from "../assets/Image/itb.png";
+import Cyber from "../assets/Image/cysec.jpg";
+import Markoding from "../assets/Image/markoding.png";
+import Bootcamp from "../assets/Image/bootcamp.png";
 import MoneyTrackIMG from "../assets/Image/moneytrack.png";
 import ShareIcon from "../assets/Icon/share.svg";
 import { isCookie, useNavigate } from "react-router-dom";
@@ -77,6 +81,30 @@ function Project() {
       text: "WEB DEV 3RD PLACE CERTIFICATE",
       desc: "This certificate is given after winning the web development competition at the Tragora Cup event...",
       image: PeintagonsIMG,
+    },
+    {
+      id: 4,
+      text: "WEB DEV 3RD PLACE CERTIFICATE",
+      desc: "This certificate is given after winning the web development competition at the Tragora Cup event...",
+      image: ITB,
+    },
+    {
+      id: 5,
+      text: "WEB DEV 3RD PLACE CERTIFICATE",
+      desc: "This certificate is given after winning the web development competition at the Tragora Cup event...",
+      image: Cyber,
+    },
+    {
+      id: 6,
+      text: "WEB DEV 3RD PLACE CERTIFICATE",
+      desc: "This certificate is given after winning the web development competition at the Tragora Cup event...",
+      image: Markoding,
+    },
+    {
+      id: 7,
+      text: "WEB DEV 3RD PLACE CERTIFICATE",
+      desc: "This certificate is given after winning the web development competition at the Tragora Cup event...",
+      image: Bootcamp,
     },
   ];
 
@@ -207,7 +235,7 @@ function Project() {
                         : "text-black bg-white"
                     }`}
                   >
-                    Certificate
+                    Activity
                   </button>
                 </div>
               </div>
